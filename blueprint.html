@@ -8,10 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="httpshttps://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-
     <header class="hero">
         <div class="logo-container" data-aos="zoom-in">
             <a href="index.html" aria-label="Back to main site">
@@ -22,7 +21,7 @@
         <p class="subtitle" data-aos="fade-up" data-aos-delay="200">
             Learn how everyday guys are making real money filming 30-second videos from their phone — without posting anything online or quitting their job.
         </p>
-        <a href="https://buy.stripe.com/9B628rfys5DA3kzawyfIs00" target="_blank" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Get The Blueprint Now</a>
+        <a href="https://buy.stripe.com/28EeVdeuoaXUbR5dIKfIs01" target="_blank" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Get The Blueprint Now</a>
     </header>
 
     <main>
@@ -141,18 +140,17 @@
         <section id="offer" class="section offer-section">
             <div class="container">
                 <div class="offer-box" data-aos="zoom-in">
-                    <h2>🎁 <span class="highlight">$30 OFF</span> LAUNCH SALE</h2>
-                    <p>Be one of the first 200 people to get the entire blueprint at a massive discount.</p>
+                    <h2>🎁 <span class="highlight">Limited Time</span> Offer</h2>
+                    <p>Get the entire blueprint at the special launch price.</p>
                     <div class="price">
                         <span class="original">$79</span>$49
                     </div>
                     <p>That’s less than a bad date, a night at the bar, or 2 drinks in Miami.</p>
-                    <a href="https://buy.stripe.com/9B628rfys5DA3kzawyfIs00" target="_blank" class="btn btn-primary" style="margin-top: 2rem;">Claim My Discount Now</a>
-                    <div class="promo-code">Use code: LAUNCH200 at checkout</div>
-                </div>
+                    <a href="https://buy.stripe.com/28EeVdeuoaXUbR5dIKfIs01" target="_blank" class="btn btn-primary" style="margin-top: 2rem;">Claim My Discount Now</a>
+                    </div>
             </div>
         </section>
-
+        
         <section class="section faq-section">
             <div class="container section-center">
                 <h2 data-aos="fade-up">Frequently Asked <span class="highlight">Questions</span></h2>
@@ -175,7 +173,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-question">How long does it take to start making money?</button>
-                        <div class="faq-answer"><p>If you follow the steps and tips in the guide consistently you should see results and land your first paid deal within 2-3 weeks.</p></div>
+                        <div class="faq-answer"><p>Many students see results and land their first paid deal within 2-3 weeks if they follow the steps consistently. Some have even landed deals in their first week.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question">What if I don’t live in the U.S.?</button>
@@ -187,7 +185,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-question">How will I access the guide after purchase?</button>
-                        <div class="faq-answer"><p>You will receive an email with a link to download the guide as a PDF immediately after your purchase is complete. It's yours to keep forever.</p></div>
+                        <div class="faq-answer"><p>You will receive an email with a link to download the guide as a PDF immediately after your purchase is complete. It's yours to keep forever for lifetime access.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question">Are there any extra or hidden costs?</button>
@@ -209,13 +207,13 @@
             <div class="container section-center" style="max-width: 800px; margin: auto;">
                 <h2 data-aos="fade-up">Don’t Wait Until You’re Burnt Out to Start.</h2>
                 <p data-aos="fade-up" data-aos-delay="100">You don't need to be perfect. You just need to start. Whether you're 18 or 85, this is your sign to bet on yourself. Start small. Start now. Grow fast.</p>
-                <a href="#offer" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200">This is my Blueprint. Let's Go.</a>
+                <a href="https://buy.stripe.com/28EeVdeuoaXUbR5dIKfIs01" target="_blank" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200">This is my Blueprint. Let's Go.</a>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 The Blueprint for Men. All Rights Reserved.</p>
+    <footer style="border-top: 1px solid var(--border-color); padding: 3rem 2rem; text-align: center;">
+        <p>&copy; 2025 Ismeli Henriquez. All Rights Reserved.</p>
     </footer>
 
     <div class="lightbox" id="img1"><div class="lightbox-content"><a class="close">&times;</a><img src="Email Screenshot.jpg" alt="Enlarged view of email offer"><a class="close-bg"></a></div></div>
@@ -224,10 +222,9 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
-
-        // SCRIPT FOR LIGHTBOX
         document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 800, once: true });
+
             const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
             lightboxTriggers.forEach(trigger => {
                 trigger.addEventListener('click', (e) => {
@@ -243,19 +240,18 @@
                     closer.closest('.lightbox').classList.remove('active');
                 });
             });
-        });
 
-        // SCRIPT FOR FAQ ACCORDION
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                question.classList.toggle('active');
-                if (question.classList.contains('active')) {
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                } else {
-                    answer.style.maxHeight = 0;
-                }
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    question.classList.toggle('active');
+                    if (question.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        answer.style.maxHeight = 0;
+                    }
+                });
             });
         });
     </script>
