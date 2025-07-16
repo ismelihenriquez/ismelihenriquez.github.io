@@ -8,36 +8,42 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a712c33756.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
     <nav class="main-nav">
         <div class="logo"><a href="index.html">Ismeli Henriquez</a></div>
-        <ul>
+        <ul class="nav-links" id="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="acting.html">Acting</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="blueprint.html">The Blueprint</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
+        <div class="hamburger" id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
     </nav>
 
     <main>
         <section class="section">
-            <div class="container section-center" style="padding-top: 8rem; padding-bottom: 8rem;">
+            <div class="container section-center" style="min-height: 60vh; display: flex; flex-direction: column; justify-content: center;">
                 <div data-aos="fade-up">
                     <h2>Get In Touch</h2>
                     <p>For business inquiries, collaborations, or acting opportunities, please reach out via email.</p>
                     <div class="contact-info">
-                        <p style="font-size: 2rem; margin-top: 2rem;"><a href="mailto:ismelihenriquez@gmail.com">ismelihenriquez@gmail.com</a></p>
+                        <h3 style="font-size: 2.5rem; margin-top: 2rem;"><a href="mailto:ismelihenriquez@gmail.com">ismelihenriquez@gmail.com</a></h3>
                     </div>
                     <p style="margin-top: 4rem;">You can also find me on social media:</p>
                     <div class="social-icons" style="justify-content: center;">
-                        <a href="https://www.instagram.com/ismelihenriquez" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@ismelihenriquez" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://www.facebook.com/ismelihenriquezz" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/ismelihenriquez" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@ismelihenriquez" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.facebook.com/ismelihenriquezz" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
@@ -45,6 +51,14 @@
     </main>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ once: true, duration: 800 });</script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
