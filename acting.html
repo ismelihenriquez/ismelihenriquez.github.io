@@ -14,13 +14,18 @@
 
     <nav class="main-nav">
         <div class="logo"><a href="index.html">Ismeli Henriquez</a></div>
-        <ul>
+        <ul class="nav-links" id="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="acting.html">Acting</a></li>
+            <li><a href="acting.html" class="active">Acting</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="blueprint.html">The Blueprint</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="hamburger" id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
     </nav>
 
     <main>
@@ -31,11 +36,8 @@
                     <p>Storytelling is my first love. It's the art of stepping into another's shoes and exploring the vast landscape of human behavior. I'm known for my role as Kalinda across two seasons of BET's "Games People Play," an experience that solidified my passion for bringing complex characters to life. My goal is to continually take on roles that challenge me, pushing me beyond my own experiences to tell stories that are raw, honest, and deeply human.</p>
                 </div>
 
-                <div class="reel-container" data-aos="fade-up" data-aos-delay="100">
-                     <div class="reel-placeholder">
-                         <h3>Acting Reel Placeholder</h3>
-                         <p>Please replace this with your YouTube embed code.</p>
-                     </div>
+                <div class="video-responsive" data-aos="fade-up" data-aos-delay="100">
+                    <iframe src="https://www.youtube.com/watch?v=...8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
 
                 <div class="section-center" style="margin-top: 6rem;" data-aos="fade-up">
@@ -54,6 +56,14 @@
     </main>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ once: true, duration: 800 });</script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
