@@ -14,13 +14,18 @@
 
     <nav class="main-nav">
         <div class="logo"><a href="index.html">Ismeli Henriquez</a></div>
-        <ul>
+        <ul class="nav-links" id="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="acting.html">Acting</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
             <li><a href="blueprint.html">The Blueprint</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="hamburger" id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
     </nav>
 
     <main>
@@ -34,22 +39,14 @@
                 <div class="blog-post-list" data-aos="fade-up" data-aos-delay="100">
                     <div class="blog-post-item">
                         <h3>Blog Post Title Will Go Here</h3>
-                        <p class="post-date">July 6, 2025</p>
+                        <p class="post-date">July 16, 2025</p>
                         <p>This is a short excerpt of the blog post. When you're ready to write, you can replace this text with the beginning of your article to give readers a preview...</p>
                         <a href="#">Read More &rarr;</a>
                     </div>
-
                     <div class="blog-post-item">
                         <h3>Another Interesting Topic</h3>
-                        <p class="post-date">July 1, 2025</p>
+                        <p class="post-date">July 10, 2025</p>
                         <p>This is a placeholder for your second blog post. You can easily copy and paste this entire block to add new posts to your blog page by just editing the HTML.</p>
-                        <a href="#">Read More &rarr;</a>
-                    </div>
-                    
-                     <div class="blog-post-item">
-                        <h3>My Thoughts on Psychological Thrillers</h3>
-                        <p class="post-date">June 25, 2025</p>
-                        <p>Here I might talk about the latest movie I saw or a book I read, diving into what makes a story compelling and what we can learn about ourselves through fiction.</p>
                         <a href="#">Read More &rarr;</a>
                     </div>
                 </div>
@@ -58,6 +55,14 @@
     </main>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ once: true, duration: 800 });</script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
