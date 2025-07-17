@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Ismeli Henriquez</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="logo"><a href="/">Ismeli Henriquez</a></div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/acting/">Acting</a></li>
+            <li><a href="/blog/" class="active">Blog</a></li>
+            <li><a href="/theblueprint/">The Blueprint</a></li>
+            <li><a href="/contact/">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </nav>
+    <main>
+        <section class="section">
+            <div class="container section-center" data-aos="fade-up">
+                <h2>Ismeli's Blog</h2>
+                <p>Welcome to my little corner of the internet! This is where I let my thoughts roam free. I've always had a lot to say about a lot of things, and sometimes it feels like these ideas need a place to land outside of my own head. You can expect a little bit of everything: my experiences and insights into business, content creation, the ups and downs of life, explorations of psychology and philosophy, and even my perspectives on acting, relationships, and what it means to be a woman. Think of this as my personal collection of thoughts and ideas that I'm comfortable sharing publicly. Perhaps something here will plant a seed for you.</p>
+            </div>
+        </section>
+        <section class="section" style="padding-top:0;">
+            <div class="container">
+                <div class="blog-post-item" data-aos="fade-up" data-aos-delay="100">
+                    <h3 style="text-align: center; font-size: 2.5rem;">"Life is what you make of it. If you make nothing, it will be nothing."</h3>
+                    <p style="margin-top: 2rem;">You have the power to be the architect of your own life. By actively making choices, pursuing goals, and engaging with the world, you can create a life that reflects your intentions. However, if you choose not to actively shape your life – if you remain passive and don't take initiative – then life's circumstances and external forces will inevitably mold you, and you might not like the result.</p>
+                    <p>I hope this serves as a reminder to live your life with intention because our lives are not just something that happens to us, but something we actively participate in creating.</p>
+                </div>
+                <div class="blog-post-item" data-aos="fade-up" data-aos-delay="200">
+                    <h3>How Consuming Cockblocks Your Creativity</h3>
+                    <p class="post-date">May 2, 2025</p>
+                    <p>I’m realizing that as a creative, and most importantly a CREATOR, one of the worst things you can do is consume. It clouds your mind, jumbles up your ideas, and if you consume just a little too much, you won’t know where your ideas start and theirs end. It also cockblocks your creativity.</p>
+                    <p>When you consume, your mind is occupied. It’s being ‘entertained’ and filled up with other people’s ideas. But the problem is, in today’s distraction era, we don’t even allow enough time after consuming to let our minds dissect what we’ve consumed to add to it. Which kills our opportunity for creativity.</p>
+                    <p>Creativity requires brainpower; it demands space to grow, and so you must create that space. You must allow your mind to empty out and make room. You do this by letting yourself be bored. Next time you consume something interesting, I want you to go and write down your thoughts on it. Instead of letting it go and consuming something new, sit on that one thing, elaborate, and allow your mind to create something with it.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
