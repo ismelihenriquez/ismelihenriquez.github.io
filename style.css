@@ -163,21 +163,64 @@ a {
 .video-responsive { position: relative; overflow: hidden; padding-top: 56.25%; height: 0; margin-top: 4rem; }
 .video-responsive iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
+/* --- Styles for Blueprint Page --- */
+.blueprint-page .hero { text-align: center; padding: 6rem 2rem 6rem; background: radial-gradient(circle, #1a1a1a 0%, var(--dark-bg) 70%); }
+.blueprint-page .hero .logo-container { max-width: 700px; margin: 0 auto 2rem; }
+.blueprint-page .hero img { max-width: 100%; height: auto; }
+.blueprint-page .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+.blueprint-page .hero p.subtitle { font-size: 1.5rem; color: var(--off-white); max-width: 700px; margin: 0 auto 2.5rem; }
+.blueprint-page .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+.blueprint-page .card { background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); }
+.blueprint-page .card h3 { color: var(--primary-blue); margin-bottom: 1rem; font-size: 1.5rem; }
+.blueprint-page .how-it-works .step { display: flex; align-items: center; background: var(--card-bg); padding: 2rem; border-radius: 12px; margin-bottom: 1.5rem; }
+.blueprint-page .how-it-works .step-number { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: var(--primary-blue); margin-right: 2rem; line-height: 1; }
+.blueprint-page .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
+.blueprint-page .proof-item { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; }
+.blueprint-page .proof-item img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid #444; cursor: zoom-in; transition: transform 0.2s ease-in-out; }
+.blueprint-page .proof-item img:hover { transform: scale(1.03); }
+.blueprint-page .enlarge-text { font-style: italic; color: var(--primary-blue); font-weight: 600; }
+.blueprint-page .checklist { list-style: none; margin-top: 3rem; columns: 2; column-gap: 2.5rem; }
+.blueprint-page .checklist li { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%230055FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>') no-repeat left center; padding-left: 40px; margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--off-white); }
+.blueprint-page .creator-section { display: flex; align-items: center; gap: 4rem; }
+.blueprint-page .creator-img { max-width: 450px; width: 40%; flex-shrink: 0; }
+.blueprint-page .creator-img img { width: 100%; height: auto; display: block; border-radius: 16px; }
+.blueprint-page .creator-bio .social-handle a { color: var(--primary-blue); text-decoration: none; font-weight: 600; font-size: 1.2rem; }
+.blueprint-page .creator-bio .social-handle a:hover { text-decoration: underline; }
+.blueprint-page .offer-section { background-color: var(--card-bg); border-radius: 16px; }
+.blueprint-page .offer-box { background: white; color: var(--dark-bg); padding: 3rem; border-radius: 16px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+.blueprint-page .offer-box p { color: #555; }
+.blueprint-page .price { margin: 1.5rem 0; font-size: 4rem; font-weight: 700; color: var(--dark-bg); }
+.blueprint-page .price span.original { text-decoration: line-through; font-size: 1.8rem; color: var(--text-grey); margin-right: 1rem; }
+.blueprint-page .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease; z-index: 1000; }
+.blueprint-page .lightbox.active { opacity: 1; visibility: visible; }
+.blueprint-page .lightbox-content { position: relative; }
+.blueprint-page .lightbox-content img { max-width: 90vw; max-height: 90vh; border: 2px solid white; border-radius: 4px; }
+.blueprint-page .lightbox .close { position: absolute; top: -40px; right: 0; font-size: 2.5rem; color: white; text-decoration: none; font-family: sans-serif; }
+.blueprint-page .lightbox .close-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+.blueprint-page .faq-container { max-width: 800px; margin: 3rem auto 0; border-top: 1px solid var(--border-color); }
+.blueprint-page .faq-item { border-bottom: 1px solid var(--border-color); }
+.blueprint-page .faq-question { background: none; border: none; width: 100%; text-align: left; padding: 1.5rem 0; font-size: 1.3rem; font-weight: 600; color: var(--off-white); cursor: pointer; position: relative; padding-right: 2rem; font-family: 'Poppins', sans-serif; }
+.blueprint-page .faq-question::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 2rem; color: var(--primary-blue); transition: transform 0.2s ease; }
+.blueprint-page .faq-question.active::after { content: '\2212'; }
+.blueprint-page .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding-left: 0.5rem; }
+.blueprint-page .faq-answer p { padding: 0 0 1.5rem 0; color: var(--text-grey); }
+
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
     h1 { font-size: 4rem; }
     h2 { font-size: 3rem; }
     .homepage-hero { flex-direction: column-reverse; text-align: center; }
     .homepage-hero .social-icons { justify-content: center; }
+    .creator-section { flex-direction: column; text-align: center; }
+    .creator-img { margin: 0 auto 2rem; width: 60%; }
 }
-
 @media (max-width: 768px) {
     .main-nav .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 67px; /* Height of the nav bar */
+        top: 67px; 
         left: 0;
         background-color: #111;
         border-bottom: 1px solid var(--border-color);
@@ -194,14 +237,10 @@ a {
     .hamburger {
         display: flex;
     }
-    .hamburger.active .line:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    .hamburger.active .line:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active .line:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
+    .hamburger.active .line:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active .line:nth-child(2) { opacity: 0; }
+    .hamburger.active .line:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
     h1 { font-size: 3rem; }
+    .blueprint-page .hero h1 { font-size: 2.5rem; }
+    .blueprint-page .checklist { columns: 1; }
 }
