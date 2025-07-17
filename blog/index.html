@@ -15,6 +15,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+
     <nav class="main-nav">
         <div class="logo"><a href="/">Ismeli Henriquez</a></div>
         <ul class="nav-links" id="nav-links">
@@ -26,30 +27,38 @@
         </ul>
         <div class="hamburger" id="hamburger"><div class="line"></div><div class="line"></div><div class="line"></div></div>
     </nav>
+
     <main>
         <section class="section">
-            <div class="container section-center" data-aos="fade-up">
-                <h2>Ismeli's Blog</h2>
-                <p>Welcome to my little corner of the internet! This is where I let my thoughts roam free. I've always had a lot to say about a lot of things, and sometimes it feels like these ideas need a place to land outside of my own head. You can expect a little bit of everything: my experiences and insights into business, content creation, the ups and downs of life, explorations of psychology and philosophy, and even my perspectives on acting, relationships, and what it means to be a woman. Think of this as my personal collection of thoughts and ideas that I'm comfortable sharing publicly. Perhaps something here will plant a seed for you.</p>
-            </div>
-        </section>
-        <section class="section" style="padding-top:0;">
             <div class="container">
-                <div class="blog-post-item" data-aos="fade-up" data-aos-delay="100">
-                    <h3 style="text-align: center; font-size: 2.5rem;">"Life is what you make of it. If you make nothing, it will be nothing."</h3>
-                    <p style="margin-top: 2rem;">You have the power to be the architect of your own life. By actively making choices, pursuing goals, and engaging with the world, you can create a life that reflects your intentions. However, if you choose not to actively shape your life – if you remain passive and don't take initiative – then life's circumstances and external forces will inevitably mold you, and you might not like the result.</p>
-                    <p>I hope this serves as a reminder to live your life with intention because our lives are not just something that happens to us, but something we actively participate in creating.</p>
+                <div class="section-center" data-aos="fade-up">
+                    <h2>Ismeli's Blog</h2>
+                    <p style="max-width: 800px; margin: 1rem auto;">Welcome to my little corner of the internet! This is where I let my thoughts roam free. You can expect a little bit of everything: my experiences and insights into business, content creation, acting, relationships, and what it means to be a woman. Perhaps something here will plant a seed for you.</p>
                 </div>
-                <div class="blog-post-item" data-aos="fade-up" data-aos-delay="200">
-                    <h3>How Consuming Cockblocks Your Creativity</h3>
-                    <p class="post-date">May 2, 2025</p>
-                    <p>I’m realizing that as a creative, and most importantly a CREATOR, one of the worst things you can do is consume. It clouds your mind, jumbles up your ideas, and if you consume just a little too much, you won’t know where your ideas start and theirs end. It also cockblocks your creativity.</p>
-                    <p>When you consume, your mind is occupied. It’s being ‘entertained’ and filled up with other people’s ideas. But the problem is, in today’s distraction era, we don’t even allow enough time after consuming to let our minds dissect what we’ve consumed to add to it. Which kills our opportunity for creativity.</p>
-                    <p>Creativity requires brainpower; it demands space to grow, and so you must create that space. You must allow your mind to empty out and make room. You do this by letting yourself be bored. Next time you consume something interesting, I want you to go and write down your thoughts on it. Instead of letting it go and consuming something new, sit on that one thing, elaborate, and allow your mind to create something with it.</p>
+                <div class="blog-post-list" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-post-item">
+                        <h3>How Consuming Cockblocks Your Creativity</h3>
+                        <p class="post-date">May 2, 2025</p>
+                        <p>I’m realizing that as a creative, and most importantly a CREATOR, one of the worst things you can do is consume. It clouds your mind, jumbles up your ideas, and if you consume just a little too much, you won’t know where your ideas start and theirs end...</p>
+                        <button class="btn btn-secondary read-more-btn" data-modal-target="post1">Read More</button>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <div class="modal-overlay" id="post1">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h2>How Consuming Cockblocks Your Creativity</h2>
+            <p class="post-date">May 2, 2025</p>
+            <p>I’m realizing that as a creative, and most importantly a CREATOR, one of the worst things you can do is consume. It clouds your mind, jumbles up your ideas, and if you consume just a little too much, you won’t know where your ideas start and theirs end. It also cockblocks your creativity.</p>
+            <p>Let me explain what I mean… I’ve heard it from multiple sources over the years that we should allow ourselves to get bored. In today’s landscape, it is very difficult to allow yourself to be bored because it’s so easy to reach for the main source of all sorts of distractions - our phone. You will never be bored when you have access to the whole world from this little device, and the hits of dopamine make it even more appealing to reach for. But creativity, in all forms, is born from boredom; from letting our mind roam because it has nothing else to do.</p>
+            <p>How does that connect to my opening statement? Well, when you consume, your mind is occupied. It’s being ‘entertained’ and filled up with other people’s ideas, which can sometimes serve as inspiration for your ideas to bounce off of. But the problem is, in today’s distraction era, we don’t even allow enough time after consuming to let our minds dissect what we’ve consumed to add to it. Which kills our opportunity for creativity.</p>
+            <p>Creativity requires brainpower; it demands space to grow, and so you must create that space. You must allow your mind to empty out and make room. You do this by letting yourself be bored. Next time you consume something interesting or that inspired some sort of reaction and thoughts from you, I want you to go and write down your thoughts on what you just consumed. It can be on why you agree or disagree, how you relate, or maybe it sparked a new idea in you. Instead of letting it go and consuming something new, sit on that one thing, elaborate, and allow your mind to create something with it. It may be nothing after all, but I think it’s important for you to at least explore it.</p>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ once: true, duration: 800 });
@@ -58,6 +67,32 @@
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
+        });
+
+        // NEW script for blog modals
+        const readMoreBtns = document.querySelectorAll('.read-more-btn');
+        const modals = document.querySelectorAll('.modal-overlay');
+        const closeBtns = document.querySelectorAll('.modal-close-btn');
+
+        readMoreBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modalId = btn.getAttribute('data-modal-target');
+                document.getElementById(modalId).classList.add('active');
+            });
+        });
+
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.closest('.modal-overlay').classList.remove('active');
+            });
+        });
+
+        modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
         });
     </script>
 </body>
