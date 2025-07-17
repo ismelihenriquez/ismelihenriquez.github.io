@@ -169,24 +169,52 @@ a {
 .main-footer .social-icons { justify-content: center; margin-top: 0; margin-bottom: 1.5rem; }
 
 /* --- Styles for Blueprint Page --- */
-.blueprint-page .hero { text-align: center; padding: 6rem 2rem 6rem; background: radial-gradient(circle, #1a1a1a 0%, var(--dark-bg) 70%); }
-.blueprint-page .hero .logo-container { max-width: 700px; margin: 0 auto 2rem; }
-.blueprint-page .hero img { max-width: 100%; height: auto; }
-.blueprint-page .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-.blueprint-page .hero p.subtitle { font-size: 1.5rem; color: var(--off-white); max-width: 700px; margin: 0 auto 2.5rem; }
-.blueprint-page .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+.blueprint-page .hero { padding: 4rem 2rem; }
+.blueprint-page .hero .logo-container { max-width: 500px; }
+.blueprint-page .hero h1 { font-size: 3rem; }
+.blueprint-page .deal-highlight { color: var(--off-white); font-weight: 600; margin-top: 1rem; }
+.blueprint-page .value-prop-section { background-color: var(--card-bg); padding: 4rem 2rem; border-radius: 16px; margin-top: -1px; border-top: 1px solid var(--border-color);}
+.blueprint-page .investment-section { display: flex; align-items: center; gap: 4rem; text-align: left; }
+.blueprint-page .investment-section .receipt-image { flex-basis: 40%; }
+.blueprint-page .investment-section .receipt-image img { width: 100%; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.3); }
+.blueprint-page .investment-section .investment-text { flex: 1; }
+.blueprint-page .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+.blueprint-page .testimonial-card img { width: 100%; border-radius: 12px; border: 1px solid var(--border-color); }
 .blueprint-page .card { background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); }
-.blueprint-page .card h3 { color: var(--primary-blue); margin-bottom: 1rem; font-size: 1.5rem; }
-.blueprint-page .how-it-works .step { display: flex; align-items: center; background: var(--card-bg); padding: 2rem; border-radius: 12px; margin-bottom: 1.5rem; }
-.blueprint-page .how-it-works .step-number { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: var(--primary-blue); margin-right: 2rem; line-height: 1; }
-.blueprint-page .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
-.blueprint-page .proof-item { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; }
-.blueprint-page .proof-item img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid #444; cursor: zoom-in; transition: transform 0.2s ease-in-out; }
-.blueprint-page .proof-item img:hover { transform: scale(1.03); }
-.blueprint-page .enlarge-text { font-style: italic; color: var(--primary-blue); font-weight: 600; }
-.blueprint-page .checklist { list-style: none; margin-top: 3rem; columns: 2; column-gap: 2.5rem; }
-.blueprint-page .checklist li { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%230055FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>') no-repeat left center; padding-left: 40px; margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--off-white); }
-.blueprint-page .creator-section { display: flex; align-items: center; gap: 4rem; }
-.blueprint-page .creator-img { max-width: 450px; width: 40%; flex-shrink: 0; }
-.blueprint-page .creator-img img { width: 100%; height: auto; display: block; border-radius: 16px; }
-.blueprint-page .creator-bio .social-handle a { color: var(--primary-blue); text-decoration: none; font-weight: 600; font-size:
+.blueprint-page .card h3 { color: var(--primary-blue); font-size: 1.5rem; }
+.blueprint-page .checklist { columns: 2; }
+.blueprint-page .offer-box p { color: #555; }
+.blueprint-page .price { margin: 1.5rem 0; font-size: 4rem; font-weight: 700; color: var(--dark-bg); }
+.blueprint-page .price span.original { text-decoration: line-through; font-size: 1.8rem; color: var(--text-grey); margin-right: 1rem; }
+.blueprint-page footer.footer-note { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border-color); }
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    h1 { font-size: 4rem; }
+    h2 { font-size: 3rem; }
+    .homepage-hero { flex-direction: column-reverse; text-align: center; }
+    .homepage-hero .social-icons { justify-content: center; }
+    .blueprint-page .investment-section { flex-direction: column; }
+}
+@media (max-width: 768px) {
+    .main-nav .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 67px;
+        left: 0;
+        background-color: #111;
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem 0;
+    }
+    .main-nav .nav-links.active { display: flex; }
+    .main-nav .nav-links li { text-align: center; padding: 0.5rem 0; width: 100%; }
+    .hamburger { display: flex; }
+    .hamburger.active .line:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active .line:nth-child(2) { opacity: 0; }
+    .hamburger.active .line:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+    h1 { font-size: 3rem; }
+    .blueprint-page .hero h1 { font-size: 2.5rem; }
+    .blueprint-page .checklist { columns: 1; }
+}
