@@ -327,3 +327,15 @@ a {
 .modal-close-btn:hover {
     color: white;
 }
+/* --- NEW: Main Footer --- */
+.main-footer {
+    background-color: #111;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+.main-footer .social-icons {
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
