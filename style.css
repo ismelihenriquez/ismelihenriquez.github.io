@@ -165,6 +165,7 @@ a { color: var(--primary-blue); text-decoration: none; }
     overflow-y: auto; /* Allows vertical scrolling */
     flex-grow: 1;     /* Allows the container to fill space and scroll */
     padding: 2rem 3rem;
+     min-height: 0;
 }
 .quiz-modal-inner::-webkit-scrollbar {
     width: 8px;
