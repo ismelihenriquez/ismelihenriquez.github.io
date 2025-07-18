@@ -132,7 +132,7 @@ a {
     transition: all 0.3s ease-in-out;
 }
 
-/* --- Homepage & General Site Styles --- */
+/* --- General Site Styles --- */
 .homepage-hero { display: flex; align-items: center; gap: 4rem; }
 .homepage-hero .hero-text { flex: 1; }
 .homepage-hero .hero-image { flex-basis: 350px; }
@@ -162,18 +162,20 @@ a {
 .main-footer { background-color: #111; padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border-color); }
 .main-footer .social-icons { justify-content: center; margin-top: 0; margin-bottom: 1.5rem; }
 
-/* ===============================================
---- ALL STYLES FOR THE BLUEPRINT PAGE --- 
-===============================================
-*/
-
-.blueprint-page .hero { text-align: center; padding: 4rem 2rem; }
+/* --- Styles for Blueprint Page --- */
+.blueprint-page .hero { text-align: center; padding: 4rem 2rem; background: radial-gradient(circle, #1a1a1a 0%, var(--dark-bg) 70%); }
 .blueprint-page .hero .logo-container { max-width: 500px; margin: 0 auto 2rem; }
 .blueprint-page .hero img { max-width: 100%; height: auto; }
 .blueprint-page .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
 .blueprint-page .hero p.subtitle { font-size: 1.5rem; color: var(--off-white); max-width: 700px; margin: 0 auto 2.5rem; }
 .blueprint-page .deal-highlight { color: var(--off-white); font-weight: 600; margin-top: 1rem; }
-.blueprint-page .value-prop-section { background-color: var(--card-bg); padding: 4rem 2rem; border-radius: 16px; margin-top: -1px; border-top: 1px solid var(--border-color); }
+.blueprint-page .value-prop-section { background-color: var(--card-bg); padding: 4rem 2rem; border-radius: 16px; }
+.blueprint-page .investment-section { display: flex; align-items: center; gap: 4rem; text-align: left; }
+.blueprint-page .investment-section .receipt-image { flex-basis: 40%; }
+.blueprint-page .investment-section .receipt-image img { width: 100%; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.3); }
+.blueprint-page .investment-section .investment-text { flex: 1; }
+.blueprint-page .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+.blueprint-page .testimonial-card img { width: 100%; border-radius: 12px; border: 1px solid var(--border-color); }
 .blueprint-page .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
 .blueprint-page .card { background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); }
 .blueprint-page .card h3 { color: var(--primary-blue); font-size: 1.5rem; }
@@ -189,14 +191,6 @@ a {
 .blueprint-page .creator-section { display: flex; align-items: center; gap: 4rem; }
 .blueprint-page .creator-img { max-width: 450px; width: 40%; flex-shrink: 0; }
 .blueprint-page .creator-img img { width: 100%; height: auto; display: block; border-radius: 16px; }
-.blueprint-page .creator-bio .social-handle a { color: var(--primary-blue); text-decoration: none; font-weight: 600; font-size: 1.2rem; }
-.blueprint-page .creator-bio .social-handle a:hover { text-decoration: underline; }
-.blueprint-page .investment-section { display: flex; align-items: center; gap: 4rem; text-align: left; }
-.blueprint-page .investment-section .receipt-image { flex-basis: 40%; }
-.blueprint-page .investment-section .receipt-image img { width: 100%; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.3); }
-.blueprint-page .investment-section .investment-text { flex: 1; }
-.blueprint-page .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
-.blueprint-page .testimonial-card img { width: 100%; border-radius: 12px; border: 1px solid var(--border-color); }
 .blueprint-page .offer-section { background-color: var(--card-bg); border-radius: 16px; }
 .blueprint-page .offer-box { background: white; color: var(--dark-bg); padding: 3rem; border-radius: 16px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
 .blueprint-page .offer-box p { color: #555; }
@@ -247,63 +241,4 @@ a {
     h1 { font-size: 3rem; }
     .blueprint-page .hero h1 { font-size: 2.5rem; }
     .blueprint-page .checklist { columns: 1; }
-}
-/* --- NEW: Quiz Pop-up Styles --- */
-#modal-overlay {
-    --tw-bg-opacity: 1;
-    background-color: rgba(13, 13, 13, 0.85); /* Matches your dark-bg with opacity */
-    backdrop-filter: blur(8px);
-    font-family: 'Poppins', sans-serif;
-}
-#intro-screen, #quiz-screen, #results-screen {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-}
-#intro-screen h1, #quiz-screen h3, #results-screen h2, #results-screen h3, #results-screen h4 {
-    font-family: 'Bebas Neue', sans-serif;
-    color: var(--off-white);
-}
-#intro-screen p, #quiz-screen p, #results-screen p {
-    color: var(--text-grey);
-}
-#start-quiz-btn, #email-form button {
-    background-color: var(--primary-blue);
-}
-#start-quiz-btn:hover, #email-form button:hover {
-    background-color: #0044dd; /* A slightly darker blue for hover */
-}
-#quiz-screen h2 {
-    color: var(--primary-blue);
-}
-#progress-bar {
-    background-color: var(--primary-blue);
-}
-#answer-options button {
-    border-color: var(--border-color);
-    color: var(--off-white);
-}
-#answer-options button:hover {
-    background-color: rgba(0, 85, 255, 0.1);
-    border-color: var(--primary-blue);
-}
-#results-screen .bg-gray-100 {
-    background-color: #222;
-}
-#results-screen .text-gray-700 {
-    color: var(--off-white);
-}
-#results-screen .bg-blue-50 {
-    background-color: rgba(0, 85, 255, 0.1);
-    border-color: var(--primary-blue);
-}
-#results-screen .text-gray-900 {
-    color: var(--off-white);
-}
-#email-input {
-    background-color: #333;
-    border-color: var(--border-color);
-    color: var(--off-white);
-}
-#email-input:focus {
-    --tw-ring-color: var(--primary-blue);
 }
