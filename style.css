@@ -7,14 +7,8 @@
     --card-bg: #1a1a1a;
     --border-color: #2a2a2a;
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html {
-    scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--dark-bg);
@@ -22,115 +16,31 @@ body {
     line-height: 1.7;
 }
 /* --- Typography & General Styles --- */
-h1, h2, h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    line-height: 1.2;
-    letter-spacing: 1px;
-    color: white;
-}
+h1, h2, h3 { font-family: 'Bebas Neue', sans-serif; line-height: 1.2; letter-spacing: 1px; color: white; }
 h1 { font-size: 5rem; }
 h2 { font-size: 3.5rem; }
 h3 { font-size: 2rem; }
-p {
-    color: var(--text-grey);
-    margin-bottom: 1rem;
-}
-a {
-    color: var(--primary-blue);
-    text-decoration: none;
-}
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-}
-.section {
-    padding: 6rem 0;
-    border-bottom: 1px solid var(--border-color);
-}
-.section:last-child {
-    border-bottom: none;
-}
-.section-center {
-    text-align: center;
-}
-.highlight {
-    color: var(--primary-blue);
-}
+p { color: var(--text-grey); margin-bottom: 1rem; }
+a { color: var(--primary-blue); text-decoration: none; }
+.container { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+.section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
+.section:last-child { border-bottom: none; }
+.section-center { text-align: center; }
+.highlight { color: var(--primary-blue); }
 /* --- Buttons --- */
-.btn {
-    display: inline-block;
-    padding: 18px 40px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: 2px solid var(--primary-blue);
-    background: var(--primary-blue);
-    color: white;
-}
-.btn:hover {
-    transform: translateY(-5px);
-}
-.btn-secondary {
-    background: transparent;
-    color: var(--primary-blue);
-}
-.btn-secondary:hover {
-    background: var(--primary-blue);
-    color: white;
-}
+.btn { display: inline-block; padding: 18px 40px; font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 700; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; cursor: pointer; border: 2px solid var(--primary-blue); background: var(--primary-blue); color: white; }
+.btn:hover { transform: translateY(-5px); }
+.btn-secondary { background: transparent; color: var(--primary-blue); }
+.btn-secondary:hover { background: var(--primary-blue); color: white; }
 
 /* --- Main Navigation --- */
-.main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: rgba(17, 17, 17, 0.85);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-.main-nav .logo a {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    color: white;
-}
-.main-nav .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-    align-items: center;
-}
-.main-nav .nav-links a {
-    color: var(--off-white);
-    font-weight: 600;
-    transition: color 0.2s ease;
-    padding: 0.5rem;
-}
-.main-nav .nav-links a:hover,
-.main-nav .nav-links a.active {
-    color: var(--primary-blue);
-}
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-.hamburger .line {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-}
+.main-nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background-color: rgba(17, 17, 17, 0.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
+.main-nav .logo a { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: white; }
+.main-nav .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+.main-nav .nav-links a { color: var(--off-white); font-weight: 600; transition: color 0.2s ease; padding: 0.5rem; }
+.main-nav .nav-links a:hover, .main-nav .nav-links a.active { color: var(--primary-blue); }
+.hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+.hamburger .line { width: 25px; height: 3px; background-color: white; border-radius: 5px; transition: all 0.3s ease-in-out; }
 
 /* --- General Site Styles --- */
 .homepage-hero { display: flex; align-items: center; gap: 4rem; }
@@ -166,7 +76,7 @@ a {
 .blueprint-page .hero { text-align: center; padding: 4rem 2rem; background: radial-gradient(circle, #1a1a1a 0%, var(--dark-bg) 70%); }
 .blueprint-page .hero .logo-container { max-width: 500px; margin: 0 auto 2rem; }
 .blueprint-page .hero img { max-width: 100%; height: auto; }
-.blueprint-page .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+.blueprint-page .hero h1, .blueprint-page .creator-section h2, .blueprint-page .value-prop-section h2, .blueprint-page .investment-section h2, .blueprint-page .offer-box h2, .blueprint-page h2 { font-size: 3.5rem; }
 .blueprint-page .hero p.subtitle { font-size: 1.5rem; color: var(--off-white); max-width: 700px; margin: 0 auto 2.5rem; }
 .blueprint-page .deal-highlight { color: var(--off-white); font-weight: 600; margin-top: 1rem; }
 .blueprint-page .value-prop-section { background-color: var(--card-bg); padding: 4rem 2rem; border-radius: 16px; }
@@ -196,7 +106,7 @@ a {
 .blueprint-page .offer-box p { color: #555; }
 .blueprint-page .price { margin: 1.5rem 0; font-size: 4rem; font-weight: 700; color: var(--dark-bg); }
 .blueprint-page .price span.original { text-decoration: line-through; font-size: 1.8rem; color: var(--text-grey); margin-right: 1rem; }
-.blueprint-page .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease; z-index: 1000; }
+.blueprint-page .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease; z-index: 2000; }
 .blueprint-page .lightbox.active { opacity: 1; visibility: visible; }
 .blueprint-page .lightbox-content { position: relative; }
 .blueprint-page .lightbox-content img { max-width: 90vw; max-height: 90vh; border: 2px solid white; border-radius: 4px; }
@@ -209,8 +119,31 @@ a {
 .blueprint-page .faq-question.active::after { content: '\2212'; }
 .blueprint-page .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding-left: 0.5rem; }
 .blueprint-page .faq-answer p { padding: 0 0 1.5rem 0; color: var(--text-grey); }
-.blueprint-page footer.footer-note { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border-color); }
 .blueprint-page .quiz-trigger-section { background-color: var(--card-bg); border-radius: 16px; }
+.blueprint-page footer.footer-note { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border-color); }
+
+/* --- Custom Quiz Modal Styles (No Tailwind) --- */
+.quiz-overlay { font-family: 'Poppins', sans-serif; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(13, 13, 13, 0.85); backdrop-filter: blur(8px); z-index: 5000; display: none; align-items: center; justify-content: center; padding: 1rem; }
+.quiz-overlay.active { display: flex; }
+.quiz-modal { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); width: 100%; max-height: 90vh; display: flex; flex-direction: column; }
+.quiz-modal-inner { overflow-y: auto; padding: 2rem 3rem; }
+.quiz-close-btn { position: absolute; top: 1rem; right: 1.5rem; font-size: 2rem; color: var(--text-grey); cursor: pointer; background: none; border: none; line-height: 1; }
+.quiz-close-btn:hover { color: white; }
+.quiz-modal h1, .quiz-modal h2, .quiz-modal h3, .quiz-modal h4 { font-family: 'Bebas Neue', sans-serif; color: var(--off-white); }
+.quiz-modal h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.quiz-modal p { color: var(--text-grey); margin-bottom: 2rem; }
+.quiz-progress-bar { width: 100%; background-color: #333; border-radius: 99px; height: 10px; }
+.quiz-progress-bar div { height: 100%; background-color: var(--primary-blue); border-radius: 99px; transition: width 0.3s ease; }
+.quiz-answer-options { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+.quiz-answer-btn { width: 100%; text-align: left; padding: 1rem; border: 2px solid var(--border-color); border-radius: 8px; color: var(--off-white); background: none; cursor: pointer; transition: all 0.2s ease; }
+.quiz-answer-btn:hover { background-color: rgba(0, 85, 255, 0.1); border-color: var(--primary-blue); }
+.quiz-results-brands { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.quiz-results-brands div { background-color: #222; padding: 1rem; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+.quiz-results-format { background-color: rgba(0, 85, 255, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--primary-blue); text-align: left; margin-bottom: 1rem; }
+.quiz-results-format h5 { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--off-white); }
+.quiz-email-capture { background-color: #111; padding: 2rem; margin: 2rem -3rem -2rem -3rem; border-top: 1px solid var(--border-color); }
+.quiz-email-capture input { background-color: #333; border: 1px solid var(--border-color); color: var(--off-white); width: 100%; padding: 0.75rem 1rem; border-radius: 8px; margin-bottom: 1rem; }
+.quiz-email-capture button { width: 100%; }
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
@@ -242,4 +175,5 @@ a {
     h1 { font-size: 3rem; }
     .blueprint-page .hero h1 { font-size: 2.5rem; }
     .blueprint-page .checklist { columns: 1; }
+    .quiz-answer-options { grid-template-columns: 1fr; }
 }
