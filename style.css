@@ -33,7 +33,7 @@ a { color: var(--primary-blue); text-decoration: none; }
 .btn-secondary { background: transparent; color: var(--primary-blue); }
 .btn-secondary:hover { background: var(--primary-blue); color: white; }
 
-/* --- Main Navigation --- */
+/* --- Main Site Navigation --- */
 .main-nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background-color: rgba(17, 17, 17, 0.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
 .main-nav .logo a { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: white; }
 .main-nav .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
@@ -73,10 +73,14 @@ a { color: var(--primary-blue); text-decoration: none; }
 .main-footer .social-icons { justify-content: center; margin-top: 0; margin-bottom: 1.5rem; }
 
 /* --- Styles for Blueprint Page --- */
-.blueprint-page .hero { text-align: center; padding: 4rem 2rem; background: radial-gradient(circle, #1a1a1a 0%, var(--dark-bg) 70%); }
+.blueprint-page .lp-nav { background-color: rgba(17, 17, 17, 0.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; padding: 1rem 2rem; text-align: center; }
+.blueprint-page .lp-nav a { color: var(--off-white); text-decoration: none; font-weight: 600; margin: 0 1rem; transition: color 0.2s ease; }
+.blueprint-page .lp-nav a:hover { color: var(--primary-blue); }
+.blueprint-page .hero { text-align: center; padding-top: 4rem; }
 .blueprint-page .hero .logo-container { max-width: 500px; margin: 0 auto 2rem; }
 .blueprint-page .hero img { max-width: 100%; height: auto; }
-.blueprint-page .hero h1, .blueprint-page .creator-section h2, .blueprint-page .value-prop-section h2, .blueprint-page .investment-section h2, .blueprint-page .offer-box h2, .blueprint-page h2 { font-size: 3.5rem; }
+.blueprint-page h2 { font-size: 3.5rem; }
+.blueprint-page .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
 .blueprint-page .hero p.subtitle { font-size: 1.5rem; color: var(--off-white); max-width: 700px; margin: 0 auto 2.5rem; }
 .blueprint-page .deal-highlight { color: var(--off-white); font-weight: 600; margin-top: 1rem; }
 .blueprint-page .value-prop-section { background-color: var(--card-bg); padding: 4rem 2rem; border-radius: 16px; }
@@ -85,7 +89,8 @@ a { color: var(--primary-blue); text-decoration: none; }
 .blueprint-page .investment-section .receipt-image img { width: 100%; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.3); }
 .blueprint-page .investment-section .investment-text { flex: 1; }
 .blueprint-page .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
-.blueprint-page .testimonial-card img { width: 100%; border-radius: 12px; border: 1px solid var(--border-color); }
+.blueprint-page .testimonial-card img, .blueprint-page .receipt-image img { cursor: zoom-in; transition: transform 0.2s ease; }
+.blueprint-page .testimonial-card img:hover, .blueprint-page .receipt-image img:hover { transform: scale(1.03); }
 .blueprint-page .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
 .blueprint-page .card { background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); }
 .blueprint-page .card h3 { color: var(--primary-blue); font-size: 1.5rem; }
@@ -121,26 +126,26 @@ a { color: var(--primary-blue); text-decoration: none; }
 .blueprint-page .faq-answer p { padding: 0 0 1.5rem 0; color: var(--text-grey); }
 .blueprint-page .quiz-trigger-section { background-color: var(--card-bg); border-radius: 16px; }
 .blueprint-page footer.footer-note { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border-color); }
-
-/* --- Custom Quiz Modal Styles (No Tailwind) --- */
 .quiz-overlay { font-family: 'Poppins', sans-serif; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(13, 13, 13, 0.85); backdrop-filter: blur(8px); z-index: 5000; display: none; align-items: center; justify-content: center; padding: 1rem; }
 .quiz-overlay.active { display: flex; }
 .quiz-modal { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); width: 100%; max-height: 90vh; display: flex; flex-direction: column; }
 .quiz-modal-inner { overflow-y: auto; padding: 2rem 3rem; }
 .quiz-close-btn { position: absolute; top: 1rem; right: 1.5rem; font-size: 2rem; color: var(--text-grey); cursor: pointer; background: none; border: none; line-height: 1; }
 .quiz-close-btn:hover { color: white; }
-.quiz-modal h1, .quiz-modal h2, .quiz-modal h3, .quiz-modal h4 { font-family: 'Bebas Neue', sans-serif; color: var(--off-white); }
+.quiz-modal h1, .quiz-modal h2 { font-family: 'Bebas Neue', sans-serif; color: var(--off-white); }
 .quiz-modal h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.quiz-modal h2 { font-size: 2.2rem; }
+.quiz-modal h3 { font-size: 1.75rem; }
 .quiz-modal p { color: var(--text-grey); margin-bottom: 2rem; }
 .quiz-progress-bar { width: 100%; background-color: #333; border-radius: 99px; height: 10px; }
 .quiz-progress-bar div { height: 100%; background-color: var(--primary-blue); border-radius: 99px; transition: width 0.3s ease; }
 .quiz-answer-options { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
-.quiz-answer-btn { width: 100%; text-align: left; padding: 1rem; border: 2px solid var(--border-color); border-radius: 8px; color: var(--off-white); background: none; cursor: pointer; transition: all 0.2s ease; }
+.quiz-answer-btn { width: 100%; text-align: left; padding: 1rem; border: 2px solid var(--border-color); border-radius: 8px; color: var(--off-white); background: none; cursor: pointer; transition: all 0.2s ease; font-size: 1rem;}
 .quiz-answer-btn:hover { background-color: rgba(0, 85, 255, 0.1); border-color: var(--primary-blue); }
 .quiz-results-brands { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
 .quiz-results-brands div { background-color: #222; padding: 1rem; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; }
 .quiz-results-format { background-color: rgba(0, 85, 255, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--primary-blue); text-align: left; margin-bottom: 1rem; }
-.quiz-results-format h5 { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--off-white); }
+.quiz-results-format h5 { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--off-white); margin-bottom: 0.5rem; }
 .quiz-email-capture { background-color: #111; padding: 2rem; margin: 2rem -3rem -2rem -3rem; border-top: 1px solid var(--border-color); }
 .quiz-email-capture input { background-color: #333; border: 1px solid var(--border-color); color: var(--off-white); width: 100%; padding: 0.75rem 1rem; border-radius: 8px; margin-bottom: 1rem; }
 .quiz-email-capture button { width: 100%; }
@@ -155,17 +160,7 @@ a { color: var(--primary-blue); text-decoration: none; }
     .blueprint-page .creator-img { margin: 0 auto 2rem; width: 60%; }
 }
 @media (max-width: 768px) {
-    .main-nav .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 67px;
-        left: 0;
-        background-color: #111;
-        border-bottom: 1px solid var(--border-color);
-        padding: 1rem 0;
-    }
+    .main-nav .nav-links { display: none; flex-direction: column; width: 100%; position: absolute; top: 67px; left: 0; background-color: #111; border-bottom: 1px solid var(--border-color); padding: 1rem 0; }
     .main-nav .nav-links.active { display: flex; }
     .main-nav .nav-links li { text-align: center; padding: 0.5rem 0; width: 100%; }
     .hamburger { display: flex; }
