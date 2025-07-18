@@ -144,8 +144,14 @@
         const manualQuizTrigger = document.getElementById('manual-quiz-trigger');
         let currentQuestionIndex = 0; let scores = {}; let winningArchetypeKey;
         
-        function openModal() { modalOverlay.classList.add('active'); }
-        function closeModal() { modalOverlay.classList.remove('active'); }
+        function openModal() {
+    document.body.classList.add('modal-open');
+    modalOverlay.classList.add('active');
+}
+function closeModal() {
+    document.body.classList.remove('modal-open');
+    modalOverlay.classList.remove('active');
+}
         function resetQuiz() { currentQuestionIndex = 0; scores = { skilledTradesman: 0, modernProfessional: 0, techEnthusiast: 0, outdoorAdventurer: 0, fitnessArchitect: 0, modernGentleman: 0 }; formConfirmation.style.display = 'none'; introScreen.style.display = 'block'; resultsScreen.style.display = 'none'; quizScreen.style.display = 'none'; }
         function showQuestion() { const question = quizData.questions[currentQuestionIndex]; const totalQuestions = quizData.questions.length; document.getElementById('question-counter').textContent = `Question ${currentQuestionIndex + 1}/${totalQuestions}`; document.getElementById('progress-bar').style.width = `${((currentQuestionIndex + 1) / totalQuestions) * 100}%`; document.getElementById('question-text').textContent = question.text; const answerOptionsDiv = document.getElementById('answer-options'); answerOptionsDiv.innerHTML = ''; question.answers.forEach(answer => { const button = document.createElement('button'); button.className = 'quiz-answer-btn'; button.textContent = answer.text; button.onclick = () => selectAnswer(answer.archetypes); answerOptionsDiv.appendChild(button); }); }
         function selectAnswer(archetypes) { archetypes.forEach(archetype => { if (scores.hasOwnProperty(archetype)) { scores[archetype]++; } }); currentQuestionIndex++; if (currentQuestionIndex < quizData.questions.length) { showQuestion(); } else { showResults(); } }
