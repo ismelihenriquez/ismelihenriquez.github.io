@@ -210,6 +210,7 @@ a {
 .blueprint-page .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding-left: 0.5rem; }
 .blueprint-page .faq-answer p { padding: 0 0 1.5rem 0; color: var(--text-grey); }
 .blueprint-page footer.footer-note { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border-color); }
+.blueprint-page .quiz-trigger-section { background-color: var(--card-bg); border-radius: 16px; }
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
