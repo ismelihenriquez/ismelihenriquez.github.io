@@ -173,3 +173,19 @@ a { color: var(--primary-blue); text-decoration: none; }
     .quiz-answer-options { grid-template-columns: 1fr; }
     .blueprint-page .lp-nav a { margin: 0 0.5rem; font-size: 0.9rem; }
 }
+.blueprint-page .testimonial-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 2. Constrain the width of the quiz pop-up */
+.quiz-modal#intro-screen {
+    max-width: 550px;
+}
+.quiz-modal#quiz-screen {
+    max-width: 700px;
+}
+.quiz-modal#results-screen {
+    max-width: 800px;
+}
