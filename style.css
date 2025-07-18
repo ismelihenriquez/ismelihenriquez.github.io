@@ -126,7 +126,9 @@ a { color: var(--primary-blue); text-decoration: none; }
 .blueprint-page .faq-answer p { padding: 0 0 1.5rem 0; color: var(--text-grey); }
 .blueprint-page .quiz-trigger-section { background-color: var(--card-bg); border-radius: 16px; }
 .blueprint-page .coming-soon-section { padding-top: 6rem; text-align: center; }
-.blueprint-page footer.footer-note { padding: 3rem 2rem; text-align: center; }
+.blueprint-page footer.footer-note { padding:  2rem 2rem 3rem; text-align: center;  border-top: 1px solid var(--border-color); }
+.blueprint-page .coming-soon-note { font-size: 1.25rem;  font-weight: 600;  color: var(--primary-blue);  margin-top: 1.5rem; }
+
 
 /* --- Custom Quiz Modal Styles (Updated) --- */
 .quiz-overlay { font-family: 'Poppins', sans-serif; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(13, 13, 13, 0.85); backdrop-filter: blur(8px); z-index: 5000; display: none; align-items: center; justify-content: center; padding: 1rem; }
