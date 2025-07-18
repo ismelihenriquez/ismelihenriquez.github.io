@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LY2QNK2MLC"></script>
     <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LY2QNK2MLC'); </script>
 </head>
@@ -53,6 +52,7 @@
     <div class="lightbox" id="img1"><div class="lightbox-content"><a class="close">×</a><img src="/Email Screenshot.jpg" alt="Enlarged view of email offer"><a class="close-bg"></a></div></div>
     <div class="lightbox" id="img2"><div class="lightbox-content"><a class="close">×</a><img src="/Email Retainer.jpg" alt="Enlarged view of retainer offer"><a class="close-bg"></a></div></div>
     <div class="lightbox" id="img3"><div class="lightbox-content"><a class="close">×</a><img src="/payments.jpg" alt="Enlarged view of payments screenshot"><a class="close-bg"></a></div></div>
+    
     <div id="modal-overlay" class="fixed inset-0 flex items-center justify-center p-4 z-50 transition-opacity duration-300 opacity-0 pointer-events-none">
         <div id="intro-screen" class="w-full max-w-lg mx-auto rounded-2xl shadow-2xl p-8 md:p-12 text-center transform transition-all duration-300">
             <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-200"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
@@ -80,11 +80,13 @@
             </div>
         </div>
     </div>
+    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             AOS.init({ duration: 800, once: true });
-            // All lightbox and faq scripts
+            
+            // All interactive scripts are now inside here
             const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
             lightboxTriggers.forEach(trigger => { trigger.addEventListener('click', (e) => { e.preventDefault(); const lightboxId = trigger.getAttribute('data-lightbox'); const lightbox = document.getElementById(lightboxId); if (lightbox) { lightbox.classList.add('active'); } }); });
             const lightboxClosers = document.querySelectorAll('.lightbox .close, .lightbox .close-bg');
@@ -109,19 +111,20 @@
             const getBlueprintBtn = document.getElementById('get-blueprint-btn');
             const manualQuizTrigger = document.getElementById('manual-quiz-trigger');
             let currentQuestionIndex = 0;
-            let scores = { skilledTradesman: 0, modernProfessional: 0, techEnthusiast: 0, outdoorAdventurer: 0, fitnessArchitect: 0, modernGentleman: 0 };
+            let scores = {};
+            let winningArchetypeKey;
             
             function openModal() { modalOverlay.classList.remove('opacity-0', 'pointer-events-none'); }
             function closeModal() { modalOverlay.classList.add('opacity-0', 'pointer-events-none'); }
-            function resetQuiz() { currentQuestionIndex = 0; for (const key in scores) { scores[key] = 0; } formConfirmation.classList.add('hidden'); introScreen.classList.remove('hidden'); resultsScreen.classList.add('hidden'); quizScreen.classList.add('hidden'); }
-            function showQuestion() { /* ... function code ... */ }
-            function selectAnswer(archetypes) { /* ... function code ... */ }
-            function showResults() { /* ... function code ... */ }
+            function resetQuiz() { currentQuestionIndex = 0; scores = { skilledTradesman: 0, modernProfessional: 0, techEnthusiast: 0, outdoorAdventurer: 0, fitnessArchitect: 0, modernGentleman: 0 }; formConfirmation.classList.add('hidden'); introScreen.classList.remove('hidden'); resultsScreen.classList.add('hidden'); quizScreen.classList.add('hidden'); }
+            function showQuestion() { const quizContent = document.getElementById('quiz-content'); quizContent.classList.remove('fade-in'); quizContent.classList.add('fade-out'); setTimeout(() => { const question = quizData.questions[currentQuestionIndex]; const totalQuestions = quizData.questions.length; document.getElementById('question-counter').textContent = `Question ${currentQuestionIndex + 1}/${totalQuestions}`; document.getElementById('progress-bar').style.width = `${((currentQuestionIndex + 1) / totalQuestions) * 100}%`; document.getElementById('question-text').textContent = question.text; const answerOptionsDiv = document.getElementById('answer-options'); answerOptionsDiv.innerHTML = ''; question.answers.forEach(answer => { const button = document.createElement('button'); button.className = 'w-full text-left p-4 border-2 rounded-lg transition duration-200 focus:outline-none focus:ring-2'; button.textContent = answer.text; button.onclick = () => selectAnswer(answer.archetypes); answerOptionsDiv.appendChild(button); }); quizContent.classList.remove('fade-out'); quizContent.classList.add('fade-in'); }, 300); }
+            function selectAnswer(archetypes) { archetypes.forEach(archetype => { if (scores.hasOwnProperty(archetype)) { scores[archetype]++; } }); currentQuestionIndex++; if (currentQuestionIndex < quizData.questions.length) { showQuestion(); } else { showResults(); } }
+            function showResults() { let maxScore = -1; winningArchetypeKey = 'modernGentleman'; for (const archetype in scores) { if (scores[archetype] > maxScore) { maxScore = scores[archetype]; winningArchetypeKey = archetype; } } const result = quizData.results[winningArchetypeKey]; const resultsContentDiv = document.getElementById('results-content'); resultsContentDiv.innerHTML = `<p class="font-semibold mb-2" style="color: var(--primary-blue);">Your UGC Archetype is...</p><h2 class="text-4xl font-extrabold mb-4">${result.title}</h2><p class="max-w-2xl mx-auto mb-8">${result.description}</p><div class="text-left"><h4 class="text-xl font-bold mb-4">Potential Brand Partners</h4><div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">${result.brands.map(brand => `<div class="bg-gray-100 p-4 rounded-lg flex items-center justify-center h-20"><span class="font-bold">${brand}</span></div>`).join('')}</div><h4 class="text-xl font-bold mb-4">UGC Ad Formats You Could Make</h4><div class="space-y-4">${result.formats.map(format => `<div class="bg-blue-50 p-4 rounded-lg border-l-4"><h5 class="font-bold">${format.title}</h5><p>${format.desc}</p></div>`).join('')}</div></div>`; quizScreen.classList.add('hidden'); resultsScreen.classList.remove('hidden'); resultsScreen.classList.add('fade-in'); }
 
             manualQuizTrigger.addEventListener('click', openModal);
-            startQuizBtn.addEventListener('click', () => { introScreen.classList.add('hidden'); quizScreen.classList.remove('hidden'); showQuestion(); });
+            startQuizBtn.addEventListener('click', () => { introScreen.classList.add('hidden'); quizScreen.classList.remove('hidden'); resetQuiz(); showQuestion(); });
             closeModalBtn.addEventListener('click', closeModal);
-            getBlueprintBtn.addEventListener('click', closeModal);
+            getBlueprintBtn.addEventListener('click', () => { closeModal(); window.location.href = '#offer'; });
             restartQuizBtn.addEventListener('click', () => { resultsScreen.classList.add('hidden'); quizScreen.classList.remove('hidden'); resetQuiz(); showQuestion(); });
             emailForm.addEventListener('submit', (e) => { e.preventDefault(); formConfirmation.classList.remove('hidden'); });
             
