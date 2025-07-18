@@ -6,7 +6,7 @@
     <title>The Blueprint for Men - Ismeli Henriquez</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="manifest" href="/site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LY2QNK2MLC"></script>
     <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LY2QNK2MLC'); </script>
@@ -112,7 +112,7 @@
         const introScreen = document.getElementById('intro-screen');
         const quizScreen = document.getElementById('quiz-screen');
         const resultsScreen = document.getElementById('results-screen');
-        const closeModalBtn = document.getElementById('close-modal-btn');
+        const closeModalBtn = document.getElementById('close-modal-btn'); // Corrected ID
         const startQuizBtn = document.getElementById('start-quiz-btn');
         const emailForm = document.getElementById('email-form');
         const formConfirmation = document.getElementById('form-confirmation');
@@ -124,7 +124,7 @@
         function closeModal() { document.body.classList.remove('modal-open'); modalOverlay.classList.remove('active'); }
         function resetQuiz() { currentQuestionIndex = 0; scores = { skilledTradesman: 0, modernProfessional: 0, techEnthusiast: 0, outdoorAdventurer: 0, fitnessArchitect: 0, modernGentleman: 0 }; formConfirmation.style.display = 'none'; introScreen.style.display = 'block'; resultsScreen.style.display = 'none'; quizScreen.style.display = 'none'; }
         function showQuestion() { const question = quizData.questions[currentQuestionIndex]; const totalQuestions = quizData.questions.length; document.getElementById('question-counter').textContent = `Question ${currentQuestionIndex + 1}/${totalQuestions}`; document.getElementById('progress-bar').style.width = `${((currentQuestionIndex + 1) / totalQuestions) * 100}%`; document.getElementById('question-text').textContent = question.text; const answerOptionsDiv = document.getElementById('answer-options'); answerOptionsDiv.innerHTML = ''; question.answers.forEach(answer => { const button = document.createElement('button'); button.className = 'quiz-answer-btn'; button.textContent = answer.text; button.onclick = () => selectAnswer(answer.archetypes); answerOptionsDiv.appendChild(button); }); }
-        function selectAnswer(archetypes) { archetypes.forEach(archetype => { if (scores.hasOwnProperty(archetype)) { scores[archetype]++; } }); currentQuestionIndex++; if (currentQuestionIndex < quizData.questions.length) { showQuestion(); } else { showResults(); } }
+        function selectAnswer(archetypes) { archetypes.forEach(archearchetype => { if (scores.hasOwnProperty(archetype)) { scores[archetype]++; } }); currentQuestionIndex++; if (currentQuestionIndex < quizData.questions.length) { showQuestion(); } else { showResults(); } }
         function showResults() { let maxScore = -1; winningArchetypeKey = 'modernGentleman'; for (const archetype in scores) { if (scores[archetype] > maxScore) { maxScore = scores[archetype]; winningArchetypeKey = archetype; } } const result = quizData.results[winningArchetypeKey]; document.getElementById('results-content').innerHTML = `<p class="highlight" style="font-weight: 600;">Your UGC Archetype is...</p><h1>${result.title}</h1><p>${result.description}</p><h4 style="font-size: 1.5rem; text-align: left; margin-top: 2rem;">Potential Brand Partners</h4><div class="quiz-results-brands">${result.brands.map(brand => `<div>${brand}</div>`).join('')}</div><h4 style="font-size: 1.5rem; text-align: left;">UGC Ad Formats You Could Make</h4><div>${result.formats.map(format => `<div class="quiz-results-format"><h5>${format.title}</h5><p style="color: var(--text-grey); margin-bottom: 0;">${format.desc}</p></div>`).join('')}</div>`; introScreen.style.display = 'none'; quizScreen.style.display = 'none'; resultsScreen.style.display = 'block'; }
 
         if(manualQuizTrigger) manualQuizTrigger.addEventListener('click', () => { resetQuiz(); openModal(); });
