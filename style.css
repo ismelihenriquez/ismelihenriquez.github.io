@@ -87,10 +87,9 @@ a { color: var(--primary-blue); text-decoration: none; }
 .blueprint-page .investment-section { display: flex; align-items: center; gap: 4rem; text-align: left; }
 .blueprint-page .investment-section .receipt-image { flex-basis: 40%; }
 .blueprint-page .investment-section .receipt-image img { width: 100%; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.3); }
-.blueprint-page .investment-section .investment-text { flex: 1; }
 .blueprint-page .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
-.blueprint-page .testimonial-card img, .blueprint-page .receipt-image img { cursor: zoom-in; transition: transform 0.2s ease; }
-.blueprint-page .testimonial-card img:hover, .blueprint-page .receipt-image img:hover { transform: scale(1.03); }
+.blueprint-page .testimonial-card img { width: 100%; border-radius: 12px; border: 1px solid var(--border-color); cursor: zoom-in; transition: transform 0.2s ease; }
+.blueprint-page .testimonial-card img:hover { transform: scale(1.03); }
 .blueprint-page .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
 .blueprint-page .card { background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); }
 .blueprint-page .card h3 { color: var(--primary-blue); font-size: 1.5rem; }
@@ -125,14 +124,15 @@ a { color: var(--primary-blue); text-decoration: none; }
 .blueprint-page .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding-left: 0.5rem; }
 .blueprint-page .faq-answer p { padding: 0 0 1.5rem 0; color: var(--text-grey); }
 .blueprint-page .quiz-trigger-section { background-color: var(--card-bg); border-radius: 16px; }
-.blueprint-page footer.footer-note { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border-color); }
+.blueprint-page .coming-soon-section { padding-top: 6rem; text-align: center; }
+.blueprint-page footer.footer-note { padding: 3rem 2rem; text-align: center; }
 .quiz-overlay { font-family: 'Poppins', sans-serif; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(13, 13, 13, 0.85); backdrop-filter: blur(8px); z-index: 5000; display: none; align-items: center; justify-content: center; padding: 1rem; }
 .quiz-overlay.active { display: flex; }
 .quiz-modal { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); width: 100%; max-height: 90vh; display: flex; flex-direction: column; }
 .quiz-modal-inner { overflow-y: auto; padding: 2rem 3rem; }
 .quiz-close-btn { position: absolute; top: 1rem; right: 1.5rem; font-size: 2rem; color: var(--text-grey); cursor: pointer; background: none; border: none; line-height: 1; }
 .quiz-close-btn:hover { color: white; }
-.quiz-modal h1, .quiz-modal h2 { font-family: 'Bebas Neue', sans-serif; color: var(--off-white); }
+.quiz-modal h1, .quiz-modal h2, .quiz-modal h3, .quiz-modal h4 { font-family: 'Bebas Neue', sans-serif; color: var(--off-white); }
 .quiz-modal h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
 .quiz-modal h2 { font-size: 2.2rem; }
 .quiz-modal h3 { font-size: 1.75rem; }
@@ -168,7 +168,8 @@ a { color: var(--primary-blue); text-decoration: none; }
     .hamburger.active .line:nth-child(2) { opacity: 0; }
     .hamburger.active .line:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
     h1 { font-size: 3rem; }
-    .blueprint-page .hero h1 { font-size: 2.5rem; }
+    .blueprint-page .hero h1, .blueprint-page h2 { font-size: 2.5rem; }
     .blueprint-page .checklist { columns: 1; }
     .quiz-answer-options { grid-template-columns: 1fr; }
+    .blueprint-page .lp-nav a { margin: 0 0.5rem; font-size: 0.9rem; }
 }
