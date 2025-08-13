@@ -180,5 +180,98 @@ function closeModal() {
         }, 3000);
     });
     </script>
+    <!-- Popup Modal HTML -->
+<div id="guideModal" class="modal">
+  <div class="modal-content">
+    <h2>Which Guide Would You Like?</h2>
+    <p>Select your version of The Blueprint</p>
+    <div class="modal-buttons">
+      <button id="mensGuide">Men's Guide</button>
+      <button id="womensGuide">Women's Guide</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal CSS -->
+<style>
+  /* Background overlay */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Modal box */
+  .modal-content {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 300px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  /* Title */
+  .modal-content h2 {
+    color: #c83dd4; /* purple */
+    margin-bottom: 10px;
+  }
+
+  /* Buttons */
+  .modal-buttons button {
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  #mensGuide {
+    background-color: #000;
+    color: white;
+  }
+
+  #womensGuide {
+    background-color: #ff4db8; /* pink */
+    color: white;
+  }
+
+  /* Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+</style>
+
+<!-- Modal JS -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("guideModal");
+    const mensBtn = document.getElementById("mensGuide");
+    const womensBtn = document.getElementById("womensGuide");
+
+    // Show modal on page load
+    modal.style.display = "flex";
+
+    // Redirects
+    mensBtn.addEventListener("click", function () {
+      window.location.href = "https://www.ismelihenriquez.com/theblueprint/";
+    });
+
+    womensBtn.addEventListener("click", function () {
+      window.location.href = "https://www.ismelihenriquez.com/herblueprint/"; // Placeholder
+    });
+  });
+</script>
 </body>
 </html>
