@@ -29,18 +29,12 @@
             --font-body: 'Poppins', sans-serif;
             --font-heading: 'Playfair Display', serif;
         }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        html { scroll-behavior: smooth; }
         body {
             background-color: var(--light-gray-bg);
             color: var(--dark-text);
             font-family: var(--font-body);
         }
-
-        /* Nav Bar Styles */
         .lp-nav {
             position: sticky;
             top: 0;
@@ -60,21 +54,12 @@
             text-decoration: none;
             transition: color 0.2s;
         }
-        .lp-nav a:hover {
-            color: var(--primary-blue);
-        }
-
-        /* Typography */
+        .lp-nav a:hover { color: var(--primary-blue); }
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-heading);
             color: var(--dark-text);
         }
-        
-        .highlight {
-            color: var(--primary-blue);
-        }
-
-        /* Buttons */
+        .highlight { color: var(--primary-blue); }
         .btn {
             padding: 14px 28px;
             border-radius: 8px;
@@ -104,16 +89,12 @@
             background-color: var(--primary-blue);
             color: white;
         }
-
-        /* Layout & Cards */
         .page-container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        .section {
-            padding: 80px 0;
-        }
+        .section { padding: 80px 0; }
         .section-center {
             text-align: center;
             max-width: 800px;
@@ -127,14 +108,10 @@
             text-align: center;
             border: 1px solid var(--border-color);
         }
-        
-        /* Header */
         .hero {
             padding: 80px 0;
             text-align: center;
         }
-
-        /* UGC vs Influencer Section */
         .ugc-vs-influencer-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -162,8 +139,6 @@
             color: var(--primary-blue);
             font-weight: 700;
         }
-
-        /* How it Works */
         .how-it-works-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -181,11 +156,9 @@
             font-family: var(--font-heading);
             margin-bottom: 10px;
         }
-
-        /* Testimonial Slideshow Styles */
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-320px * 9)); } /* 320px image width * 9 images */
+            100% { transform: translateX(calc(-320px * 9)); }
         }
         .testimonial-slider {
             margin-top: 40px;
@@ -197,12 +170,10 @@
         }
         .testimonial-slider-track {
             display: flex;
-            width: calc(320px * 18); /* 2 sets of 9 images */
+            width: calc(320px * 18);
             animation: scroll 60s linear infinite;
         }
-        .testimonial-slider:hover .testimonial-slider-track {
-            animation-play-state: paused;
-        }
+        .testimonial-slider:hover .testimonial-slider-track { animation-play-state: paused; }
         .testimonial-slide {
             width: 300px;
             margin: 0 10px;
@@ -213,8 +184,6 @@
             border-radius: 12px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
-
-        /* Checklist */
         .checklist {
             list-style: none;
             padding: 0;
@@ -237,8 +206,6 @@
             font-weight: 700;
             font-size: 1.2rem;
         }
-
-        /* Instagram Section */
         .instagram-section {
             background: linear-gradient(45deg, var(--primary-blue), #003f7f);
             padding: 60px;
@@ -246,16 +213,12 @@
             color: white;
             text-align: center;
         }
-        .instagram-section h2 {
-            color: white;
-        }
+        .instagram-section h2 { color: white; }
         .instagram-section .btn {
             background: white;
             color: var(--primary-blue);
             margin-top: 20px;
         }
-
-        /* FAQ */
         .faq-container { max-width: 700px; margin: 40px auto; }
         .faq-item { border-bottom: 1px solid var(--border-color); }
         .faq-question {
@@ -276,17 +239,13 @@
             color: var(--primary-blue);
             transition: transform 0.2s;
         }
-        .faq-question.active::after {
-            transform: rotate(45deg);
-        }
+        .faq-question.active::after { transform: rotate(45deg); }
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-in-out;
         }
         .faq-answer p { padding: 0 10px 20px 10px; color: var(--light-text); }
-
-        /* Offer Box */
         .offer-box {
             background: white;
             border: 2px solid var(--primary-blue);
@@ -300,73 +259,12 @@
             font-family: var(--font-heading);
             margin: 15px 0;
         }
-
-        /* Modal Popup */
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); justify-content: center; align-items: center; }
         .modal-content { background-color: white; padding: 30px; border-radius: 12px; text-align: center; max-width: 320px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
         .modal-content h2 { color: var(--primary-dark-blue); }
         .modal-buttons button { padding: 12px 20px; margin: 10px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px; }
         #mensGuide { background-color: var(--primary-blue); color: white; }
         #womensGuide { background-color: #ff4db8; color: white; }
-
-        /* Quiz Modal Styles */
-        .quiz-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 2000;
-            display: none;
-            justify-content: center; align-items: center;
-            padding: 20px;
-        }
-        .quiz-overlay.active { display: flex; }
-        .quiz-modal {
-            background: white; padding: 30px; border-radius: 12px;
-            max-width: 500px; width: 100%; position: relative;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        }
-        .quiz-close-btn {
-            position: absolute; top: 10px; right: 15px;
-            font-size: 2rem; border: none; background: none;
-            cursor: pointer; color: #aaa;
-        }
-        .quiz-modal-inner { text-align: center; }
-        .quiz-progress-bar { height: 8px; background: #eee; border-radius: 4px; overflow: hidden; }
-        .quiz-progress-bar div { height: 100%; background: var(--primary-blue); transition: width 0.3s; }
-        .quiz-answer-options { display: grid; gap: 15px; }
-        .quiz-answer-btn {
-            width: 100%; padding: 15px; border: 1px solid var(--border-color);
-            background: white; border-radius: 8px; font-weight: 600;
-            cursor: pointer; transition: all 0.2s; text-align: left;
-        }
-        .quiz-answer-btn:hover {
-            background: #e7f3ff;
-            border-color: var(--primary-blue);
-            color: var(--primary-blue);
-        }
-        
-        /* ✅ ADDED: Styles for the new results + email section */
-        .quiz-results-brands {
-            display: flex; flex-wrap: wrap; justify-content: center;
-            gap: 10px; margin: 20px 0;
-        }
-        .quiz-results-brands div {
-            background: #e7f3ff;
-            color: var(--primary-blue);
-            padding: 5px 12px; border-radius: 20px;
-            font-size: 0.9rem; font-weight: 600;
-        }
-        .quiz-results-format {
-            text-align: left; background: #f8f9fa;
-            padding: 15px; border-radius: 8px; margin-bottom: 10px;
-        }
-        .quiz-email-capture {
-            margin-top: 30px; padding-top: 30px;
-            border-top: 1px solid var(--border-color);
-        }
-        .quiz-email-capture input {
-            width: 100%; padding: 12px; border-radius: 8px;
-            border: 1px solid #ccc; margin-bottom: 10px;
-        }
 
         @media (max-width: 768px) {
             .checklist { grid-template-columns: 1fr; }
@@ -532,13 +430,7 @@
                 <p style="font-size: 1.2rem; max-width: 600px; margin: 1rem auto; color: var(--light-text);">You can spend months trying to figure this out alone, or you can invest in a proven system that gets you paid, faster. The choice is simple.</p>
             </div>
         </section>
-        <section id="quiz-trigger" class="section" style="background: white; padding: 80px 0; border-radius: 20px;">
-            <div class="section-center" data-aos="fade-up">
-                <h2>Find Your <span class="highlight">Creator Superpower</span></h2>
-                <p style="max-width: 600px; margin: 1rem auto; color: var(--light-text);">Not sure where you'd fit in? Take our 60-second quiz to discover your unique UGC niche and the types of brands you could work with.</p>
-                <button id="manual-quiz-trigger" class="btn btn-secondary" style="margin-top: 1.5rem;">Take The Quiz Now</button>
-            </div>
-        </section>
+        
         <section id="offer" class="section">
             <div class="offer-box section-center" data-aos="zoom-in">
                 <h2>Get <span class="highlight">Instant Access</span> to The Blueprint</h2>
@@ -574,8 +466,6 @@
         <p>© 2025 Ismeli Henriquez. All Rights Reserved.</p>
     </footer>
 
-    <div class="quiz-overlay" id="quiz-modal-overlay"></div>
-
     <div id="guideModal" class="modal">
       <div class="modal-content">
         <h2>Which Guide Would You Like?</h2>
@@ -592,207 +482,23 @@
     document.addEventListener('DOMContentLoaded', () => {
         AOS.init({ duration: 800, once: true, offset: 50 });
         
+        // --- FAQ Script ---
         const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => { question.addEventListener('click', () => { const answer = question.nextElementSibling; question.classList.toggle('active'); if (question.classList.contains('active')) { answer.style.maxHeight = answer.scrollHeight + 'px'; } else { answer.style.maxHeight = 0; } }); });
-
-        // ✅ OVERHAULED: Men's Quiz Script - Now with full results and email capture
-        const quizData = {
-            questions: [
-                { text: "What does your typical workday look like?", answers: [{ text: "In the field or on a job site, working with my hands.", archetypes: ["skilledTradesman"] },{ text: "In an office, in meetings, or working with clients.", archetypes: ["modernProfessional"] },{ text: "Behind a screen, focusing on tech, gaming, or creative work.", archetypes: ["techEnthusiast"] },{ text: "In a gym, on the field, or focused on physical activity.", archetypes: ["fitnessArchitect"] }] },
-                { text: "How do you typically spend your Saturday?", answers: [{ text: "Outdoors—hiking, camping, fishing, or working in the yard.", archetypes: ["outdoorAdventurer", "skilledTradesman"] },{ text: "Out on the town—at a nice restaurant, a sporting event, or a social gathering.", archetypes: ["modernGentleman", "modernProfessional"] },{ text: "At home—tackling a DIY project or trying out a new recipe.", archetypes: ["skilledTradesman"] },{ text: "On an adventure—a road trip, exploring a new city, or trying something new.", archetypes: ["outdoorAdventurer"] }] },
-                { text: "When you buy a new product, what's your main priority?", answers: [{ text: "Durability & Power—It has to be tough and get the job done right.", archetypes: ["skilledTradesman", "outdoorAdventurer"] },{ text: "Performance & Technology—I want the latest features and best performance.", archetypes: ["techEnthusiast", "modernProfessional"] },{ text: "Quality & Style—I appreciate great design, craftsmanship, and a premium feel.", archetypes: ["modernGentleman"] },{ text: "Health & Wellness—How it contributes to my fitness and well-being goals.", archetypes: ["fitnessArchitect"] }] },
-                { text: "What's your personal style on the weekend?", answers: [{ text: "Functional & Rugged (e.g., Carhartt, work boots, heavy-duty gear)", archetypes: ["skilledTradesman", "outdoorAdventurer"] },{ text: "Sharp & Sophisticated (e.g., blazers, quality denim, leather shoes)", archetypes: ["modernGentleman", "modernProfessional"] },{ text: "Comfortable & Casual (e.g., hoodies, jeans, sneakers)", archetypes: [] },{ text: "Athletic & Sporty (e.g., Nike, Under Armour, joggers)", archetypes: ["fitnessArchitect"] }] },
-                { text: "Pick a topic you're the 'go-to' guy for among your friends:", answers: [{ text: "Cars, tools, and how things work.", archetypes: ["skilledTradesman"] },{ text: "The latest gadgets, computers, or games.", archetypes: ["techEnthusiast"] },{ text: "Fitness routines and nutrition advice.", archetypes: ["fitnessArchitect"] },{ text: "The best restaurants, style tips, or travel spots.", archetypes: ["modernGentleman"] }] },
-                { text: "If a brand asked you to make a video, what format feels most natural?", answers: [{ text: "A straightforward demo showing exactly how the product works.", archetypes: ["skilledTradesman", "techEnthusiast"] },{ text: "An honest testimonial talking about my experience with the product.", archetypes: ["fitnessArchitect", "modernProfessional"] },{ text: "An aesthetic video showing the product in a cool setting.", archetypes: ["modernGentleman", "outdoorAdventurer"] },{ text: "A problem/solution video showing how the product made my life easier.", archetypes: [] }] }
-            ],
-            results: {
-                skilledTradesman: { title: "The Skilled Tradesman", description: "You value power, durability, and getting the job done right. Brands in the tool, automotive, and workwear spaces need authentic content from real experts like you.", brands: ["DeWalt", "Milwaukee", "Carhartt", "Ford", "Home Depot"], formats: [{title: "Tool Torture Test", desc: "Show the tool handling a tough, real-world job."}, {title: "Workshop Walkthrough", desc: "Show how the product fits into your daily workflow."}, {title: "No-BS Review", desc: "A straight-to-camera review giving your honest take."}]},
-                modernProfessional: { title: "The Modern Professional", description: "You navigate the corporate world with a focus on efficiency, productivity, and professional image. Brands need content that shows how their products fit into the busy life of a successful person like you.", brands: ["Dell", "Samsonite", "Brooks Brothers", "Microsoft", "Starbucks"], formats: [{title: "A Day in the Life", desc: "Show how the product helps you through a busy workday."}, {title: "Productivity Hack", desc: "A quick video showing how the product saves you time."}, {title: "What's In My Briefcase", desc: "An unboxing-style video of your work essentials."}]},
-                techEnthusiast: { title: "The Tech Enthusiast", description: "You live on the cutting edge of technology, from gaming to smart homes. Brands need creators like you to generate excitement and show off the cool-factor of their latest products.", brands: ["Samsung", "Sony", "Logitech", "Apple", "Bose"], formats: [{title: "Unboxing & First Look", desc: "Your genuine reaction and first thoughts on a new gadget."}, {title: "Setup Tour", desc: "Show how the tech fits into your gaming or desk setup."}, {title: "Feature Deep-Dive", desc: "A quick tutorial on a specific, cool feature."}]},
-                outdoorAdventurer: { title: "The Outdoor Adventurer", description: "You thrive in the great outdoors and rely on gear that can handle the elements. Brands in the outdoor, travel, and automotive industries need creators to capture their products facing real-world tests.", brands: ["The North Face", "YETI", "GoPro", "Jeep", "Columbia"], formats: [{title: "In-the-Wild Test", desc: "Show the product being used on a real adventure."}, {title: "Gear Loadout", desc: "A video showing all the gear you're packing for a trip."}, {title: "Cinematic Product Shot", desc: "An aesthetic video of the product in a beautiful landscape."}]},
-                fitnessArchitect: { title: "The Fitness Architect", description: "Your life is built around health, wellness, and pushing physical limits. Nutrition, apparel, and tech brands need authentic content from people who genuinely use their products to achieve their fitness goals.", brands: ["Nike", "Under Armour", "Gatorade", "Optimum Nutrition", "Fitbit"], formats: [{title: "Workout Demo", desc: "Show yourself using the product during an actual workout."}, {title: "Post-Workout Review", desc: "A genuine testimonial about how the product helps your performance."}, {title: "Daily Routine", desc: "Show how a supplement or product fits into your nutrition plan."}]},
-                modernGentleman: { title: "The Modern Gentleman", description: "You have an eye for quality, style, and the finer details. Premium lifestyle, fashion, and grooming brands need content that captures the aspirational and high-quality nature of their products.", brands: ["Ralph Lauren", "Johnnie Walker", "Kiehl's", "Nespresso", "Tissot"], formats: [{title: "Get Ready With Me (GRWM)", desc: "Show how you use a grooming or fashion product to create your look."}, {title: "Aesthetic Product Video", desc: "A stylish, slow-motion video focusing on product details."}, {title: "Experience Video", desc: "Show yourself enjoying a premium product, like a coffee or spirit."}]}
-            }
-        };
-        
-        const quizOverlay = document.getElementById('quiz-modal-overlay');
-        const manualQuizTrigger = document.getElementById('manual-quiz-trigger');
-
-        if(manualQuizTrigger) {
-            manualQuizTrigger.addEventListener('click', () => {
-                // Dynamically create the quiz HTML inside the overlay
-                quizOverlay.innerHTML = `
-                    <div class="quiz-modal" id="intro-screen">
-                        <button class="quiz-close-btn">×</button>
-                        <div class="quiz-modal-inner">
-                            <h1>Find Your Creator Superpower</h1>
-                            <p>Not sure what kind of content you could create for brands? Answer 6 quick questions to discover your unique UGC niche.</p>
-                            <button id="start-quiz-btn" class="btn btn-primary" style="width: 100%;">Start The Quiz</button>
-                        </div>
-                    </div>
-                    <div class="quiz-modal" id="quiz-screen" style="display: none;">
-                        <button class="quiz-close-btn">×</button>
-                        <div class="quiz-modal-inner">
-                            <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
-                                <h3 id="question-counter" style="margin-bottom: 0; font-family: 'Poppins', sans-serif; font-size: 1.2rem;"></h3>
-                                <div class="quiz-progress-bar" style="margin-left: 1rem; flex-grow: 1;"><div id="progress-bar" style="width: 0%;"></div></div>
-                            </div>
-                            <h2 id="question-text" style="font-size: 1.8rem; margin-bottom: 1.5rem;"></h2>
-                            <div id="answer-options" class="quiz-answer-options"></div>
-                        </div>
-                    </div>
-                    <div class="quiz-modal" id="results-screen" style="display: none;">
-                        <button class="quiz-close-btn">×</button>
-                        <div class="quiz-modal-inner">
-                            <div id="results-content" style="text-align: center;"></div>
-                            <div style="text-align: center; margin-top: 2rem;">
-                                <h3 style="font-size: 1.75rem;">Ready to Get Started?</h3>
-                                <p style="color: var(--light-text); margin-top: 0.5rem; margin-bottom: 1.5rem;">Now that you know your creator type, The Blueprint has everything you need to turn it into a profitable side hustle.</p>
-                                <button id="get-blueprint-btn" class="btn btn-primary">Get The Blueprint Guide</button>
-                            </div>
-                            <div class="quiz-email-capture">
-                                <h4 style="font-size: 1.5rem;">Get Your Full Results</h4>
-                                <p style="color: var(--light-text); margin-top: 0.5rem; margin-bottom: 1rem;">Enter your email to get your personalized results sent to your inbox.</p>
-                                <form id="email-form"><input type="email" id="email-input" placeholder="Enter Your Email Address" required><button type="submit" class="btn btn-primary">Send My Results</button></form>
-                                <p id="form-confirmation" style="color: #22c55e; font-weight: 600; margin-top: 1rem; display: none;">Got it! Your results are on their way.</p>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                
-                // Define elements now that they exist in the DOM
-                const introScreen = document.getElementById('intro-screen');
-                const quizScreen = document.getElementById('quiz-screen');
-                const resultsScreen = document.getElementById('results-screen');
-                const startQuizBtn = document.getElementById('start-quiz-btn');
-                const getBlueprintBtn = document.getElementById('get-blueprint-btn');
-                const emailForm = document.getElementById('email-form');
-                const closeBtns = quizOverlay.querySelectorAll('.quiz-close-btn');
-
-                let currentQuestionIndex = 0;
-                let scores = {};
-                let winningArchetypeResult = {};
-
-                function openModal() { quizOverlay.classList.add('active'); }
-                function closeModal() { quizOverlay.classList.remove('active'); }
-                
-                function resetQuiz() {
-                    currentQuestionIndex = 0;
-                    scores = { skilledTradesman: 0, modernProfessional: 0, techEnthusiast: 0, outdoorAdventurer: 0, fitnessArchitect: 0, modernGentleman: 0 };
-                    winningArchetypeResult = {};
-                    const formConfirmation = document.getElementById('form-confirmation');
-                    const emailInput = document.getElementById('email-input');
-                    if(formConfirmation) formConfirmation.style.display = 'none';
-                    if(emailInput) emailInput.value = '';
-                    introScreen.style.display = 'block';
-                    resultsScreen.style.display = 'none';
-                    quizScreen.style.display = 'none';
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                question.classList.toggle('active');
+                if (question.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.style.maxHeight = 0;
                 }
-
-                function showQuestion() {
-                    const question = quizData.questions[currentQuestionIndex];
-                    const totalQuestions = quizData.questions.length;
-                    document.getElementById('question-counter').textContent = `Question ${currentQuestionIndex + 1}/${totalQuestions}`;
-                    document.getElementById('progress-bar').style.width = `${((currentQuestionIndex + 1) / totalQuestions) * 100}%`;
-                    document.getElementById('question-text').textContent = question.text;
-                    const answerOptionsDiv = document.getElementById('answer-options');
-                    answerOptionsDiv.innerHTML = '';
-                    question.answers.forEach(answer => {
-                        const button = document.createElement('button');
-                        button.className = 'quiz-answer-btn';
-                        button.textContent = answer.text;
-                        button.onclick = () => selectAnswer(answer.archetypes);
-                        answerOptionsDiv.appendChild(button);
-                    });
-                }
-
-                function selectAnswer(archetypes) {
-                    archetypes.forEach(archetype => { if (scores.hasOwnProperty(archetype)) { scores[archetype]++; } });
-                    currentQuestionIndex++;
-                    if (currentQuestionIndex < quizData.questions.length) { showQuestion(); } else { showResults(); }
-                }
-
-                function showResults() {
-                    let maxScore = -1;
-                    let winningArchetypeKey = 'modernGentleman'; // default
-                    for (const archetype in scores) { if (scores[archetype] > maxScore) { maxScore = scores[archetype]; winningArchetypeKey = archetype; } }
-                    
-                    const result = quizData.results[winningArchetypeKey];
-                    winningArchetypeResult = result; // Store result for email form
-                    
-                    const resultsContentDiv = document.getElementById('results-content');
-                    // ✅ FIXED: Updated to show the full results including formats
-                    resultsContentDiv.innerHTML = `
-                        <p class="highlight" style="font-weight: 600; font-family: var(--font-body);">Your Creator Superpower is...</p>
-                        <h1>${result.title}</h1>
-                        <p>${result.description}</p>
-                        <h4 style="font-size: 1.5rem; text-align: left; margin-top: 2rem;">Potential Brand Partners</h4>
-                        <div class="quiz-results-brands">${result.brands.map(brand => `<div>${brand}</div>`).join('')}</div>
-                        <h4 style="font-size: 1.5rem; text-align: left;">UGC Ad Formats You Could Make</h4>
-                        <div>${result.formats.map(format => `<div class="quiz-results-format"><h5>${format.title}</h5><p style="color: var(--light-text); margin-bottom: 0;">${format.desc}</p></div>`).join('')}</div>
-                    `;
-                    
-                    introScreen.style.display = 'none';
-                    quizScreen.style.display = 'none';
-                    resultsScreen.style.display = 'block';
-                }
-
-                // Logic for email form submission
-                if(emailForm) {
-                    emailForm.addEventListener('submit', (e) => {
-                        e.preventDefault();
-                        // --- PASTE YOUR NEW MAKE.COM WEBHOOK URL FOR THE MEN'S QUIZ HERE ---
-                        const webhookUrl = 'https://hook.us2.make.com/wtrk4trve3q3ag8x525dkg6cwfcntba5';
-                        // -------------------------------------------------------------------
-                        
-                        if (webhookUrl.includes('PASTE_YOUR')) { alert('Please update the webhook URL in the script first!'); return; }
-
-                        const form = e.target;
-                        const email = form.querySelector('#email-input').value;
-                        const formConfirmation = document.getElementById('form-confirmation');
-                        const submitButton = form.querySelector('button[type="submit"]');
-
-                        const dataToSend = {
-                            email: email,
-                            quizResultTitle: winningArchetypeResult.title,
-                            quizResultDescription: winningArchetypeResult.description,
-                            source: "The Blueprint for Men Quiz"
-                        };
-
-                        submitButton.disabled = true;
-                        submitButton.textContent = 'Sending...';
-
-                        fetch(webhookUrl, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(dataToSend),
-                        }).then(response => {
-                            if (response.ok) {
-                                if(formConfirmation) formConfirmation.style.display = 'block';
-                                form.reset();
-                            } else {
-                                alert("Oops! There was a problem sending your results. Please try again.");
-                            }
-                        }).catch(error => {
-                            console.error('Webhook submission error:', error);
-                            alert("Oops! There was a problem sending your results. Please try again.");
-                        }).finally(() => {
-                            submitButton.disabled = false;
-                            submitButton.textContent = 'Send My Results';
-                        });
-                    });
-                }
-                
-                // Initial setup and event listeners
-                resetQuiz();
-                openModal();
-                startQuizBtn.addEventListener('click', () => { introScreen.style.display = 'none'; quizScreen.style.display = 'block'; showQuestion(); });
-                closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
-                getBlueprintBtn.addEventListener('click', () => { closeModal(); window.location.href = '#offer'; });
             });
-        }
+        });
 
-        // Guide Selection Modal Script
+        // ✅ REMOVED: The entire quiz JavaScript logic was here.
+
+        // --- Guide Selection Modal Script ---
         const guideModal = document.getElementById("guideModal");
         const mensBtn = document.getElementById("mensGuide");
         const womensBtn = document.getElementById("womensGuide");
