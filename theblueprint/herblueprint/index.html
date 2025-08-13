@@ -1,135 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Her Content Blueprint</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #333;
-      background-color: #fff;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Her Content Blueprint - Ismeli Henriquez</title>
 
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-    }
+    <link rel="stylesheet" href="/style.css">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LY2QNK2MLC"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LY2QNK2MLC'); </script>
 
-    .image-section {
-      flex: 1;
-      min-width: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .image-section img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
-
-    .content-section {
-      flex: 1;
-      min-width: 300px;
-      padding: 20px;
-    }
-
-    h1 {
-      color: #c83dd4; /* purple */
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      color: #ff4db8; /* pink */
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 1rem;
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-
-    .features {
-      margin-top: 20px;
-    }
-
-    .feature {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-
-    .feature-icon {
-      font-size: 1.5rem;
-      margin-right: 10px;
-      color: #c83dd4;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      background-color: #ff4db8;
-      color: #fff;
-      padding: 12px 20px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .cta-btn:hover {
-      background-color: #c83dd4;
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .image-section, .content-section {
-        padding: 10px;
-      }
-    }
-  </style>
+    <style>
+        :root {
+            --primary-color: #ff4db8; /* Pink */
+            --secondary-color: #c83dd4; /* Purple */
+        }
+        .highlight,
+        .faq-question.active,
+        .quiz-results-brands div {
+            color: var(--primary-color);
+        }
+        .btn-primary,
+        .quiz-progress-bar div,
+        #womensGuide {
+            background-color: var(--primary-color);
+        }
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+        }
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        .btn-secondary:hover {
+            background-color: #fce4f4; /* Light pink */
+        }
+        .step-number {
+            background-color: #fce4f4;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        .offer-box {
+            border-color: var(--primary-color);
+        }
+        .modal-content h2 {
+             color: var(--secondary-color);
+        }
+        #womensGuide:hover {
+            background-color: var(--secondary-color);
+        }
+    </style>
 </head>
-<body>
-  <div class="container">
-    <!-- Left Image Section -->
-    <div class="image-section">
-      <img src="https://github.com/ismelihenriquez/ismelihenriquez.github.io/blob/main/sheguide.png?raw=true" alt="Her Content Blueprint">
+<body class="blueprint-page">
+    
+    <nav class="lp-nav">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#features">What's Inside</a>
+        <a href="#testimonials">Results</a>
+        <a href="#quiz-trigger">Creator Quiz</a>
+        <a href="#faq">FAQ</a>
+        <a href="#offer">Get The Guide</a>
+    </nav>
+
+    <header class="hero">
+        <div class="logo-container" data-aos="zoom-in"><a href="/" aria-label="Back to main site"><img src="https://github.com/ismelihenriquez/ismelihenriquez.github.io/blob/main/sheguide.png?raw=true" alt="Her Content Blueprint Logo"></a></div>
+        <h1 data-aos="fade-up" data-aos-delay="100">Make <span class="highlight">$1K–$5K+/Month</span> Creating Simple Videos for Brands You Love</h1>
+        <p class="subtitle" data-aos="fade-up" data-aos-delay="200">Learn how everyday women are making real money filming short videos from their phone — without a huge following or quitting their day job.</p>
+        <a href="https://buy.stripe.com/eVq6oHdqkaXU4oDbACfIs02" target="_blank" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Get The Blueprint Now</a>
+        <p class="deal-highlight" data-aos="fade-up" data-aos-delay="350">Special Offer: <span style="text-decoration: line-through;">$79</span> Just $49 Today!</p>
+    </header>
+
+    <main>
+        <section class="section value-prop-section" data-aos="fade-up">
+            <div class="container section-center">
+                <h2>Turn Your Morning Routine Into a Payday</h2>
+                <p style="font-size: 1.2rem; max-width: 700px; margin: 1rem auto;">Brands will pay you <span class="highlight">$150 - $1,500+</span> per video that can take you 10 minutes to film and 20 minutes to edit. You can make what some people make in a full day of work in less than an hour.</p>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="section"><div class="container"><div class="section-center" style="max-width: 800px; margin: 0 auto 4rem auto;"><h2 data-aos="fade-up">It’s Called UGC. And It's Simple.</h2><p data-aos="fade-up" data-aos-delay="100">Brands don’t want perfect influencers. They want <span class="highlight">real, relatable women like you.</span></p></div><div class="how-it-works"><div class="step" data-aos="fade-right"><div class="step-number">1</div><div class="step-content"><h3>📦 Get Free Products</h3><p>Brands send you their products for free.<span class="highlight"> Skincare, clothes, tech, you name it!</span></p></div></div><div class="step" data-aos="fade-right" data-aos-delay="100"><div class="step-number">2</div><div class="step-content"><h3>🎥 Film a Short Video</h3><p>You film a casual 30-60 second video on your phone.</p></div></div><div class="step" data-aos-fade-right" data-aos-delay="200"><div class="step-number">3</div><div class="step-content"><h3>💰 Get Paid</h3><p>You send the video to the brand, and they pay you directly.</p></div></div></div></div></section>
+        
+        <section id="who-its-for" class="section"><div class="container section-center"><h2 data-aos="fade-up">This Is For Women Who Are <span class="highlight">Ready for More.</span></h2><p data-aos="fade-up" data-aos-delay="100">If you're looking for a fun, flexible way to earn extra income on your own terms, this is for you.</p><div class="grid-3"><div class="card" data-aos="fade-up" data-aos-delay="200"><h3>🎨 The Creative &<br>🛍️ Fashion Lover</h3><p>Turn your great taste and eye for style into a profitable side hustle working with brands you already love.</p></div><div class="card" data-aos="fade-up" data-aos-delay="300"><h3>👩‍👧‍👦 Moms &<br>📚 Students</h3><p>Need flexibility? Earn from home between classes or during nap time without sacrificing your priorities.</p></div><div class="card" data-aos="fade-up" data-aos-delay="400"><h3>💼 The 9-to-5<br>✨ Professional</h3><p>Build a fulfilling income stream outside of your main job that gives you more financial freedom and fun.</p></div></div></div></section>
+        
+        <section id="testimonials" class="section"><div class="container section-center"><h2 data-aos="fade-up">What Our Students Are Saying</h2><div class="testimonial-grid"><div class="testimonial-card" data-aos="fade-up" data-aos-delay="100"><a href="#img4" class="lightbox-trigger" data-lightbox="img4"><img src="/testimonial1.PNG" alt="Testimonial 1"></a></div><div class="testimonial-card" data-aos="fade-up" data-aos-delay="200"><a href="#img5" class="lightbox-trigger" data-lightbox="img5"><img src="/testimonial2.PNG" alt="Testimonial 2"></a></div><div class="testimonial-card" data-aos="fade-up" data-aos-delay="300"><a href="#img6" class="lightbox-trigger" data-lightbox="img6"><img src="/testimonial3.jpg" alt="Testimonial 3"></a></div></div></div></section>
+
+        <section class="section"><div class="container section-center"><h2 data-aos="fade-up">My Results <span class="highlight">Don't Lie.</span></h2><p class="enlarge-text" data-aos="fade-up" data-aos-delay="150">(Click each image to enlarge)</p><div class="proof-grid"><div class="proof-item" data-aos="fade-up" data-aos-delay="200"><a class="lightbox-trigger" data-lightbox="img1"><img src="/Email Screenshot.jpg" alt="Email offer for a bundle deal"></a><p>$2,000 for 5 short videos that took less than 30 minutes of my time.</p></div><div class="proof-item" data-aos="fade-up" data-aos-delay="300"><a class="lightbox-trigger" data-lightbox="img2"><img src="/Email Retainer.jpg" alt="Email offer for a retainer deal"></a><p>Long-term, consistent income. A 6-month retainer offer.</p></div><div class="proof-item" data-aos="fade-up" data-aos-delay="400"><a class="lightbox-trigger" data-lightbox="img3"><img src="/payments.jpg" alt="Screenshot of payments"></a><p>The proof is in the payments. Direct deposits from brands.</p></div></div></div></section>
+        
+        <section id="features" class="section"><div class="container"><div class="section-center"><h2 data-aos="fade-up">Inside <span class="highlight">Her Blueprint</span></h2></div><ul class="checklist" data-aos="fade-up" data-aos-delay="200"><li>How to film videos brands love</li><li>How to get paid without ever posting</li><li>How to pitch brands + get them to say YES</li><li>How to turn your passions into brand deals</li><li>How to make $1K–$5K/month part-time</li><li>10 direct brand contacts (my personal list!)</li><li>My personal scripts, tools, and templates</li><li>Portfolio template to look professional</li><li>How to work without showing your face</li><li>How to negotiate your rates</li><li>How to scale to a $10k+/month income</li><li>How to build a personal brand (optional)</li></ul></div></section>
+
+        <section class="section"><div class="container creator-section"><div class="creator-img" data-aos="fade-right"><img src="/me.jpg" alt="A photo of Ismeli, the course creator"></div><div class="creator-bio" data-aos="fade-left" data-aos-delay="100"><h2>👋 Hey, I'm Ismeli.<br>I'm Your Guide.</h2><p class="social-handle"><a href="https://www.instagram.com/ismelihenriquez" target="_blank">@ismelihenriquez</a></p><p>I’m an actress-turned-creator. For 5 years, I haven't worked a regular job. I get paid to make simple videos, and I work from anywhere. This guide is everything I wish I had when I started.</p></div></div></section>
+        
+        <section class="section"><div class="container investment-section"><div class="investment-text" data-aos="fade-right"><h2>A Smarter Investment.</h2><p>This guide costs less than brunch with friends or a new skincare product. But unlike those, this is an investment in a skill that pays you back over and over again. It’s an investment in your financial freedom.</p></div><div class="receipt-image" data-aos="fade-left"><a href="#img7" class="lightbox-trigger" data-lightbox="img7"><img src="/receipt compare.jpg" alt="A receipt for over $70 for drinks compared to the $49 price of the guide."></a></div></div></section>
+        
+        <section id="quiz-trigger" class="section quiz-trigger-section" data-aos="fade-up"><div class="container section-center"><h2>Find Your Creator Superpower</h2><p style="max-width: 600px; margin: 1rem auto;">Not sure where you'd fit in? Take our 60-second quiz to discover your unique UGC niche and the types of brands you could work with.</p><button id="manual-quiz-trigger" class="btn btn-secondary" style="margin-top: 1.5rem;">Take The Quiz Now</button></div></section>
+        
+        <section id="offer" class="section offer-section"><div class="container"><div class="offer-box" data-aos="zoom-in"><h2>🎁 <span class="highlight">Limited Time</span> Offer</h2><p>Get the entire blueprint at the special launch price.</p><div class="price"><span class="original">$79</span>$49</div><a href="https://buy.stripe.com/eVq6oHdqkaXU4oDbACfIs02" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">Claim My Discount Now</a></div></div></section>
+        
+        <section id="faq" class="section faq-section"><div class="container section-center"><h2 data-aos="fade-up">Frequently Asked <span class="highlight">Questions</span></h2><div class="faq-container" data-aos="fade-up" data-aos-delay="100"><div class="faq-item"><button class="faq-question">Do I need prior experience?</button><div class="faq-answer"><p>No. This guide is designed to walk you through every single step, from beginner to pro.</p></div></div><div class="faq-item"><button class="faq-question">Can I land deals with zero followers?</button><div class="faq-answer"><p>Yes. UGC doesn't rely on your followers. All you need is a portfolio, and this guide helps you build one from scratch.</p></div></div><div class="faq-item"><button class="faq-question">What kind of equipment do I need?</button><div class="faq-answer"><p>All you need to get started is a smartphone with a decent camera. No expensive equipment is necessary.</p></div></div><div class="faq-item"><button class="faq-question">How much time do I need?</button><div class="faq-answer"><p>That's entirely up to you. This is a flexible side hustle you can do in 5 hours a week or 20+.</p></div></div><div class="faq-item"><button class="faq-question">How long until I make money?</button><div class="faq-answer"><p>Many students land their first paid deal within 2-3 weeks of consistent effort.</p></div></div><div class="faq-item"><button class="faq-question">What if I don’t live in the U.S.?</button><div class="faq-answer"><p>UGC is a global need. The guide teaches you how to work with brands in any country, including a hack for working with tech and digital companies that don't require shipping physical products.</p></div></div><div class="faq-item"><button class="faq-question">Does the guide include templates?</button><div class="faq-answer"><p>Yes, the guide comes with portfolio and email templates, but more importantly, it teaches you the *formula* behind a great pitch so you can craft your own unique emails that stand out.</p></div></div><div class="faq-item"><button class="faq-question">How will I access the guide?</button><div class="faq-answer"><p>You will receive an email with a link to download the guide as a PDF immediately after your purchase is complete. It's yours to keep forever.</p></div></div><div class="faq-item"><button class="faq-question">Are there any extra costs?</button><div class="faq-answer"><p>No. The price of the guide is a one-time charge. The guide recommends optional tools if you want to upgrade your quality later, but it provides free alternatives for everything.</p></div></div><div class="faq-item"><button class="faq-question">What support is available?</button><div class="faq-answer"><p>The guide is very in-depth, but if you have questions, you can always reach out via email or Instagram DM. One-on-one coaching calls are also available to book.</p></div></div><div class="faq-item"><button class="faq-question">Do you offer refunds?</button><div class="faq-answer"><p>Due to the instant access nature of the guide, we cannot offer refunds. Thanks for your understanding!</p></div></div></div></div></section>
+        
+        <section class="section"><div class="container section-center" style="max-width: 800px; margin: auto;"><h2 data-aos="fade-up">Don’t Wait for the "Perfect" Time.</h2><p data-aos="fade-up" data-aos-delay="100">You don't need to be perfect. You just need to start. This is your sign to bet on yourself. Start small. Start now. Grow fast.</p><a href="https://buy.stripe.com/eVq6oHdqkaXU4oDbACfIs02" target="_blank" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200">This is my Blueprint. Let's Go.</a></div></section>
+    </main>
+    
+    <section class="section coming-soon-section"><div class="container section-center"><h3>P.S. A guide for men is also available!</h3></div></section>
+    <footer class="footer-note"><p>© 2025 Ismeli Henriquez. All Rights Reserved.</p></footer>
+
+    <div class="lightbox" id="img1"><div class="lightbox-content"><a class="close">×</a><img src="/Email Screenshot.jpg" alt="Enlarged view"><a class="close-bg"></a></div></div>
+    <div class="lightbox" id="img2"><div class="lightbox-content"><a class="close">×</a><img src="/Email Retainer.jpg" alt="Enlarged view"><a class="close-bg"></a></div></div>
+    <div class="lightbox" id="img3"><div class="lightbox-content"><a class="close">×</a><img src="/payments.jpg" alt="Enlarged view"><a class="close-bg"></a></div></div>
+    <div class="lightbox" id="img4"><div class="lightbox-content"><a class="close">×</a><img src="/testimonial1.PNG" alt="Enlarged view"><a class="close-bg"></a></div></div>
+    <div class="lightbox" id="img5"><div class="lightbox-content"><a class="close">×</a><img src="/testimonial2.PNG" alt="Enlarged view"><a class="close-bg"></a></div></div>
+    <div class="lightbox" id="img6"><div class="lightbox-content"><a class="close">×</a><img src="/testimonial3.jpg" alt="Enlarged view"><a class="close-bg"></a></div></div>
+    <div class="lightbox" id="img7"><div class="lightbox-content"><a class="close">×</a><img src="/receipt compare.jpg" alt="Enlarged view"><a class="close-bg"></a></div></div>
+    
+    <div class="quiz-overlay" id="quiz-modal-overlay">
+        <div class="quiz-modal" id="intro-screen">
+            <button class="quiz-close-btn" id="close-modal-btn-intro">×</button>
+            <div class="quiz-modal-inner">
+                <h1>Find Your Creator Superpower</h1>
+                <p>Not sure what kind of content you could create for brands? Answer 6 quick questions to discover your unique UGC niche.</p>
+                <button id="start-quiz-btn" class="btn btn-primary" style="width: 100%;">Start The Quiz</button>
+            </div>
+        </div>
+        <div class="quiz-modal" id="quiz-screen" style="display: none;">
+             <button class="quiz-close-btn" id="close-modal-btn-quiz">×</button>
+            <div class="quiz-modal-inner">
+                <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                    <h3 id="question-counter" style="margin-bottom: 0; font-family: 'Poppins', sans-serif; font-size: 1.2rem;"></h3>
+                    <div class="quiz-progress-bar" style="margin-left: 1rem; flex-grow: 1;"><div id="progress-bar" style="width: 0%;"></div></div>
+                </div>
+                <h2 id="question-text" style="font-size: 1.8rem; margin-bottom: 1.5rem;"></h2>
+                <div id="answer-options" class="quiz-answer-options"></div>
+            </div>
+        </div>
+        <div class="quiz-modal" id="results-screen" style="display: none;">
+             <button class="quiz-close-btn" id="close-modal-btn-results">×</button>
+            <div class="quiz-modal-inner">
+                <div id="results-content" style="text-align: center;"></div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <h3 style="font-size: 1.75rem;">Ready to Get Started?</h3>
+                    <p style="color: var(--text-grey); margin-top: 0.5rem; margin-bottom: 1.5rem;">Now that you know your creator type, Her Blueprint has everything you need to turn it into a profitable side hustle.</p>
+                    <button id="get-blueprint-btn" class="btn btn-primary">Get The Blueprint Guide</button>
+                </div>
+                <div class="quiz-email-capture">
+                    <h4 style="font-size: 1.5rem;">Get Your Full Results</h4>
+                    <p style="color: var(--text-grey); margin-top: 0.5rem; margin-bottom: 1rem;">Enter your email to get your personalized results sent to your inbox.</p>
+                    <form id="email-form"><input type="email" id="email-input" placeholder="Enter Your Email Address" required><button type="submit" class="btn btn-primary">Send My Results</button></form>
+                    <p id="form-confirmation" style="color: #22c55e; font-weight: 600; margin-top: 1rem; display: none;">Got it! Your results are on their way.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Right Content Section -->
-    <div class="content-section">
-      <h1>Her Content Blueprint</h1>
-      <h2>Get Paid to Create for Brands You Love.</h2>
-      <p>This is your guide to getting paid by brands, simply by being you. We'll explore how to transform your existing skills, passions, and life experiences into $1,000 - $5,000+ in monthly income through User Generated Content (UGC).</p>
-      
-      <div class="features">
-        <div class="feature">
-          <span class="feature-icon">⚠️</span>
-          <span>You don't need a big following.</span>
-        </div>
-        <div class="feature">
-          <span class="feature-icon">📷</span>
-          <span>You don't need fancy equipment.</span>
-        </div>
-        <div class="feature">
-          <span class="feature-icon">🎯</span>
-          <span>All you need is your phone, your personality, and a willingness to learn.</span>
-        </div>
-      </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        AOS.init({ duration: 800, once: true });
+        
+        // --- LIGHTBOX SCRIPT ---
+        const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
+        lightboxTriggers.forEach(trigger => { trigger.addEventListener('click', (e) => { e.preventDefault(); const lightboxId = trigger.getAttribute('data-lightbox'); const lightbox = document.getElementById(lightboxId); if (lightbox) { lightbox.classList.add('active'); } }); });
+        const lightboxClosers = document.querySelectorAll('.lightbox .close, .lightbox .close-bg');
+        lightboxClosers.forEach(closer => { closer.addEventListener('click', (e) => { e.preventDefault(); const lightbox = closer.closest('.lightbox'); if (lightbox) { lightbox.classList.remove('active'); } }); });
 
-      <br>
-      <a href="https://buy.stripe.com/eVq6oHdqkaXU4oDbACfIs02" class="cta-btn" target="_blank" rel="noopener noreferrer">Get the Guide</a>
+        // --- FAQ SCRIPT ---
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => { question.addEventListener('click', () => { const answer = question.nextElementSibling; question.classList.toggle('active'); if (question.classList.contains('active')) { answer.style.maxHeight = answer.scrollHeight + 'px'; } else { answer.style.maxHeight = 0; } }); });
+
+        // --- NEW: QUIZ SCRIPT FOR WOMEN ---
+        const quizData = {
+            questions: [
+                { text: "What's your ideal Saturday afternoon?", answers: [{ text: "Trying a new recipe or a DIY home project.", archetypes: ["homebodyCreative"] }, { text: "A workout class followed by a healthy brunch.", archetypes: ["wellnessGuru"] }, { text: "Shopping for the perfect outfit or trying new makeup looks.", archetypes: ["glamExpert"] }, { text: "Organizing my schedule and setting goals for the week ahead.", archetypes: ["careerProfessional", "savvyMom"] }] },
+                { text: "Which social media feed do you scroll the most?", answers: [{ text: "Interior design, home organization, and cozy aesthetics.", archetypes: ["homebodyCreative"] }, { text: "Fashion influencers, makeup tutorials, and skincare routines.", archetypes: ["glamExpert"] }, { text: "Meal prep ideas, workout motivation, and mindfulness tips.", archetypes: ["wellnessGuru"] }, { text: "Parenting hacks, family activities, and budget tips.", archetypes: ["savvyMom"] }] },
+                { text: "When a friend asks for advice, it's usually about...", answers: [{ text: "The best skincare for their skin type or a good clothing brand.", archetypes: ["glamExpert"] }, { text: "Career advice, productivity hacks, or networking.", archetypes: ["careerProfessional"] }, { text: "A great protein powder or a new yoga routine.", archetypes: ["wellnessGuru"] }, { text: "How to keep the kids entertained or manage a busy household.", archetypes: ["savvyMom"] }] },
+                { text: "You get a gift card. What do you buy?", answers: [{ text: "Something for my home, like a new throw pillow or kitchen gadget.", archetypes: ["homebodyCreative", "savvyMom"] }, { text: "The latest 'must-have' serum or a new eyeshadow palette.", archetypes: ["glamExpert"] }, { text: "New workout gear or a subscription to a wellness app.", archetypes: ["wellnessGuru"] }, { text: "A new planner or a book on professional development.", archetypes: ["careerProfessional"] }] },
+                { text: "What's your 'uniform'?", answers: [{ text: "A stylish, put-together outfit, even if I'm working from home.", archetypes: ["glamExpert", "careerProfessional"] }, { text: "Comfy athleisure wear that's ready for a workout or errands.", archetypes: ["wellnessGuru", "savvyMom"] }, { text: "A cozy sweater and leggings.", archetypes: ["homebodyCreative"] }, { text: "Whatever is clean and practical for the day!", archetypes: ["savvyMom"] }] },
+                { text: "If a brand sent you a product, what video would be most fun to make?", answers: [{ text: "An aesthetic 'Get Ready With Me' (GRWM) video.", archetypes: ["glamExpert"] }, { text: "A 'Day in the Life' showing how the product fits my busy schedule.", archetypes: ["savvyMom", "careerProfessional"] }, { text: "A calming routine video, like making my morning smoothie.", archetypes: ["wellnessGuru", "homebodyCreative"] }, { text: "An honest, chatty review talking directly to the camera.", archetypes: [] }] }
+            ],
+            results: {
+                glamExpert: { title: "The Glam Expert", description: "You have a passion for all things beauty, fashion, and style. Brands in cosmetics, skincare, and apparel need your authentic voice and keen eye to showcase their products.", brands: ["Sephora", "Fenty Beauty", "Aritzia", "Drunk Elephant", "Lululemon"], formats: [{ title: "Get Ready With Me (GRWM)", desc: "Show how you incorporate a product into your daily makeup or styling routine." }, { title: "Honest First Impressions", desc: "An authentic video sharing your real-time thoughts as you try a product for the first time." }, { title: "Aesthetic Product Shot", desc: "A beautifully styled video or photo that makes the product look irresistible." }] },
+                wellnessGuru: { title: "The Wellness Guru", description: "You're passionate about health, from fitness to nutrition to mental clarity. Health food, athletic wear, and supplement brands need creators like you to share real-life testimonials.", brands: ["Alo Yoga", "Glow Recipe", "Athletic Greens", "Nike", "BetterHelp"], formats: [{ title: "Morning Routine", desc: "Show how a product (like a supplement or workout set) is part of your healthy start to the day." }, { title: "Recipe/Workout Video", desc: "Create a short tutorial that features a brand's food product or workout gear in action." }, { title: "Authentic Testimonial", desc: "A post-workout video talking about how a product helps you achieve your fitness goals." }] },
+                savvyMom: { title: "The Savvy Mom", description: "You're the master of multitasking and finding products that make family life better and easier. Brands for kids, home, and convenience need your trusted recommendations.", brands: ["Target", "HelloFresh", "KiwiCo", "The Honest Company", "Graco"], formats: [{ title: "'Mom Hack' Video", desc: "Show how a product provides a clever solution to a common parenting problem." }, { title: "A Day in the Life", desc: "Create a montage showing how a product fits seamlessly into your busy family schedule." }, { title: "Kid-Approved Review", desc: "A fun unboxing or product test featuring your kids' genuine reactions." }] },
+                homebodyCreative: { title: "The Homebody Creative", description: "You excel at creating a cozy and beautiful space. Your passion is in home decor, DIY projects, and organization. Home goods and lifestyle brands need your talent for creating aesthetic content.", brands: ["The Sill", "Brooklinen", "Our Place", "Crate & Barrel", "Etsy"], formats: [{ title: "Cozy Room Tour", desc: "A short, aesthetic video highlighting how a brand's product fits into your home." }, { title: "Satisfying 'Restock' Video", desc: "An organizing video where you restock your pantry, fridge, or bathroom using a brand's products." }, { title: "DIY Project", desc: "Showcase your creativity by using a product in a unique DIY or home styling project." }] },
+                careerProfessional: { title: "The Career Professional", description: "You are ambitious, organized, and always striving for growth. Brands in tech, business, and productivity need to show how their products help driven women like you succeed.", brands: ["Apple", "Notion", "Microsoft", "Starbucks", "Away Luggage"], formats: [{ title: "Productivity Hack", desc: "A quick video demonstrating how a tool or app saves you time and keeps you organized." }, { title: "Work From Home Setup", desc: "An aesthetic tour of your desk setup, featuring the brand's products." }, { title: "'What's In My Work Bag'", desc: "An unboxing-style video showing how a brand's products are essential for your workday." }] }
+            }
+        };
+        const modalOverlay = document.getElementById('quiz-modal-overlay');
+        const introScreen = document.getElementById('intro-screen');
+        const quizScreen = document.getElementById('quiz-screen');
+        const resultsScreen = document.getElementById('results-screen');
+        const closeBtns = [document.getElementById('close-modal-btn-intro'), document.getElementById('close-modal-btn-quiz'), document.getElementById('close-modal-btn-results')];
+        const startQuizBtn = document.getElementById('start-quiz-btn');
+        const emailForm = document.getElementById('email-form');
+        const formConfirmation = document.getElementById('form-confirmation');
+        const getBlueprintBtn = document.getElementById('get-blueprint-btn');
+        const manualQuizTrigger = document.getElementById('manual-quiz-trigger');
+        let currentQuestionIndex = 0; let scores = {}; let winningArchetypeKey;
+        
+        function openModal() { document.body.classList.add('modal-open'); modalOverlay.classList.add('active'); }
+        function closeModal() { document.body.classList.remove('modal-open'); modalOverlay.classList.remove('active'); }
+        function resetQuiz() { currentQuestionIndex = 0; scores = { glamExpert: 0, wellnessGuru: 0, savvyMom: 0, homebodyCreative: 0, careerProfessional: 0 }; formConfirmation.style.display = 'none'; introScreen.style.display = 'block'; resultsScreen.style.display = 'none'; quizScreen.style.display = 'none'; }
+        function showQuestion() { const question = quizData.questions[currentQuestionIndex]; const totalQuestions = quizData.questions.length; document.getElementById('question-counter').textContent = `Question ${currentQuestionIndex + 1}/${totalQuestions}`; document.getElementById('progress-bar').style.width = `${((currentQuestionIndex + 1) / totalQuestions) * 100}%`; document.getElementById('question-text').textContent = question.text; const answerOptionsDiv = document.getElementById('answer-options'); answerOptionsDiv.innerHTML = ''; question.answers.forEach(answer => { const button = document.createElement('button'); button.className = 'quiz-answer-btn'; button.textContent = answer.text; button.onclick = () => selectAnswer(answer.archetypes); answerOptionsDiv.appendChild(button); }); }
+        function selectAnswer(archetypes) { archetypes.forEach(archetype => { if (scores.hasOwnProperty(archetype)) { scores[archetype]++; } }); currentQuestionIndex++; if (currentQuestionIndex < quizData.questions.length) { showQuestion(); } else { showResults(); } }
+        function showResults() { let maxScore = -1; winningArchetypeKey = 'glamExpert'; for (const archetype in scores) { if (scores[archetype] > maxScore) { maxScore = scores[archetype]; winningArchetypeKey = archetype; } } const result = quizData.results[winningArchetypeKey]; const resultsContentDiv = document.getElementById('results-content'); resultsContentDiv.innerHTML = `<p class="highlight" style="font-weight: 600;">Your UGC Archetype is...</p><h1>${result.title}</h1><p>${result.description}</p><h4 style="font-size: 1.5rem; text-align: left; margin-top: 2rem;">Potential Brand Partners</h4><div class="quiz-results-brands">${result.brands.map(brand => `<div>${brand}</div>`).join('')}</div><h4 style="font-size: 1.5rem; text-align: left;">UGC Ad Formats You Could Make</h4><div>${result.formats.map(format => `<div class="quiz-results-format"><h5>${format.title}</h5><p style="color: var(--text-grey); margin-bottom: 0;">${format.desc}</p></div>`).join('')}</div>`; introScreen.style.display = 'none'; quizScreen.style.display = 'none'; resultsScreen.style.display = 'block'; }
+
+        manualQuizTrigger.addEventListener('click', () => { resetQuiz(); openModal(); });
+        startQuizBtn.addEventListener('click', () => { introScreen.style.display = 'none'; quizScreen.style.display = 'block'; showQuestion(); });
+        closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
+        getBlueprintBtn.addEventListener('click', () => { closeModal(); window.location.href = '#offer'; });
+        
+        emailForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const emailInput = document.getElementById('email-input');
+            const submitButton = emailForm.querySelector('button[type="submit"]');
+            const webhookURL = 'https://hook.us2.make.com/yj2b8yrcpd8124476ksg9g8n4idt1y83';
+            const resultData = quizData.results[winningArchetypeKey];
+            const dataToSend = { email: emailInput.value, archetype: { title: resultData.title, description: resultData.description, brands: resultData.brands.join(', '), formats: resultData.formats.map(f => `${f.title}: ${f.desc}`).join('\n') } };
+            submitButton.textContent = 'Sending...'; submitButton.disabled = true;
+            fetch(webhookURL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(dataToSend), })
+            .then(response => { if (response.ok) { formConfirmation.style.display = 'block'; } else { alert('Something went wrong. Please try again.'); } submitButton.textContent = 'Send My Results'; submitButton.disabled = false; })
+            .catch(error => { console.error('Error:', error); alert('Could not connect. Please try again.'); submitButton.textContent = 'Send My Results'; submitButton.disabled = false; });
+        });
+        
+        setTimeout(() => {
+            if (!sessionStorage.getItem('quizModalSeen')) { openModal(); resetQuiz(); sessionStorage.setItem('quizModalSeen', 'true'); }
+        }, 3000);
+    });
+    </script>
+    
+<div id="guideModal" class="modal">
+  <div class="modal-content">
+    <h2>Which Guide Would You Like?</h2>
+    <p>Select your version of The Blueprint</p>
+    <div class="modal-buttons">
+      <button id="mensGuide">Men's Guide</button>
+      <button id="womensGuide">Women's Guide</button>
     </div>
   </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("guideModal");
+    const mensBtn = document.getElementById("mensGuide");
+    const womensBtn = document.getElementById("womensGuide");
+
+    // Show modal on page load
+    modal.style.display = "flex";
+
+    // Redirect to Men's Guide
+    mensBtn.addEventListener("click", function () {
+      window.location.href = "https://www.ismelihenriquez.com/theblueprint/";
+    });
+
+    // Close modal on this page
+    womensBtn.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+  });
+</script>
 </body>
 </html>
