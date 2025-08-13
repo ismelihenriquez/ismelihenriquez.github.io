@@ -20,7 +20,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- ✅ NEW: Masculine Light Theme Styles -->
+    <!-- Masculine Light Theme Styles -->
     <style>
         :root {
             --primary-blue: #007BFF;
@@ -173,6 +173,11 @@
             gap: 30px;
             margin-top: 40px;
         }
+        /* ✅ ADDED: Pop of color for these specific cards */
+        .how-it-works-grid .card {
+            background-color: #e7f3ff;
+            border-color: #cce4ff;
+        }
         .step .step-number {
             font-size: 2rem;
             font-weight: 700;
@@ -191,8 +196,9 @@
             overflow: hidden;
             position: relative;
             width: 100%;
-            -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
-            mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+            /* ✅ UPDATED: Toned down gradient */
+            -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
         }
         .testimonial-slider-track {
             display: flex;
@@ -354,18 +360,20 @@
     </style>
 </head>
 <body>
+    <!-- ✅ UPDATED: FAQ link added -->
     <nav class="lp-nav">
         <a href="#testimonials">Results</a>
         <a href="#ugc-explained">What is UGC?</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#who-its-for">Who It's For</a>
         <a href="#features">What's Inside</a>
+        <a href="#faq">FAQ</a>
         <a href="#offer">Get The Guide</a>
     </nav>
     
     <header class="hero">
         <div class="page-container section-center">
-            <img src="/hims header.jpg" alt="The Blueprint for Men Logo" style="max-width: 250px; margin: 0 auto 20px auto; display: block;" data-aos="zoom-in">
+            <img src="/FOR_MEN_(2).jpg" alt="The Blueprint for Men Logo" style="max-width: 250px; margin: 0 auto 20px auto; display: block;" data-aos="zoom-in">
             <h1 data-aos="fade-up">The No-BS Guide to a $5K/Month Side Hustle</h1>
             <h2 data-aos="fade-up" data-aos-delay="100" style="font-family: var(--font-body); font-size: 1.5rem; color: var(--primary-blue); font-weight: 600;">Stop Grinding. Start Earning.</h2>
             <p data-aos="fade-up" data-aos-delay="200" style="max-width: 600px; margin: 20px auto; color: var(--light-text);">Learn how everyday guys are making real money filming simple videos for brands on their phone—without posting online, without a following, and without quitting their day job.</p>
@@ -374,7 +382,6 @@
     </header>
 
     <main class="page-container">
-        <!-- ✅ MOVED UP: Testimonials for instant social proof -->
         <section id="testimonials" class="section" style="padding-top: 0;">
             <div class="section-center">
                 <h2 data-aos="fade-up">Real Guys, Real Results.</h2>
@@ -532,7 +539,8 @@
                 <h2>Get <span class="highlight">Instant Access</span> to The Blueprint</h2>
                 <p style="color: var(--light-text);">Stop wasting time. Start earning. Get the entire playbook today.</p>
                 <div class="price">$79</div>
-                <a href="https://buy.stripe.com/28EeVdeuoaXUbR5dIKfIs01" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">Yes, I Want The Blueprint!</a>
+                <!-- ✅ UPDATED: Payment Link -->
+                <a href="https://buy.stripe.com/9B628rfys5DA3kzawyfIs00" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">Yes, I Want The Blueprint!</a>
             </div>
         </section>
         
@@ -555,7 +563,7 @@
             <div class="section-center" data-aos="fade-up">
                 <h2>Looking for the Women's Guide?</h2>
                 <p style="max-width: 600px; margin: 1rem auto; color: var(--light-text);">I also created a blueprint specifically for women, tailored to their unique strengths and the brands that want to work with them.</p>
-                <a href="https://www.ismelihenriquez.com/theblueprint/herblueprint/" target="_blank" class="btn btn-secondary" style="margin-top: 1.5rem; border-color: var(--primary-pink); color: var(--primary-pink);">View Her Blueprint</a>
+                <a href="https://www.ismelihenriquez.com/theblueprint/herblueprint/" target="_blank" class="btn btn-secondary" style="margin-top: 1.5rem; border-color: #ff4db8; color: #ff4db8;">View Her Blueprint</a>
             </div>
         </section>
 
