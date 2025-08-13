@@ -190,8 +190,8 @@
             overflow: hidden;
             position: relative;
             width: 100%;
-            -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
-            mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
         }
         .testimonial-slider-track {
             display: flex;
@@ -307,7 +307,7 @@
         #mensGuide { background-color: #333; color: white; }
         #womensGuide { background-color: var(--primary-pink); color: white; }
 
-        /* ✅ ADDED: Quiz Modal Styles */
+        /* Quiz Modal Styles */
         .quiz-overlay {
             position: fixed;
             top: 0;
@@ -501,22 +501,22 @@
                     <div class="testimonial-slide"><img src="/testimonial1.PNG" alt="Testimonial 1"></div>
                     <div class="testimonial-slide"><img src="/testimonial2.PNG" alt="Testimonial 2"></div>
                     <div class="testimonial-slide"><img src="/testimonial3.jpg" alt="Testimonial 3"></div>
-                    <div class="testimonial-slide"><img src="/testimonialnew (1).JPEG" alt="New Testimonial 1"></div>
-                    <div class="testimonial-slide"><img src="/testimonialnew (2).JPEG" alt="New Testimonial 2"></div>
-                    <div class="testimonial-slide"><img src="/testimonialnew (3).JPEG" alt="New Testimonial 3"></div>
-                    <div class="testimonial-slide"><img src="/testimonialnew (4).JPEG" alt="New Testimonial 4"></div>
-                    <div class="testimonial-slide"><img src="/testimonialnew (5).JPEG" alt="New Testimonial 5"></div>
-                    <div class="testimonial-slide"><img src="/testimonialnew (6).JPEG" alt="New Testimonial 6"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (1).JPG" alt="New Testimonial 1"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (2).JPG" alt="New Testimonial 2"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (3).JPG" alt="New Testimonial 3"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (4).JPG" alt="New Testimonial 4"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (5).JPG" alt="New Testimonial 5"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (6).JPG" alt="New Testimonial 6"></div>
                     <!-- Duplicate set for seamless loop -->
                     <div class="testimonial-slide"><img src="/testimonial1.PNG" alt="Testimonial 1"></div>
                     <div class="testimonial-slide"><img src="/testimonial2.PNG" alt="Testimonial 2"></div>
                     <div class="testimonial-slide"><img src="/testimonial3.jpg" alt="Testimonial 3"></div>
-                    <div class="testimonial-slide"><img src="/testimonialnew (1).JPEG" alt="New Testimonial 1"></div>
-                    <div class="testimonial-slide"><img src="/testimonialnew (2).JPEG" alt="New Testimonial 2"></div>
-                    <div class="testimonial-slide"><img src="/testimonialnew (3).JPEG" alt="New Testimonial 3"></div>
-                    <div class="testimonial-slide"><img src="/testimonialnew (4).JPEG" alt="New Testimonial 4"></div>
-                    <div class="testimonial-slide"><img src="/testimonialnew (5).JPEG" alt="New Testimonial 5"></div>
-                    <div class="testimonial-slide"><img src="/testimonialnew (6).JPEG" alt="New Testimonial 6"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (1).JPG" alt="New Testimonial 1"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (2).JPG" alt="New Testimonial 2"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (3).JPG" alt="New Testimonial 3"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (4).JPG" alt="New Testimonial 4"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (5).JPG" alt="New Testimonial 5"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (6).JPG" alt="New Testimonial 6"></div>
                 </div>
             </div>
         </section>
@@ -630,7 +630,6 @@
         <p>© 2025 Ismeli Henriquez. All Rights Reserved.</p>
     </footer>
 
-    <!-- ✅ ADDED: Quiz Modal HTML -->
     <div class="quiz-overlay" id="quiz-modal-overlay">
         <div class="quiz-modal" id="intro-screen">
             <button class="quiz-close-btn">×</button>
@@ -686,11 +685,10 @@
     document.addEventListener('DOMContentLoaded', () => {
         AOS.init({ duration: 800, once: true, offset: 50 });
         
-        // FAQ Script
         const faqQuestions = document.querySelectorAll('.faq-question');
         faqQuestions.forEach(question => { question.addEventListener('click', () => { const answer = question.nextElementSibling; question.classList.toggle('active'); if (question.classList.contains('active')) { answer.style.maxHeight = answer.scrollHeight + 'px'; } else { answer.style.maxHeight = 0; } }); });
 
-        // ✅ ADDED: Full Quiz Script
+        // Full Quiz Script
         const quizData = {
             questions: [
                 { text: "What's your ideal Saturday afternoon?", answers: [{ text: "Trying a new recipe or a DIY home project.", archetypes: ["homebodyCreative"] }, { text: "A workout class followed by a healthy brunch.", archetypes: ["wellnessGuru"] }, { text: "Shopping for the perfect outfit or trying new makeup looks.", archetypes: ["glamExpert"] }, { text: "Organizing my schedule and setting goals for the week ahead.", archetypes: ["careerProfessional", "savvyMom"] }] },
@@ -709,12 +707,12 @@
             }
         };
         const modalOverlay = document.getElementById('quiz-modal-overlay');
-        const introScreen = document.getElementById('intro-screen');
-        const quizScreen = document.getElementById('quiz-screen');
-        const resultsScreen = document.getElementById('results-screen');
         const manualQuizTrigger = document.getElementById('manual-quiz-trigger');
 
         if(manualQuizTrigger) {
+            const introScreen = document.getElementById('intro-screen');
+            const quizScreen = document.getElementById('quiz-screen');
+            const resultsScreen = document.getElementById('results-screen');
             const startQuizBtn = document.getElementById('start-quiz-btn');
             const emailForm = document.getElementById('email-form');
             const getBlueprintBtn = document.getElementById('get-blueprint-btn');
@@ -790,10 +788,46 @@
                     window.location.href = '#offer';
                 });
             }
+            // ✅ FIXED: Email form submit logic
             if(emailForm) {
                 emailForm.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    // Webhook logic would go here
+                    const emailInput = document.getElementById('email-input');
+                    const submitButton = emailForm.querySelector('button[type="submit"]');
+                    const formConfirmation = document.getElementById('form-confirmation');
+                    const webhookURL = 'https://hook.us2.make.com/yj2b8yrcpd8124476ksg9g8n4idt1y83'; // Your webhook URL
+                    const resultData = quizData.results[winningArchetypeKey];
+                    const dataToSend = {
+                        email: emailInput.value,
+                        archetype: {
+                            title: resultData.title,
+                            description: resultData.description,
+                            brands: resultData.brands.join(', '),
+                            formats: resultData.formats.map(f => `${f.title}: ${f.desc}`).join('\n')
+                        }
+                    };
+                    submitButton.textContent = 'Sending...';
+                    submitButton.disabled = true;
+                    fetch(webhookURL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(dataToSend),
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            if(formConfirmation) formConfirmation.style.display = 'block';
+                        } else {
+                            alert('Something went wrong. Please try again.');
+                        }
+                        submitButton.textContent = 'Send My Results';
+                        submitButton.disabled = false;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Could not connect. Please try again.');
+                        submitButton.textContent = 'Send My Results';
+                        submitButton.disabled = false;
+                    });
                 });
             }
         }
@@ -808,6 +842,828 @@
         }
         if(mensBtn) mensBtn.addEventListener("click", function () { window.location.href = "https://www.ismelihenriquez.com/theblueprint/"; });
         if(womensBtn) womensBtn.addEventListener("click", function () { if(guideModal) guideModal.style.display = "none"; });
+    });
+    </script>
+</body>
+</html>
+```
+
+### 2. The Blueprint for Men (Men's Page)
+
+This version now has the polished quiz results screen, complete with the detailed ad formats and the email capture form, so it perfectly mirrors the functionality of the women's page.
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Blueprint for Men - Ismeli Henriquez</title>
+
+    <!-- External Libraries -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LY2QNK2MLC"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LY2QNK2MLC'); </script>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Masculine Light Theme Styles -->
+    <style>
+        :root {
+            --primary-blue: #007BFF;
+            --primary-dark-blue: #0056b3;
+            --light-gray-bg: #f8f9fa;
+            --dark-text: #212529;
+            --light-text: #6c757d;
+            --border-color: #e9ecef;
+            --font-body: 'Poppins', sans-serif;
+            --font-heading: 'Playfair Display', serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-gray-bg);
+            color: var(--dark-text);
+            font-family: var(--font-body);
+        }
+
+        /* Nav Bar Styles */
+        .lp-nav {
+            position: sticky;
+            top: 0;
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+        }
+        .lp-nav a {
+            font-weight: 600;
+            color: var(--dark-text);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .lp-nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            color: var(--dark-text);
+        }
+        
+        .highlight {
+            color: var(--primary-blue);
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: white;
+            box-shadow: 0 4px 15px -5px var(--primary-blue);
+        }
+        .btn-primary:hover {
+            background-color: var(--primary-dark-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px -5px var(--primary-blue);
+        }
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary-blue);
+            border: 1px solid var(--primary-blue);
+        }
+        .btn-secondary:hover {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        /* Layout & Cards */
+        .page-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .section {
+            padding: 80px 0;
+        }
+        .section-center {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px -15px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        
+        /* Header */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        /* UGC vs Influencer Section */
+        .ugc-vs-influencer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            text-align: left;
+            margin-top: 40px;
+        }
+        .ugc-vs-influencer-grid h3 {
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .ugc-vs-influencer-grid ul {
+            list-style: none;
+            padding: 0;
+        }
+        .ugc-vs-influencer-grid li {
+            padding: 8px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .ugc-vs-influencer-grid li::before {
+            content: '✓';
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        /* How it Works */
+        .how-it-works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .how-it-works-grid .card {
+            background-color: #e7f3ff;
+            border-color: #cce4ff;
+        }
+        .step .step-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-family: var(--font-heading);
+            margin-bottom: 10px;
+        }
+
+        /* Testimonial Slideshow Styles */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-320px * 9)); } /* 320px image width * 9 images */
+        }
+        .testimonial-slider {
+            margin-top: 40px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+        }
+        .testimonial-slider-track {
+            display: flex;
+            width: calc(320px * 18); /* 2 sets of 9 images */
+            animation: scroll 60s linear infinite;
+        }
+        .testimonial-slider:hover .testimonial-slider-track {
+            animation-play-state: paused;
+        }
+        .testimonial-slide {
+            width: 300px;
+            margin: 0 10px;
+            flex-shrink: 0;
+        }
+        .testimonial-slide img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Checklist */
+        .checklist {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 30px;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        .checklist li {
+            position: relative;
+            padding-left: 30px;
+            font-weight: 600;
+        }
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Instagram Section */
+        .instagram-section {
+            background: linear-gradient(45deg, var(--primary-blue), #003f7f);
+            padding: 60px;
+            border-radius: 20px;
+            color: white;
+            text-align: center;
+        }
+        .instagram-section h2 {
+            color: white;
+        }
+        .instagram-section .btn {
+            background: white;
+            color: var(--primary-blue);
+            margin-top: 20px;
+        }
+
+        /* FAQ */
+        .faq-container { max-width: 700px; margin: 40px auto; }
+        .faq-item { border-bottom: 1px solid var(--border-color); }
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 20px 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            position: relative;
+            border: none; background: none;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 5px;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            transition: transform 0.2s;
+        }
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        .faq-answer p { padding: 0 10px 20px 10px; color: var(--light-text); }
+
+        /* Offer Box */
+        .offer-box {
+            background: white;
+            border: 2px solid var(--primary-blue);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px -15px var(--primary-blue);
+        }
+        .offer-box .price {
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            margin: 15px 0;
+        }
+
+        /* Modal Popup */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); justify-content: center; align-items: center; }
+        .modal-content { background-color: white; padding: 30px; border-radius: 12px; text-align: center; max-width: 320px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .modal-content h2 { color: var(--primary-dark-blue); }
+        .modal-buttons button { padding: 12px 20px; margin: 10px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px; }
+        #mensGuide { background-color: var(--primary-blue); color: white; }
+        #womensGuide { background-color: #ff4db8; color: white; }
+
+        /* Quiz Modal Styles */
+        .quiz-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .quiz-overlay.active { display: flex; }
+        .quiz-modal {
+            background: white; padding: 30px; border-radius: 12px;
+            max-width: 500px; width: 100%; position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        .quiz-close-btn {
+            position: absolute; top: 10px; right: 15px;
+            font-size: 2rem; border: none; background: none;
+            cursor: pointer; color: #aaa;
+        }
+        .quiz-modal-inner { text-align: center; }
+        .quiz-progress-bar { height: 8px; background: #eee; border-radius: 4px; overflow: hidden; }
+        .quiz-progress-bar div { height: 100%; background: var(--primary-blue); transition: width 0.3s; }
+        .quiz-answer-options { display: grid; gap: 15px; }
+        .quiz-answer-btn {
+            width: 100%; padding: 15px; border: 1px solid var(--border-color);
+            background: white; border-radius: 8px; font-weight: 600;
+            cursor: pointer; transition: all 0.2s; text-align: left;
+        }
+        .quiz-answer-btn:hover {
+            background: #e7f3ff;
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+        .quiz-results-brands {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .quiz-results-brands div {
+            background: #e7f3ff;
+            color: var(--primary-blue);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .quiz-results-format {
+            text-align: left;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .quiz-email-capture {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+        }
+        .quiz-email-capture input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .checklist { grid-template-columns: 1fr; }
+            .ugc-vs-influencer-grid { grid-template-columns: 1fr; }
+            .section { padding: 60px 0; }
+            .lp-nav { gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="lp-nav">
+        <a href="#testimonials">Results</a>
+        <a href="#ugc-explained">What is UGC?</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#who-its-for">Who It's For</a>
+        <a href="#features">What's Inside</a>
+        <a href="#faq">FAQ</a>
+        <a href="#offer">Get The Guide</a>
+    </nav>
+    
+    <header class="hero">
+        <div class="page-container section-center">
+            <img src="/FOR_MEN_(2).jpg" alt="The Blueprint for Men Logo" style="max-width: 250px; margin: 0 auto 20px auto; display: block;" data-aos="zoom-in">
+            <h1 data-aos="fade-up">The No-BS Guide to a $5K/Month Side Hustle</h1>
+            <h2 data-aos="fade-up" data-aos-delay="100" style="font-family: var(--font-body); font-size: 1.5rem; color: var(--primary-blue); font-weight: 600;">Stop Grinding. Start Earning.</h2>
+            <p data-aos="fade-up" data-aos-delay="200" style="max-width: 600px; margin: 20px auto; color: var(--light-text);">Learn how everyday guys are making real money filming simple videos for brands on their phone—without posting online, without a following, and without quitting their day job.</p>
+            <a href="#offer" class="btn btn-primary" style="margin-top: 20px;" data-aos="fade-up" data-aos-delay="400">Get The Blueprint for $79</a>
+        </div>
+    </header>
+
+    <main class="page-container">
+        <section id="testimonials" class="section" style="padding-top: 0;">
+            <div class="section-center">
+                <h2 data-aos="fade-up">Real Guys, Real Results.</h2>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-slider-track">
+                    <div class="testimonial-slide"><img src="/testimonial1.PNG" alt="Testimonial 1"></div>
+                    <div class="testimonial-slide"><img src="/testimonial2.PNG" alt="Testimonial 2"></div>
+                    <div class="testimonial-slide"><img src="/testimonial3.jpg" alt="Testimonial 3"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (1).JPG" alt="New Testimonial 1"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (2).JPG" alt="New Testimonial 2"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (3).JPG" alt="New Testimonial 3"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (4).JPG" alt="New Testimonial 4"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (5).JPG" alt="New Testimonial 5"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (6).JPG" alt="New Testimonial 6"></div>
+                    <div class="testimonial-slide"><img src="/testimonial1.PNG" alt="Testimonial 1"></div>
+                    <div class="testimonial-slide"><img src="/testimonial2.PNG" alt="Testimonial 2"></div>
+                    <div class="testimonial-slide"><img src="/testimonial3.jpg" alt="Testimonial 3"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (1).JPG" alt="New Testimonial 1"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (2).JPG" alt="New Testimonial 2"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (3).JPG" alt="New Testimonial 3"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (4).JPG" alt="New Testimonial 4"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (5).JPG" alt="New Testimonial 5"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (6).JPG" alt="New Testimonial 6"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ugc-explained" class="section">
+            <div class="section-center">
+                <h2 data-aos="fade-up">What is UGC? (And Why It's a Goldmine for Men)</h2>
+                <p data-aos="fade-up" data-aos-delay="100" style="color: var(--light-text);">Brands are desperate for authentic content from regular guys. That's where you come in. This isn't about being an "influencer."</p>
+            </div>
+            <div class="ugc-vs-influencer-grid">
+                <div class="card" data-aos="fade-right">
+                    <h3>User Generated Content (UGC)</h3>
+                    <ul>
+                        <li>You make simple videos FOR a brand. They use it on their social media pages.</li>
+                        <li><strong>You don't post anything.</strong> Your privacy is 100% protected.</li>
+                        <li><strong>Your follower count is irrelevant.</strong> Brands want real guys, not celebrities.</li>
+                        <li>The perfect, flexible side-hustle. Earn on your own time.</li>
+                    </ul>
+                </div>
+                <div class="card" data-aos="fade-left">
+                    <h3>Influencer Marketing</h3>
+                    <ul>
+                        <li>You post content on YOUR social media to promote a brand.</li>
+                        <li>Requires building a following and a personal brand.</li>
+                        <li>Can lead to bigger deals down the line.</li>
+                        <li>The Blueprint shows you how to do this too, if you want to level up later.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="section" style="padding-top: 0;">
+            <div class="section-center">
+                <h2 data-aos="fade-up">The 3-Step System to Getting Paid</h2>
+                <p data-aos="fade-up" data-aos-delay="100" style="color: var(--light-text);">No fluff. Just the exact, repeatable steps to turn your phone into an ATM.</p>
+            </div>
+            <div class="how-it-works-grid">
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">01</div>
+                    <h3>Get Free Gear</h3>
+                    <p style="color: var(--light-text);">I'll show you how to get brands to send you free products. Tools, tech, clothing—you name it.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">02</div>
+                    <h3>Film a Quick Video</h3>
+                    <p style="color: var(--light-text);">Learn to film casual, no-fuss 30-60 second videos on your phone that brands will pay for.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-number">03</div>
+                    <h3>Get Paid. Fast.</h3>
+                    <p style="color: var(--light-text);">Send the video, get paid directly. I'll teach you how to make this a consistent income stream.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="who-its-for" class="section">
+            <div class="section-center">
+                <h2 data-aos="fade-up">This Blueprint is For <span class="highlight">Men Like You.</span></h2>
+                <p data-aos="fade-up" data-aos-delay="100" style="color: var(--light-text);">If you're looking for a real way to make extra cash on your own time, this is for you.</p>
+            </div>
+            <div class="how-it-works-grid" style="margin-top: 40px;">
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>The 9-to-5 Guy & Tradesman</h3>
+                    <p style="color: var(--light-text);">Tired of the paycheck-to-paycheck life? Use your skills to earn more on your own schedule.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>The Dad & Student</h3>
+                    <p style="color: var(--light-text);">Need flexibility? Earn from home without sacrificing time with family or your studies.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="400">
+                    <h3>The Hustler & Hobbyist</h3>
+                    <p style="color: var(--light-text);">Turn your passions—cars, gaming, fitness, tech—into a profitable side-income stream.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0; padding-bottom: 40px;">
+            <div class="section-center" data-aos="fade-up">
+                <a href="#offer" class="btn btn-primary">Let's Do This. Get The Guide.</a>
+            </div>
+        </section>
+        
+        <section id="features" class="section">
+            <div class="section-center">
+                <h2 data-aos="fade-up">The Complete Playbook from <span class="highlight">Zero to Paid Creator</span></h2>
+                <p data-aos="fade-up" data-aos-delay="100" style="color: var(--light-text);">I'm giving you everything. My personal templates, contacts, and strategies. No gatekeeping.</p>
+            </div>
+            <ul class="checklist" data-aos="fade-up" data-aos-delay="200">
+                <li>How to film videos brands actually want</li>
+                <li>How to get paid without ever posting online</li>
+                <li>My proven pitch emails that get replies</li>
+                <li>How to turn your job or hobby into cash</li>
+                <li>The plan to make $1K–$5K/month part-time</li>
+                <li>10 direct brand contacts to get you started</li>
+                <li>My personal scripts, tools, and templates</li>
+                <li>A portfolio template that looks professional</li>
+                <li>How to work without showing your face</li>
+                <li>How to negotiate rates like a pro</li>
+                <li>How to scale to a $10k+/month income</li>
+                <li>How to build a personal brand (if you want)</li>
+            </ul>
+        </section>
+
+        <section id="community" class="section">
+            <div class="instagram-section" data-aos="zoom-in">
+                <h2>Join The Community 🛠️</h2>
+                <p>This isn't just a guide, it's a network. Follow us on Instagram for tips, Q&As, and to connect with other guys building their income with UGC.</p>
+                <a href="https://www.instagram.com/the_contentblueprint/" target="_blank" class="btn">Follow @the_contentblueprint</a>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-center" data-aos="fade-up">
+                <h2>Your Time Is Worth More Than $79.</h2>
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 1rem auto; color: var(--light-text);">You can spend months trying to figure this out alone, or you can invest in a proven system that gets you paid, faster. The choice is simple.</p>
+            </div>
+        </section>
+        
+        <section id="quiz-trigger" class="section" style="background: white; padding: 80px 0; border-radius: 20px;">
+            <div class="section-center" data-aos="fade-up">
+                <h2>Find Your <span class="highlight">Creator Superpower</span></h2>
+                <p style="max-width: 600px; margin: 1rem auto; color: var(--light-text);">Not sure where you'd fit in? Take our 60-second quiz to discover your unique UGC niche and the types of brands you could work with.</p>
+                <button id="manual-quiz-trigger" class="btn btn-secondary" style="margin-top: 1.5rem;">Take The Quiz Now</button>
+            </div>
+        </section>
+        
+        <section id="offer" class="section">
+            <div class="offer-box section-center" data-aos="zoom-in">
+                <h2>Get <span class="highlight">Instant Access</span> to The Blueprint</h2>
+                <p style="color: var(--light-text);">Stop wasting time. Start earning. Get the entire playbook today.</p>
+                <div class="price">$79</div>
+                <a href="https://buy.stripe.com/9B628rfys5DA3kzawyfIs00" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">Yes, I Want The Blueprint!</a>
+            </div>
+        </section>
+        
+        <section id="faq" class="section">
+            <div class="section-center">
+                <h2 data-aos="fade-up">Your Questions, <span class="highlight">Answered</span></h2>
+            </div>
+            <div class="faq-container" data-aos="fade-up" data-aos-delay="100">
+                 <div class="faq-item"><button class="faq-question">Do I need prior experience?</button><div class="faq-answer"><p>No. This guide is designed to walk you through every single step, from beginner to pro.</p></div></div>
+                <div class="faq-item"><button class="faq-question">Can I land deals with zero followers?</button><div class="faq-answer"><p>Yes. UGC doesn't rely on your followers. All you need is a portfolio, and this guide helps you build one from scratch.</p></div></div>
+                <div class="faq-item"><button class="faq-question">What kind of equipment do I need?</button><div class="faq-answer"><p>All you need to get started is a smartphone with a decent camera. No expensive equipment is necessary.</p></div></div>
+                <div class="faq-item"><button class="faq-question">How much time do I need?</button><div class="faq-answer"><p>That's entirely up to you. This is a flexible side hustle you can do in 5 hours a week or 20+.</p></div></div>
+                <div class="faq-item"><button class="faq-question">How long until I make money?</button><div class="faq-answer"><p>Many students land their first paid deal within 2-3 weeks of consistent effort.</p></div></div>
+                <div class="faq-item"><button class="faq-question">How will I access the guide?</button><div class="faq-answer"><p>You will receive an email with a link to download the guide as a PDF immediately after your purchase is complete. It's yours to keep forever.</p></div></div>
+                <div class="faq-item"><button class="faq-question">Do you offer refunds?</button><div class="faq-answer"><p>Due to the instant access nature of the digital guide, we cannot offer refunds. Thanks for your understanding!</p></div></div>
+            </div>
+        </section>
+
+        <section id="for-women" class="section">
+            <div class="section-center" data-aos="fade-up">
+                <h2>Looking for the Women's Guide?</h2>
+                <p style="max-width: 600px; margin: 1rem auto; color: var(--light-text);">I also created a blueprint specifically for women, tailored to their unique strengths and the brands that want to work with them.</p>
+                <a href="https://www.ismelihenriquez.com/theblueprint/herblueprint/" target="_blank" class="btn btn-secondary" style="margin-top: 1.5rem; border-color: #ff4db8; color: #ff4db8;">View Her Blueprint</a>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer style="text-align: center; padding: 40px 20px; color: var(--light-text);">
+        <p>© 2025 Ismeli Henriquez. All Rights Reserved.</p>
+    </footer>
+
+    <div class="quiz-overlay" id="quiz-modal-overlay">
+        <!-- Quiz HTML is added here via JS -->
+    </div>
+
+    <div id="guideModal" class="modal">
+      <div class="modal-content">
+        <h2>Which Guide Would You Like?</h2>
+        <p>Select your version of The Blueprint</p>
+        <div class="modal-buttons">
+          <button id="mensGuide">Men's Guide</button>
+          <button id="womensGuide">Women's Guide</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        AOS.init({ duration: 800, once: true, offset: 50 });
+        
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => { question.addEventListener('click', () => { const answer = question.nextElementSibling; question.classList.toggle('active'); if (question.classList.contains('active')) { answer.style.maxHeight = answer.scrollHeight + 'px'; } else { answer.style.maxHeight = 0; } }); });
+
+        // ✅ FIXED: Men's Quiz Script
+        const quizData = {
+            questions: [ { text: "What does your typical workday look like?", answers: [{ text: "In the field or on a job site, working with my hands.", archetypes: ["skilledTradesman"] },{ text: "In an office, in meetings, or working with clients.", archetypes: ["modernProfessional"] },{ text: "Behind a screen, focusing on tech, gaming, or creative work.", archetypes: ["techEnthusiast"] },{ text: "In a gym, on the field, or focused on physical activity.", archetypes: ["fitnessArchitect"] }, ] }, { text: "How do you typically spend your Saturday?", answers: [{ text: "Outdoors—hiking, camping, fishing, or working in the yard.", archetypes: ["outdoorAdventurer", "skilledTradesman"] },{ text: "Out on the town—at a nice restaurant, a sporting event, or a social gathering.", archetypes: ["modernGentleman", "modernProfessional"] },{ text: "At home—tackling a DIY project or trying out a new recipe.", archetypes: ["skilledTradesman"] },{ text: "On an adventure—a road trip, exploring a new city, or trying something new.", archetypes: ["outdoorAdventurer"] }, ] }, { text: "When you buy a new product, what's your main priority?", answers: [{ text: "Durability & Power—It has to be tough and get the job done right.", archetypes: ["skilledTradesman", "outdoorAdventurer"] },{ text: "Performance & Technology—I want the latest features and best performance.", archetypes: ["techEnthusiast", "modernProfessional"] },{ text: "Quality & Style—I appreciate great design, craftsmanship, and a premium feel.", archetypes: ["modernGentleman"] },{ text: "Health & Wellness—How it contributes to my fitness and well-being goals.", archetypes: ["fitnessArchitect"] }, ] }, { text: "What's your personal style on the weekend?", answers: [{ text: "Functional & Rugged (e.g., Carhartt, work boots, heavy-duty gear)", archetypes: ["skilledTradesman", "outdoorAdventurer"] },{ text: "Sharp & Sophisticated (e.g., blazers, quality denim, leather shoes)", archetypes: ["modernGentleman", "modernProfessional"] },{ text: "Comfortable & Casual (e.g., hoodies, jeans, sneakers)", archetypes: [] },{ text: "Athletic & Sporty (e.g., Nike, Under Armour, joggers)", archetypes: ["fitnessArchitect"] }, ] }, { text: "Pick a topic you're the 'go-to' guy for among your friends:", answers: [{ text: "Cars, tools, and how things work.", archetypes: ["skilledTradesman"] },{ text: "The latest gadgets, computers, or games.", archetypes: ["techEnthusiast"] },{ text: "Fitness routines and nutrition advice.", archetypes: ["fitnessArchitect"] },{ text: "The best restaurants, style tips, or travel spots.", archetypes: ["modernGentleman"] }, ] }, { text: "If a brand asked you to make a video, what format feels most natural?", answers: [{ text: "A straightforward demo showing exactly how the product works.", archetypes: ["skilledTradesman", "techEnthusiast"] },{ text: "An honest testimonial talking about my experience with the product.", archetypes: ["fitnessArchitect", "modernProfessional"] },{ text: "An aesthetic video showing the product in a cool setting.", archetypes: ["modernGentleman", "outdoorAdventurer"] },{ text: "A problem/solution video showing how the product made my life easier.", archetypes: [] }, ] } ],
+            results: {
+                skilledTradesman: { title: "The Skilled Tradesman", description: "You value power, durability, and getting the job done right. Brands in the tool, automotive, and workwear spaces need authentic content from real experts like you.", brands: ["DeWalt", "Milwaukee", "Carhartt", "Ford", "Home Depot"], formats: [{ title: "Problem/Solution Ad", desc: "Show a common job site challenge, and then how a specific tool solved it instantly." },{ title: "Durability Testimonial", desc: "Film a short, rugged video explaining why you trust a certain brand of boots or jacket to last." },{ title: "On-the-Job Demo", desc: "A raw, authentic clip of you using a product in its natural environment." }] },
+                modernProfessional: { title: "The Modern Professional", description: "You navigate the corporate world with a focus on efficiency, productivity, and professional image. Brands need content that shows how their products fit into the busy life of a successful person like you.", brands: ["Dell", "Samsonite", "Brooks Brothers", "Microsoft", "Starbucks"], formats: [{ title: "'Day in the Life' Ad", desc: "Create a montage showing how a product (like a laptop or a travel bag) seamlessly integrates into your workday." },{ title: "Unboxing for a Product Page", desc: "A clean, professional unboxing video of a new monitor or briefcase that a brand can place on their website." },{ title: "Productivity Hack Video", desc: "A quick screen recording or video showing how a piece of software or a simple product saves you time." }] },
+                techEnthusiast: { title: "The Tech Enthusiast", description: "You live on the cutting edge of technology, from gaming to smart homes. Brands need creators like you to generate excitement and show off the cool-factor of their latest products.", brands: ["Samsung", "Sony", "Logitech", "Apple", "Bose"], formats: [{ title: "Feature Showcase Ad", desc: "A dynamic 15-30 second video for TikTok or Reels that highlights one 'killer feature' of a new gadget." },{ title: "Aesthetic Desk Setup", desc: "Film a visually pleasing video of your desk setup, featuring the brand's products as the centerpiece." },{ title: "Authentic Unboxing", desc: "A genuine first-impressions unboxing video. Your real-time reactions are powerful assets for a brand's ad campaign." }] },
+                outdoorAdventurer: { title: "The Outdoor Adventurer", description: "You thrive in the great outdoors and rely on gear that can handle the elements. Brands in the outdoor, travel, and automotive industries need creators to capture their products facing real-world tests.", brands: ["The North Face", "YETI", "GoPro", "Jeep", "Columbia"], formats: [{ title: "'In-The-Wild' Testimonial", desc: "Film yourself at a summit or campsite, talking about how a specific product (a jacket, a cooler) performed on your trip." },{ title: "Action Montage", desc: "Use a GoPro to create a fast-paced montage of your adventure, making sure the brand's product is the hero of the shot." },{ title: "Product-in-Use Shots", desc: "High-quality photos or short video clips of the gear in a stunning, natural environment." }] },
+                fitnessArchitect: { title: "The Fitness Architect", description: "Your life is built around health, wellness, and pushing physical limits. Nutrition, apparel, and tech brands need authentic content from people who genuinely use their products to achieve their fitness goals.", brands: ["Nike", "Under Armour", "Gatorade", "Optimum Nutrition", "Fitbit"], formats: [{ title: "Workout Integration", desc: "Film part of your workout, clearly showing how you use the brand's product (e.g., a pre-workout, flexible shorts, or a watch)." },{ title: "Authentic Product Review", desc: "A straightforward, post-workout testimonial to the camera talking about the taste of a protein powder or the comfort of a pair of running shoes." },{ title: "Transformation/Progress Clip", desc: "A short video showing how a product has been part of your fitness journey. This narrative style is incredibly effective for social media ads." }] },
+                modernGentleman: { title: "The Modern Gentleman", description: "You have an eye for quality, style, and the finer details. Premium lifestyle, fashion, and grooming brands need content that captures the aspirational and high-quality nature of their products.", brands: ["Ralph Lauren", "Johnnie Walker", "Kiehl's", "Nespresso", "Tissot"], formats: [{ title: "Aesthetic Routine", desc: "A visually pleasing 'Get Ready With Me' (GRWM) or 'Wind Down' routine video, showcasing a grooming product or beverage." },{ title: "Product-in-Hand Testimonial", desc: "A classy, well-lit video where you talk about the craftsmanship and feel of a product, like a watch or a leather wallet." },{ title: "Lifestyle Shot", desc: "A high-quality photo or slow-motion video of the product in a sophisticated setting—a glass of whiskey by the fire, a stylish outfit for a night out." }] }
+            }
+        };
+        
+        const quizOverlay = document.getElementById('quiz-modal-overlay');
+        const manualQuizTrigger = document.getElementById('manual-quiz-trigger');
+
+        if(manualQuizTrigger) {
+            manualQuizTrigger.addEventListener('click', () => {
+                quizOverlay.innerHTML = `
+                    <div class="quiz-modal" id="intro-screen">
+                        <button class="quiz-close-btn">×</button>
+                        <div class="quiz-modal-inner">
+                            <h1>Find Your Creator Superpower</h1>
+                            <p>Not sure what kind of content you could create for brands? Answer 6 quick questions to discover your unique UGC niche.</p>
+                            <button id="start-quiz-btn" class="btn btn-primary" style="width: 100%;">Start The Quiz</button>
+                        </div>
+                    </div>
+                    <div class="quiz-modal" id="quiz-screen" style="display: none;">
+                         <button class="quiz-close-btn">×</button>
+                        <div class="quiz-modal-inner">
+                            <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                                <h3 id="question-counter" style="margin-bottom: 0; font-family: 'Poppins', sans-serif; font-size: 1.2rem;"></h3>
+                                <div class="quiz-progress-bar" style="margin-left: 1rem; flex-grow: 1;"><div id="progress-bar" style="width: 0%;"></div></div>
+                            </div>
+                            <h2 id="question-text" style="font-size: 1.8rem; margin-bottom: 1.5rem;"></h2>
+                            <div id="answer-options" class="quiz-answer-options"></div>
+                        </div>
+                    </div>
+                    <div class="quiz-modal" id="results-screen" style="display: none;">
+                         <button class="quiz-close-btn">×</button>
+                        <div class="quiz-modal-inner">
+                            <div id="results-content" style="text-align: center;"></div>
+                            <div style="text-align: center; margin-top: 2rem;">
+                                <h3 style="font-size: 1.75rem;">Ready to Get Started?</h3>
+                                <p style="color: var(--light-text); margin-top: 0.5rem; margin-bottom: 1.5rem;">Now that you know your creator type, The Blueprint has everything you need to turn it into a profitable side hustle.</p>
+                                <button id="get-blueprint-btn" class="btn btn-primary">Get The Blueprint Guide</button>
+                            </div>
+                            <div class="quiz-email-capture">
+                                <h4 style="font-size: 1.5rem;">Get Your Full Results</h4>
+                                <p style="color: var(--light-text); margin-top: 0.5rem; margin-bottom: 1rem;">Enter your email to get your personalized results sent to your inbox.</p>
+                                <form id="email-form"><input type="email" id="email-input" placeholder="Enter Your Email Address" required><button type="submit" class="btn btn-primary">Send My Results</button></form>
+                                <p id="form-confirmation" style="color: #28a745; font-weight: 600; margin-top: 1rem; display: none;">Got it! Your results are on their way.</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                const introScreen = document.getElementById('intro-screen');
+                const quizScreen = document.getElementById('quiz-screen');
+                const resultsScreen = document.getElementById('results-screen');
+                const startQuizBtn = document.getElementById('start-quiz-btn');
+                const getBlueprintBtn = document.getElementById('get-blueprint-btn');
+                const closeBtns = quizOverlay.querySelectorAll('.quiz-close-btn');
+                const emailForm = document.getElementById('email-form');
+
+                let currentQuestionIndex = 0;
+                let scores = {};
+                let winningArchetypeKey;
+
+                function openModal() { quizOverlay.classList.add('active'); }
+                function closeModal() { quizOverlay.classList.remove('active'); }
+                function resetQuiz() {
+                    currentQuestionIndex = 0;
+                    scores = { skilledTradesman: 0, modernProfessional: 0, techEnthusiast: 0, outdoorAdventurer: 0, fitnessArchitect: 0, modernGentleman: 0 };
+                    const formConfirmation = document.getElementById('form-confirmation');
+                    if(formConfirmation) formConfirmation.style.display = 'none';
+                    introScreen.style.display = 'block';
+                    resultsScreen.style.display = 'none';
+                    quizScreen.style.display = 'none';
+                }
+                function showQuestion() {
+                    const question = quizData.questions[currentQuestionIndex];
+                    const totalQuestions = quizData.questions.length;
+                    document.getElementById('question-counter').textContent = `Question ${currentQuestionIndex + 1}/${totalQuestions}`;
+                    document.getElementById('progress-bar').style.width = `${((currentQuestionIndex + 1) / totalQuestions) * 100}%`;
+                    document.getElementById('question-text').textContent = question.text;
+                    const answerOptionsDiv = document.getElementById('answer-options');
+                    answerOptionsDiv.innerHTML = '';
+                    question.answers.forEach(answer => {
+                        const button = document.createElement('button');
+                        button.className = 'quiz-answer-btn';
+                        button.textContent = answer.text;
+                        button.onclick = () => selectAnswer(answer.archetypes);
+                        answerOptionsDiv.appendChild(button);
+                    });
+                }
+                function selectAnswer(archetypes) {
+                    archetypes.forEach(archetype => {
+                        if (scores.hasOwnProperty(archetype)) { scores[archetype]++; }
+                    });
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex < quizData.questions.length) { showQuestion(); } else { showResults(); }
+                }
+                function showResults() {
+                    let maxScore = -1;
+                    winningArchetypeKey = 'modernGentleman'; // default
+                    for (const archetype in scores) {
+                        if (scores[archetype] > maxScore) {
+                            maxScore = scores[archetype];
+                            winningArchetypeKey = archetype;
+                        }
+                    }
+                    const result = quizData.results[winningArchetypeKey];
+                    const resultsContentDiv = document.getElementById('results-content');
+                    resultsContentDiv.innerHTML = `<p class="highlight" style="font-weight: 600; font-family: var(--font-body);">Your Creator Superpower is...</p><h1>${result.title}</h1><p>${result.description}</p><h4 style="font-size: 1.5rem; text-align: left; margin-top: 2rem;">Potential Brand Partners</h4><div class="quiz-results-brands">${result.brands.map(brand => `<div>${brand}</div>`).join('')}</div><h4 style="font-size: 1.5rem; text-align: left;">UGC Ad Formats You Could Make</h4><div>${result.formats.map(format => `<div class="quiz-results-format"><h5>${format.title}</h5><p style="color: var(--light-text); margin-bottom: 0;">${format.desc}</p></div>`).join('')}</div>`;
+                    introScreen.style.display = 'none';
+                    quizScreen.style.display = 'none';
+                    resultsScreen.style.display = 'block';
+                }
+
+                resetQuiz();
+                openModal();
+                startQuizBtn.addEventListener('click', () => {
+                    introScreen.style.display = 'none';
+                    quizScreen.style.display = 'block';
+                    showQuestion();
+                });
+                closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
+                getBlueprintBtn.addEventListener('click', () => {
+                    closeModal();
+                    window.location.href = '#offer';
+                });
+                emailForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const emailInput = document.getElementById('email-input');
+                    const submitButton = emailForm.querySelector('button[type="submit"]');
+                    const formConfirmation = document.getElementById('form-confirmation');
+                    const webhookURL = 'https://hook.us2.make.com/yj2b8yrcpd8124476ksg9g8n4idt1y83'; // Your webhook URL
+                    const resultData = quizData.results[winningArchetypeKey];
+                    const dataToSend = {
+                        email: emailInput.value,
+                        archetype: {
+                            title: resultData.title,
+                            description: resultData.description,
+                            brands: resultData.brands.join(', '),
+                            formats: resultData.formats.map(f => `${f.title}: ${f.desc}`).join('\n')
+                        }
+                    };
+                    submitButton.textContent = 'Sending...';
+                    submitButton.disabled = true;
+                    fetch(webhookURL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(dataToSend),
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            if(formConfirmation) formConfirmation.style.display = 'block';
+                        } else {
+                            alert('Something went wrong. Please try again.');
+                        }
+                        submitButton.textContent = 'Send My Results';
+                        submitButton.disabled = false;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Could not connect. Please try again.');
+                        submitButton.textContent = 'Send My Results';
+                        submitButton.disabled = false;
+                    });
+                });
+            });
+        }
+
+        // Guide Selection Modal Script
+        const guideModal = document.getElementById("guideModal");
+        const mensBtn = document.getElementById("mensGuide");
+        const womensBtn = document.getElementById("womensGuide");
+        if (guideModal && !sessionStorage.getItem('guideModalSeen')) {
+            guideModal.style.display = "flex";
+            sessionStorage.setItem('guideModalSeen', 'true');
+        }
+        if(mensBtn) mensBtn.addEventListener("click", function () { if(guideModal) guideModal.style.display = "none"; });
+        if(womensBtn) womensBtn.addEventListener("click", function () { window.location.href = "https://www.ismelihenriquez.com/theblueprint/herblueprint/"; });
     });
     </script>
 </body>
