@@ -18,11 +18,14 @@
             --primary-color: #ff4db8; /* Pink */
             --secondary-color: #c83dd4; /* Purple */
         }
+        /* General Highlight Color */
         .highlight,
         .faq-question.active,
-        .quiz-results-brands div {
+        .enlarge-text,
+        .card h3 { /* Targets the "Who it's for" headings */
             color: var(--primary-color);
         }
+        /* Button and Progress Bar Colors */
         .btn-primary,
         .quiz-progress-bar div,
         #womensGuide {
@@ -31,6 +34,7 @@
         .btn-primary:hover {
             background-color: var(--secondary-color);
         }
+        /* Secondary Button Style */
         .btn-secondary {
             background-color: white;
             color: var(--primary-color);
@@ -39,17 +43,29 @@
         .btn-secondary:hover {
             background-color: #fce4f4; /* Light pink */
         }
+        /* Step Counter Style */
         .step-number {
             background-color: #fce4f4;
             color: var(--primary-color);
             border: 2px solid var(--primary-color);
         }
+        /* Offer Box Border */
         .offer-box {
             border-color: var(--primary-color);
         }
+        /* Modal Popup Title */
         .modal-content h2 {
              color: var(--secondary-color);
         }
+        /* Pink Checklist Icons */
+        .checklist li::before {
+            filter: grayscale(1) brightness(0.5) sepia(1) hue-rotate(280deg) saturate(500%);
+        }
+        /* Pink FAQ Plus/Minus Icons */
+        .faq-question::after {
+            filter: grayscale(1) brightness(0.5) sepia(1) hue-rotate(280deg) saturate(500%);
+        }
+        /* Hover state for popup button */
         #womensGuide:hover {
             background-color: var(--secondary-color);
         }
@@ -70,9 +86,8 @@
         <div class="logo-container" data-aos="zoom-in"><a href="/" aria-label="Back to main site"><img src="https://github.com/ismelihenriquez/ismelihenriquez.github.io/blob/main/sheguide.png?raw=true" alt="Her Content Blueprint Logo"></a></div>
         <h1 data-aos="fade-up" data-aos-delay="100">Make <span class="highlight">$1K–$5K+/Month</span> Creating Simple Videos for Brands You Love</h1>
         <p class="subtitle" data-aos="fade-up" data-aos-delay="200">Learn how everyday women are making real money filming short videos from their phone — without a huge following or quitting their day job.</p>
-        <a href="https://buy.stripe.com/eVq6oHdqkaXU4oDbACfIs02" target="_blank" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Get The Blueprint Now</a>
-        <p class="deal-highlight" data-aos="fade-up" data-aos-delay="350">Special Offer: <span style="text-decoration: line-through;">$79</span> Just $49 Today!</p>
-    </header>
+        <a href="https://buy.stripe.com/eVq6oHdqkaXU4oDbACfIs02" target="_blank" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Get The Blueprint for $79</a>
+        </header>
 
     <main>
         <section class="section value-prop-section" data-aos="fade-up">
@@ -94,15 +109,20 @@
 
         <section class="section"><div class="container creator-section"><div class="creator-img" data-aos="fade-right"><img src="/me.jpg" alt="A photo of Ismeli, the course creator"></div><div class="creator-bio" data-aos="fade-left" data-aos-delay="100"><h2>👋 Hey, I'm Ismeli.<br>I'm Your Guide.</h2><p class="social-handle"><a href="https://www.instagram.com/ismelihenriquez" target="_blank">@ismelihenriquez</a></p><p>I’m an actress-turned-creator. For 5 years, I haven't worked a regular job. I get paid to make simple videos, and I work from anywhere. This guide is everything I wish I had when I started.</p></div></div></section>
         
-        <section class="section"><div class="container investment-section"><div class="investment-text" data-aos="fade-right"><h2>A Smarter Investment.</h2><p>This guide costs less than brunch with friends or a new skincare product. But unlike those, this is an investment in a skill that pays you back over and over again. It’s an investment in your financial freedom.</p></div><div class="receipt-image" data-aos="fade-left"><a href="#img7" class="lightbox-trigger" data-lightbox="img7"><img src="/receipt compare.jpg" alt="A receipt for over $70 for drinks compared to the $49 price of the guide."></a></div></div></section>
+        <section class="section investment-section" data-aos="fade-up">
+            <div class="container section-center">
+                <h2>A Smarter Investment.</h2>
+                <p style="font-size: 1.2rem; max-width: 700px; margin: 1rem auto;">This guide costs less than brunch with friends or a new skincare product. But unlike those, this is an investment in a skill that pays you back over and over again. It’s an investment in your financial freedom.</p>
+            </div>
+        </section>
         
         <section id="quiz-trigger" class="section quiz-trigger-section" data-aos="fade-up"><div class="container section-center"><h2>Find Your Creator Superpower</h2><p style="max-width: 600px; margin: 1rem auto;">Not sure where you'd fit in? Take our 60-second quiz to discover your unique UGC niche and the types of brands you could work with.</p><button id="manual-quiz-trigger" class="btn btn-secondary" style="margin-top: 1.5rem;">Take The Quiz Now</button></div></section>
         
-        <section id="offer" class="section offer-section"><div class="container"><div class="offer-box" data-aos="zoom-in"><h2>🎁 <span class="highlight">Limited Time</span> Offer</h2><p>Get the entire blueprint at the special launch price.</p><div class="price"><span class="original">$79</span>$49</div><a href="https://buy.stripe.com/eVq6oHdqkaXU4oDbACfIs02" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">Claim My Discount Now</a></div></div></section>
+        <section id="offer" class="section offer-section"><div class="container"><div class="offer-box" data-aos="zoom-in"><h2>🎁 Get <span class="highlight">Instant Access</span></h2><p>Get the entire blueprint and start your journey today.</p><div class="price">$79</div><a href="https://buy.stripe.com/eVq6oHdqkaXU4oDbACfIs02" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">Get The Guide Now</a></div></div></section>
         
         <section id="faq" class="section faq-section"><div class="container section-center"><h2 data-aos="fade-up">Frequently Asked <span class="highlight">Questions</span></h2><div class="faq-container" data-aos="fade-up" data-aos-delay="100"><div class="faq-item"><button class="faq-question">Do I need prior experience?</button><div class="faq-answer"><p>No. This guide is designed to walk you through every single step, from beginner to pro.</p></div></div><div class="faq-item"><button class="faq-question">Can I land deals with zero followers?</button><div class="faq-answer"><p>Yes. UGC doesn't rely on your followers. All you need is a portfolio, and this guide helps you build one from scratch.</p></div></div><div class="faq-item"><button class="faq-question">What kind of equipment do I need?</button><div class="faq-answer"><p>All you need to get started is a smartphone with a decent camera. No expensive equipment is necessary.</p></div></div><div class="faq-item"><button class="faq-question">How much time do I need?</button><div class="faq-answer"><p>That's entirely up to you. This is a flexible side hustle you can do in 5 hours a week or 20+.</p></div></div><div class="faq-item"><button class="faq-question">How long until I make money?</button><div class="faq-answer"><p>Many students land their first paid deal within 2-3 weeks of consistent effort.</p></div></div><div class="faq-item"><button class="faq-question">What if I don’t live in the U.S.?</button><div class="faq-answer"><p>UGC is a global need. The guide teaches you how to work with brands in any country, including a hack for working with tech and digital companies that don't require shipping physical products.</p></div></div><div class="faq-item"><button class="faq-question">Does the guide include templates?</button><div class="faq-answer"><p>Yes, the guide comes with portfolio and email templates, but more importantly, it teaches you the *formula* behind a great pitch so you can craft your own unique emails that stand out.</p></div></div><div class="faq-item"><button class="faq-question">How will I access the guide?</button><div class="faq-answer"><p>You will receive an email with a link to download the guide as a PDF immediately after your purchase is complete. It's yours to keep forever.</p></div></div><div class="faq-item"><button class="faq-question">Are there any extra costs?</button><div class="faq-answer"><p>No. The price of the guide is a one-time charge. The guide recommends optional tools if you want to upgrade your quality later, but it provides free alternatives for everything.</p></div></div><div class="faq-item"><button class="faq-question">What support is available?</button><div class="faq-answer"><p>The guide is very in-depth, but if you have questions, you can always reach out via email or Instagram DM. One-on-one coaching calls are also available to book.</p></div></div><div class="faq-item"><button class="faq-question">Do you offer refunds?</button><div class="faq-answer"><p>Due to the instant access nature of the guide, we cannot offer refunds. Thanks for your understanding!</p></div></div></div></div></section>
         
-        <section class="section"><div class="container section-center" style="max-width: 800px; margin: auto;"><h2 data-aos="fade-up">Don’t Wait for the "Perfect" Time.</h2><p data-aos="fade-up" data-aos-delay="100">You don't need to be perfect. You just need to start. This is your sign to bet on yourself. Start small. Start now. Grow fast.</p><a href="https://buy.stripe.com/eVq6oHdqkaXU4oDbACfIs02" target="_blank" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200">This is my Blueprint. Let's Go.</a></div></section>
+        <section class="section"><div class="container section-center" style="max-width: 800px; margin: auto;"><h2 data-aos="fade-up">Don’t Wait for the "Perfect" Time.</h2><p data-aos="fade-up" data-aos-delay="100">You don't need to be perfect. You just need to start. This is your sign to bet on yourself. Start small. Start now. Grow fast.</p><a href="https://buy.stripe.com/eVq6oHdqkaXU4oDbACfIs02" target="_blank" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200">Get The Blueprint for $79</a></div></section>
     </main>
     
     <section class="section coming-soon-section"><div class="container section-center"><h3>P.S. A guide for men is also available!</h3></div></section>
@@ -160,17 +180,14 @@
     document.addEventListener('DOMContentLoaded', () => {
         AOS.init({ duration: 800, once: true });
         
-        // --- LIGHTBOX SCRIPT ---
         const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
         lightboxTriggers.forEach(trigger => { trigger.addEventListener('click', (e) => { e.preventDefault(); const lightboxId = trigger.getAttribute('data-lightbox'); const lightbox = document.getElementById(lightboxId); if (lightbox) { lightbox.classList.add('active'); } }); });
         const lightboxClosers = document.querySelectorAll('.lightbox .close, .lightbox .close-bg');
         lightboxClosers.forEach(closer => { closer.addEventListener('click', (e) => { e.preventDefault(); const lightbox = closer.closest('.lightbox'); if (lightbox) { lightbox.classList.remove('active'); } }); });
 
-        // --- FAQ SCRIPT ---
         const faqQuestions = document.querySelectorAll('.faq-question');
         faqQuestions.forEach(question => { question.addEventListener('click', () => { const answer = question.nextElementSibling; question.classList.toggle('active'); if (question.classList.contains('active')) { answer.style.maxHeight = answer.scrollHeight + 'px'; } else { answer.style.maxHeight = 0; } }); });
 
-        // --- NEW: QUIZ SCRIPT FOR WOMEN ---
         const quizData = {
             questions: [
                 { text: "What's your ideal Saturday afternoon?", answers: [{ text: "Trying a new recipe or a DIY home project.", archetypes: ["homebodyCreative"] }, { text: "A workout class followed by a healthy brunch.", archetypes: ["wellnessGuru"] }, { text: "Shopping for the perfect outfit or trying new makeup looks.", archetypes: ["glamExpert"] }, { text: "Organizing my schedule and setting goals for the week ahead.", archetypes: ["careerProfessional", "savvyMom"] }] },
@@ -248,15 +265,12 @@
     const mensBtn = document.getElementById("mensGuide");
     const womensBtn = document.getElementById("womensGuide");
 
-    // Show modal on page load
     modal.style.display = "flex";
 
-    // Redirect to Men's Guide
     mensBtn.addEventListener("click", function () {
       window.location.href = "https://www.ismelihenriquez.com/theblueprint/";
     });
 
-    // Close modal on this page
     womensBtn.addEventListener("click", function () {
       modal.style.display = "none";
     });
