@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Blueprint for Men - Ismeli Henriquez</title>
 
-    <!-- External Libraries -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -14,13 +13,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LY2QNK2MLC"></script>
     <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LY2QNK2MLC'); </script>
 
-    <!-- Favicons -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Masculine Light Theme Styles -->
     <style>
         :root {
             --primary-blue: #007BFF;
@@ -173,7 +170,6 @@
             gap: 30px;
             margin-top: 40px;
         }
-        /* ✅ ADDED: Pop of color for these specific cards */
         .how-it-works-grid .card {
             background-color: #e7f3ff;
             border-color: #cce4ff;
@@ -196,7 +192,6 @@
             overflow: hidden;
             position: relative;
             width: 100%;
-            /* ✅ UPDATED: Toned down gradient */
             -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
             mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
         }
@@ -316,13 +311,11 @@
 
         /* Quiz Modal Styles */
         .quiz-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.7);
             z-index: 2000;
             display: none;
-            justify-content: center;
-            align-items: center;
+            justify-content: center; align-items: center;
             padding: 20px;
         }
         .quiz-overlay.active { display: flex; }
@@ -350,6 +343,30 @@
             border-color: var(--primary-blue);
             color: var(--primary-blue);
         }
+        
+        /* ✅ ADDED: Styles for the new results + email section */
+        .quiz-results-brands {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 10px; margin: 20px 0;
+        }
+        .quiz-results-brands div {
+            background: #e7f3ff;
+            color: var(--primary-blue);
+            padding: 5px 12px; border-radius: 20px;
+            font-size: 0.9rem; font-weight: 600;
+        }
+        .quiz-results-format {
+            text-align: left; background: #f8f9fa;
+            padding: 15px; border-radius: 8px; margin-bottom: 10px;
+        }
+        .quiz-email-capture {
+            margin-top: 30px; padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+        }
+        .quiz-email-capture input {
+            width: 100%; padding: 12px; border-radius: 8px;
+            border: 1px solid #ccc; margin-bottom: 10px;
+        }
 
         @media (max-width: 768px) {
             .checklist { grid-template-columns: 1fr; }
@@ -360,7 +377,6 @@
     </style>
 </head>
 <body>
-    <!-- ✅ UPDATED: FAQ link added -->
     <nav class="lp-nav">
         <a href="#testimonials">Results</a>
         <a href="#ugc-explained">What is UGC?</a>
@@ -388,7 +404,6 @@
             </div>
             <div class="testimonial-slider">
                 <div class="testimonial-slider-track">
-                    <!-- Assuming same testimonials, add more if you have them -->
                     <div class="testimonial-slide"><img src="/testimonial1.PNG" alt="Testimonial 1"></div>
                     <div class="testimonial-slide"><img src="/testimonial2.PNG" alt="Testimonial 2"></div>
                     <div class="testimonial-slide"><img src="/testimonial3.jpg" alt="Testimonial 3"></div>
@@ -398,7 +413,6 @@
                     <div class="testimonial-slide"><img src="/testimonialnew (4).JPEG" alt="New Testimonial 4"></div>
                     <div class="testimonial-slide"><img src="/testimonialnew (5).JPEG" alt="New Testimonial 5"></div>
                     <div class="testimonial-slide"><img src="/testimonialnew (6).JPEG" alt="New Testimonial 6"></div>
-                    <!-- Duplicate set for seamless loop -->
                     <div class="testimonial-slide"><img src="/testimonial1.PNG" alt="Testimonial 1"></div>
                     <div class="testimonial-slide"><img src="/testimonial2.PNG" alt="Testimonial 2"></div>
                     <div class="testimonial-slide"><img src="/testimonial3.jpg" alt="Testimonial 3"></div>
@@ -411,7 +425,6 @@
                 </div>
             </div>
         </section>
-
         <section id="ugc-explained" class="section">
             <div class="section-center">
                 <h2 data-aos="fade-up">What is UGC? (And Why It's a Goldmine for Men)</h2>
@@ -438,7 +451,6 @@
                 </div>
             </div>
         </section>
-
         <section id="how-it-works" class="section" style="padding-top: 0;">
             <div class="section-center">
                 <h2 data-aos="fade-up">The 3-Step System to Getting Paid</h2>
@@ -462,7 +474,6 @@
                 </div>
             </div>
         </section>
-        
         <section id="who-its-for" class="section">
             <div class="section-center">
                 <h2 data-aos="fade-up">This Blueprint is For <span class="highlight">Men Like You.</span></h2>
@@ -483,13 +494,11 @@
                 </div>
             </div>
         </section>
-
         <section class="section" style="padding-top: 0; padding-bottom: 40px;">
             <div class="section-center" data-aos="fade-up">
                 <a href="#offer" class="btn btn-primary">Let's Do This. Get The Guide.</a>
             </div>
         </section>
-        
         <section id="features" class="section">
             <div class="section-center">
                 <h2 data-aos="fade-up">The Complete Playbook from <span class="highlight">Zero to Paid Creator</span></h2>
@@ -510,7 +519,6 @@
                 <li>How to build a personal brand (if you want)</li>
             </ul>
         </section>
-
         <section id="community" class="section">
             <div class="instagram-section" data-aos="zoom-in">
                 <h2>Join The Community 🛠️</h2>
@@ -518,14 +526,12 @@
                 <a href="https://www.instagram.com/the_contentblueprint/" target="_blank" class="btn">Follow @the_contentblueprint</a>
             </div>
         </section>
-        
         <section class="section">
             <div class="section-center" data-aos="fade-up">
                 <h2>Your Time Is Worth More Than $79.</h2>
                 <p style="font-size: 1.2rem; max-width: 600px; margin: 1rem auto; color: var(--light-text);">You can spend months trying to figure this out alone, or you can invest in a proven system that gets you paid, faster. The choice is simple.</p>
             </div>
         </section>
-        
         <section id="quiz-trigger" class="section" style="background: white; padding: 80px 0; border-radius: 20px;">
             <div class="section-center" data-aos="fade-up">
                 <h2>Find Your <span class="highlight">Creator Superpower</span></h2>
@@ -533,23 +539,20 @@
                 <button id="manual-quiz-trigger" class="btn btn-secondary" style="margin-top: 1.5rem;">Take The Quiz Now</button>
             </div>
         </section>
-        
         <section id="offer" class="section">
             <div class="offer-box section-center" data-aos="zoom-in">
                 <h2>Get <span class="highlight">Instant Access</span> to The Blueprint</h2>
                 <p style="color: var(--light-text);">Stop wasting time. Start earning. Get the entire playbook today.</p>
                 <div class="price">$79</div>
-                <!-- ✅ UPDATED: Payment Link -->
                 <a href="https://buy.stripe.com/9B628rfys5DA3kzawyfIs00" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">Yes, I Want The Blueprint!</a>
             </div>
         </section>
-        
         <section id="faq" class="section">
             <div class="section-center">
                 <h2 data-aos="fade-up">Your Questions, <span class="highlight">Answered</span></h2>
             </div>
             <div class="faq-container" data-aos="fade-up" data-aos-delay="100">
-                 <div class="faq-item"><button class="faq-question">Do I need prior experience?</button><div class="faq-answer"><p>No. This guide is designed to walk you through every single step, from beginner to pro.</p></div></div>
+                <div class="faq-item"><button class="faq-question">Do I need prior experience?</button><div class="faq-answer"><p>No. This guide is designed to walk you through every single step, from beginner to pro.</p></div></div>
                 <div class="faq-item"><button class="faq-question">Can I land deals with zero followers?</button><div class="faq-answer"><p>Yes. UGC doesn't rely on your followers. All you need is a portfolio, and this guide helps you build one from scratch.</p></div></div>
                 <div class="faq-item"><button class="faq-question">What kind of equipment do I need?</button><div class="faq-answer"><p>All you need to get started is a smartphone with a decent camera. No expensive equipment is necessary.</p></div></div>
                 <div class="faq-item"><button class="faq-question">How much time do I need?</button><div class="faq-answer"><p>That's entirely up to you. This is a flexible side hustle you can do in 5 hours a week or 20+.</p></div></div>
@@ -558,24 +561,20 @@
                 <div class="faq-item"><button class="faq-question">Do you offer refunds?</button><div class="faq-answer"><p>Due to the instant access nature of the digital guide, we cannot offer refunds. Thanks for your understanding!</p></div></div>
             </div>
         </section>
-
         <section id="for-women" class="section">
             <div class="section-center" data-aos="fade-up">
                 <h2>Looking for the Women's Guide?</h2>
                 <p style="max-width: 600px; margin: 1rem auto; color: var(--light-text);">I also created a blueprint specifically for women, tailored to their unique strengths and the brands that want to work with them.</p>
-                <a href="https://www.ismelihenriquez.com/theblueprint/herblueprint/" target="_blank" class="btn btn-secondary" style="margin-top: 1.5rem; border-color: #ff4db8; color: #ff4db8;">View Her Blueprint</a>
+                <a href="https://www.ismelihenriquez.com/her-content-blueprint/" target="_blank" class="btn btn-secondary" style="margin-top: 1.5rem; border-color: #ff4db8; color: #ff4db8;">View Her Blueprint</a>
             </div>
         </section>
-
     </main>
     
     <footer style="text-align: center; padding: 40px 20px; color: var(--light-text);">
         <p>© 2025 Ismeli Henriquez. All Rights Reserved.</p>
     </footer>
 
-    <div class="quiz-overlay" id="quiz-modal-overlay">
-        <!-- Quiz HTML will be populated by JS -->
-    </div>
+    <div class="quiz-overlay" id="quiz-modal-overlay"></div>
 
     <div id="guideModal" class="modal">
       <div class="modal-content">
@@ -596,10 +595,24 @@
         const faqQuestions = document.querySelectorAll('.faq-question');
         faqQuestions.forEach(question => { question.addEventListener('click', () => { const answer = question.nextElementSibling; question.classList.toggle('active'); if (question.classList.contains('active')) { answer.style.maxHeight = answer.scrollHeight + 'px'; } else { answer.style.maxHeight = 0; } }); });
 
-        // Men's Quiz Script
+        // ✅ OVERHAULED: Men's Quiz Script - Now with full results and email capture
         const quizData = {
-            questions: [ { text: "What does your typical workday look like?", answers: [{ text: "In the field or on a job site, working with my hands.", archetypes: ["skilledTradesman"] },{ text: "In an office, in meetings, or working with clients.", archetypes: ["modernProfessional"] },{ text: "Behind a screen, focusing on tech, gaming, or creative work.", archetypes: ["techEnthusiast"] },{ text: "In a gym, on the field, or focused on physical activity.", archetypes: ["fitnessArchitect"] }, ] }, { text: "How do you typically spend your Saturday?", answers: [{ text: "Outdoors—hiking, camping, fishing, or working in the yard.", archetypes: ["outdoorAdventurer", "skilledTradesman"] },{ text: "Out on the town—at a nice restaurant, a sporting event, or a social gathering.", archetypes: ["modernGentleman", "modernProfessional"] },{ text: "At home—tackling a DIY project or trying out a new recipe.", archetypes: ["skilledTradesman"] },{ text: "On an adventure—a road trip, exploring a new city, or trying something new.", archetypes: ["outdoorAdventurer"] }, ] }, { text: "When you buy a new product, what's your main priority?", answers: [{ text: "Durability & Power—It has to be tough and get the job done right.", archetypes: ["skilledTradesman", "outdoorAdventurer"] },{ text: "Performance & Technology—I want the latest features and best performance.", archetypes: ["techEnthusiast", "modernProfessional"] },{ text: "Quality & Style—I appreciate great design, craftsmanship, and a premium feel.", archetypes: ["modernGentleman"] },{ text: "Health & Wellness—How it contributes to my fitness and well-being goals.", archetypes: ["fitnessArchitect"] }, ] }, { text: "What's your personal style on the weekend?", answers: [{ text: "Functional & Rugged (e.g., Carhartt, work boots, heavy-duty gear)", archetypes: ["skilledTradesman", "outdoorAdventurer"] },{ text: "Sharp & Sophisticated (e.g., blazers, quality denim, leather shoes)", archetypes: ["modernGentleman", "modernProfessional"] },{ text: "Comfortable & Casual (e.g., hoodies, jeans, sneakers)", archetypes: [] },{ text: "Athletic & Sporty (e.g., Nike, Under Armour, joggers)", archetypes: ["fitnessArchitect"] }, ] }, { text: "Pick a topic you're the 'go-to' guy for among your friends:", answers: [{ text: "Cars, tools, and how things work.", archetypes: ["skilledTradesman"] },{ text: "The latest gadgets, computers, or games.", archetypes: ["techEnthusiast"] },{ text: "Fitness routines and nutrition advice.", archetypes: ["fitnessArchitect"] },{ text: "The best restaurants, style tips, or travel spots.", archetypes: ["modernGentleman"] }, ] }, { text: "If a brand asked you to make a video, what format feels most natural?", answers: [{ text: "A straightforward demo showing exactly how the product works.", archetypes: ["skilledTradesman", "techEnthusiast"] },{ text: "An honest testimonial talking about my experience with the product.", archetypes: ["fitnessArchitect", "modernProfessional"] },{ text: "An aesthetic video showing the product in a cool setting.", archetypes: ["modernGentleman", "outdoorAdventurer"] },{ text: "A problem/solution video showing how the product made my life easier.", archetypes: [] }, ] } ],
-            results: { skilledTradesman: { title: "The Skilled Tradesman", description: "You value power, durability, and getting the job done right. Brands in the tool, automotive, and workwear spaces need authentic content from real experts like you.", brands: ["DeWalt", "Milwaukee", "Carhartt", "Ford", "Home Depot"] }, modernProfessional: { title: "The Modern Professional", description: "You navigate the corporate world with a focus on efficiency, productivity, and professional image. Brands need content that shows how their products fit into the busy life of a successful person like you.", brands: ["Dell", "Samsonite", "Brooks Brothers", "Microsoft", "Starbucks"] }, techEnthusiast: { title: "The Tech Enthusiast", description: "You live on the cutting edge of technology, from gaming to smart homes. Brands need creators like you to generate excitement and show off the cool-factor of their latest products.", brands: ["Samsung", "Sony", "Logitech", "Apple", "Bose"] }, outdoorAdventurer: { title: "The Outdoor Adventurer", description: "You thrive in the great outdoors and rely on gear that can handle the elements. Brands in the outdoor, travel, and automotive industries need creators to capture their products facing real-world tests.", brands: ["The North Face", "YETI", "GoPro", "Jeep", "Columbia"] }, fitnessArchitect: { title: "The Fitness Architect", description: "Your life is built around health, wellness, and pushing physical limits. Nutrition, apparel, and tech brands need authentic content from people who genuinely use their products to achieve their fitness goals.", brands: ["Nike", "Under Armour", "Gatorade", "Optimum Nutrition", "Fitbit"] }, modernGentleman: { title: "The Modern Gentleman", description: "You have an eye for quality, style, and the finer details. Premium lifestyle, fashion, and grooming brands need content that captures the aspirational and high-quality nature of their products.", brands: ["Ralph Lauren", "Johnnie Walker", "Kiehl's", "Nespresso", "Tissot"] } }
+            questions: [
+                { text: "What does your typical workday look like?", answers: [{ text: "In the field or on a job site, working with my hands.", archetypes: ["skilledTradesman"] },{ text: "In an office, in meetings, or working with clients.", archetypes: ["modernProfessional"] },{ text: "Behind a screen, focusing on tech, gaming, or creative work.", archetypes: ["techEnthusiast"] },{ text: "In a gym, on the field, or focused on physical activity.", archetypes: ["fitnessArchitect"] }] },
+                { text: "How do you typically spend your Saturday?", answers: [{ text: "Outdoors—hiking, camping, fishing, or working in the yard.", archetypes: ["outdoorAdventurer", "skilledTradesman"] },{ text: "Out on the town—at a nice restaurant, a sporting event, or a social gathering.", archetypes: ["modernGentleman", "modernProfessional"] },{ text: "At home—tackling a DIY project or trying out a new recipe.", archetypes: ["skilledTradesman"] },{ text: "On an adventure—a road trip, exploring a new city, or trying something new.", archetypes: ["outdoorAdventurer"] }] },
+                { text: "When you buy a new product, what's your main priority?", answers: [{ text: "Durability & Power—It has to be tough and get the job done right.", archetypes: ["skilledTradesman", "outdoorAdventurer"] },{ text: "Performance & Technology—I want the latest features and best performance.", archetypes: ["techEnthusiast", "modernProfessional"] },{ text: "Quality & Style—I appreciate great design, craftsmanship, and a premium feel.", archetypes: ["modernGentleman"] },{ text: "Health & Wellness—How it contributes to my fitness and well-being goals.", archetypes: ["fitnessArchitect"] }] },
+                { text: "What's your personal style on the weekend?", answers: [{ text: "Functional & Rugged (e.g., Carhartt, work boots, heavy-duty gear)", archetypes: ["skilledTradesman", "outdoorAdventurer"] },{ text: "Sharp & Sophisticated (e.g., blazers, quality denim, leather shoes)", archetypes: ["modernGentleman", "modernProfessional"] },{ text: "Comfortable & Casual (e.g., hoodies, jeans, sneakers)", archetypes: [] },{ text: "Athletic & Sporty (e.g., Nike, Under Armour, joggers)", archetypes: ["fitnessArchitect"] }] },
+                { text: "Pick a topic you're the 'go-to' guy for among your friends:", answers: [{ text: "Cars, tools, and how things work.", archetypes: ["skilledTradesman"] },{ text: "The latest gadgets, computers, or games.", archetypes: ["techEnthusiast"] },{ text: "Fitness routines and nutrition advice.", archetypes: ["fitnessArchitect"] },{ text: "The best restaurants, style tips, or travel spots.", archetypes: ["modernGentleman"] }] },
+                { text: "If a brand asked you to make a video, what format feels most natural?", answers: [{ text: "A straightforward demo showing exactly how the product works.", archetypes: ["skilledTradesman", "techEnthusiast"] },{ text: "An honest testimonial talking about my experience with the product.", archetypes: ["fitnessArchitect", "modernProfessional"] },{ text: "An aesthetic video showing the product in a cool setting.", archetypes: ["modernGentleman", "outdoorAdventurer"] },{ text: "A problem/solution video showing how the product made my life easier.", archetypes: [] }] }
+            ],
+            results: {
+                skilledTradesman: { title: "The Skilled Tradesman", description: "You value power, durability, and getting the job done right. Brands in the tool, automotive, and workwear spaces need authentic content from real experts like you.", brands: ["DeWalt", "Milwaukee", "Carhartt", "Ford", "Home Depot"], formats: [{title: "Tool Torture Test", desc: "Show the tool handling a tough, real-world job."}, {title: "Workshop Walkthrough", desc: "Show how the product fits into your daily workflow."}, {title: "No-BS Review", desc: "A straight-to-camera review giving your honest take."}]},
+                modernProfessional: { title: "The Modern Professional", description: "You navigate the corporate world with a focus on efficiency, productivity, and professional image. Brands need content that shows how their products fit into the busy life of a successful person like you.", brands: ["Dell", "Samsonite", "Brooks Brothers", "Microsoft", "Starbucks"], formats: [{title: "A Day in the Life", desc: "Show how the product helps you through a busy workday."}, {title: "Productivity Hack", desc: "A quick video showing how the product saves you time."}, {title: "What's In My Briefcase", desc: "An unboxing-style video of your work essentials."}]},
+                techEnthusiast: { title: "The Tech Enthusiast", description: "You live on the cutting edge of technology, from gaming to smart homes. Brands need creators like you to generate excitement and show off the cool-factor of their latest products.", brands: ["Samsung", "Sony", "Logitech", "Apple", "Bose"], formats: [{title: "Unboxing & First Look", desc: "Your genuine reaction and first thoughts on a new gadget."}, {title: "Setup Tour", desc: "Show how the tech fits into your gaming or desk setup."}, {title: "Feature Deep-Dive", desc: "A quick tutorial on a specific, cool feature."}]},
+                outdoorAdventurer: { title: "The Outdoor Adventurer", description: "You thrive in the great outdoors and rely on gear that can handle the elements. Brands in the outdoor, travel, and automotive industries need creators to capture their products facing real-world tests.", brands: ["The North Face", "YETI", "GoPro", "Jeep", "Columbia"], formats: [{title: "In-the-Wild Test", desc: "Show the product being used on a real adventure."}, {title: "Gear Loadout", desc: "A video showing all the gear you're packing for a trip."}, {title: "Cinematic Product Shot", desc: "An aesthetic video of the product in a beautiful landscape."}]},
+                fitnessArchitect: { title: "The Fitness Architect", description: "Your life is built around health, wellness, and pushing physical limits. Nutrition, apparel, and tech brands need authentic content from people who genuinely use their products to achieve their fitness goals.", brands: ["Nike", "Under Armour", "Gatorade", "Optimum Nutrition", "Fitbit"], formats: [{title: "Workout Demo", desc: "Show yourself using the product during an actual workout."}, {title: "Post-Workout Review", desc: "A genuine testimonial about how the product helps your performance."}, {title: "Daily Routine", desc: "Show how a supplement or product fits into your nutrition plan."}]},
+                modernGentleman: { title: "The Modern Gentleman", description: "You have an eye for quality, style, and the finer details. Premium lifestyle, fashion, and grooming brands need content that captures the aspirational and high-quality nature of their products.", brands: ["Ralph Lauren", "Johnnie Walker", "Kiehl's", "Nespresso", "Tissot"], formats: [{title: "Get Ready With Me (GRWM)", desc: "Show how you use a grooming or fashion product to create your look."}, {title: "Aesthetic Product Video", desc: "A stylish, slow-motion video focusing on product details."}, {title: "Experience Video", desc: "Show yourself enjoying a premium product, like a coffee or spirit."}]}
+            }
         };
         
         const quizOverlay = document.getElementById('quiz-modal-overlay');
@@ -607,7 +620,7 @@
 
         if(manualQuizTrigger) {
             manualQuizTrigger.addEventListener('click', () => {
-                // Quiz HTML Structure
+                // Dynamically create the quiz HTML inside the overlay
                 quizOverlay.innerHTML = `
                     <div class="quiz-modal" id="intro-screen">
                         <button class="quiz-close-btn">×</button>
@@ -618,7 +631,7 @@
                         </div>
                     </div>
                     <div class="quiz-modal" id="quiz-screen" style="display: none;">
-                         <button class="quiz-close-btn">×</button>
+                        <button class="quiz-close-btn">×</button>
                         <div class="quiz-modal-inner">
                             <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
                                 <h3 id="question-counter" style="margin-bottom: 0; font-family: 'Poppins', sans-serif; font-size: 1.2rem;"></h3>
@@ -629,7 +642,7 @@
                         </div>
                     </div>
                     <div class="quiz-modal" id="results-screen" style="display: none;">
-                         <button class="quiz-close-btn">×</button>
+                        <button class="quiz-close-btn">×</button>
                         <div class="quiz-modal-inner">
                             <div id="results-content" style="text-align: center;"></div>
                             <div style="text-align: center; margin-top: 2rem;">
@@ -637,30 +650,45 @@
                                 <p style="color: var(--light-text); margin-top: 0.5rem; margin-bottom: 1.5rem;">Now that you know your creator type, The Blueprint has everything you need to turn it into a profitable side hustle.</p>
                                 <button id="get-blueprint-btn" class="btn btn-primary">Get The Blueprint Guide</button>
                             </div>
+                            <div class="quiz-email-capture">
+                                <h4 style="font-size: 1.5rem;">Get Your Full Results</h4>
+                                <p style="color: var(--light-text); margin-top: 0.5rem; margin-bottom: 1rem;">Enter your email to get your personalized results sent to your inbox.</p>
+                                <form id="email-form"><input type="email" id="email-input" placeholder="Enter Your Email Address" required><button type="submit" class="btn btn-primary">Send My Results</button></form>
+                                <p id="form-confirmation" style="color: #22c55e; font-weight: 600; margin-top: 1rem; display: none;">Got it! Your results are on their way.</p>
+                            </div>
                         </div>
                     </div>
                 `;
                 
+                // Define elements now that they exist in the DOM
                 const introScreen = document.getElementById('intro-screen');
                 const quizScreen = document.getElementById('quiz-screen');
                 const resultsScreen = document.getElementById('results-screen');
                 const startQuizBtn = document.getElementById('start-quiz-btn');
                 const getBlueprintBtn = document.getElementById('get-blueprint-btn');
+                const emailForm = document.getElementById('email-form');
                 const closeBtns = quizOverlay.querySelectorAll('.quiz-close-btn');
 
                 let currentQuestionIndex = 0;
                 let scores = {};
-                let winningArchetypeKey;
+                let winningArchetypeResult = {};
 
                 function openModal() { quizOverlay.classList.add('active'); }
                 function closeModal() { quizOverlay.classList.remove('active'); }
+                
                 function resetQuiz() {
                     currentQuestionIndex = 0;
                     scores = { skilledTradesman: 0, modernProfessional: 0, techEnthusiast: 0, outdoorAdventurer: 0, fitnessArchitect: 0, modernGentleman: 0 };
+                    winningArchetypeResult = {};
+                    const formConfirmation = document.getElementById('form-confirmation');
+                    const emailInput = document.getElementById('email-input');
+                    if(formConfirmation) formConfirmation.style.display = 'none';
+                    if(emailInput) emailInput.value = '';
                     introScreen.style.display = 'block';
                     resultsScreen.style.display = 'none';
                     quizScreen.style.display = 'none';
                 }
+
                 function showQuestion() {
                     const question = quizData.questions[currentQuestionIndex];
                     const totalQuestions = quizData.questions.length;
@@ -677,42 +705,90 @@
                         answerOptionsDiv.appendChild(button);
                     });
                 }
+
                 function selectAnswer(archetypes) {
-                    archetypes.forEach(archetype => {
-                        if (scores.hasOwnProperty(archetype)) { scores[archetype]++; }
-                    });
+                    archetypes.forEach(archetype => { if (scores.hasOwnProperty(archetype)) { scores[archetype]++; } });
                     currentQuestionIndex++;
                     if (currentQuestionIndex < quizData.questions.length) { showQuestion(); } else { showResults(); }
                 }
+
                 function showResults() {
                     let maxScore = -1;
-                    winningArchetypeKey = 'modernGentleman'; // default
-                    for (const archetype in scores) {
-                        if (scores[archetype] > maxScore) {
-                            maxScore = scores[archetype];
-                            winningArchetypeKey = archetype;
-                        }
-                    }
+                    let winningArchetypeKey = 'modernGentleman'; // default
+                    for (const archetype in scores) { if (scores[archetype] > maxScore) { maxScore = scores[archetype]; winningArchetypeKey = archetype; } }
+                    
                     const result = quizData.results[winningArchetypeKey];
+                    winningArchetypeResult = result; // Store result for email form
+                    
                     const resultsContentDiv = document.getElementById('results-content');
-                    resultsContentDiv.innerHTML = `<p class="highlight" style="font-weight: 600; font-family: var(--font-body);">Your Creator Superpower is...</p><h1>${result.title}</h1><p>${result.description}</p><h4 style="font-size: 1.5rem; text-align: left; margin-top: 2rem;">Potential Brand Partners</h4><div class="quiz-results-brands" style="justify-content:center; gap:10px; display:flex; flex-wrap:wrap;">${result.brands.map(brand => `<div>${brand}</div>`).join('')}</div>`;
+                    // ✅ FIXED: Updated to show the full results including formats
+                    resultsContentDiv.innerHTML = `
+                        <p class="highlight" style="font-weight: 600; font-family: var(--font-body);">Your Creator Superpower is...</p>
+                        <h1>${result.title}</h1>
+                        <p>${result.description}</p>
+                        <h4 style="font-size: 1.5rem; text-align: left; margin-top: 2rem;">Potential Brand Partners</h4>
+                        <div class="quiz-results-brands">${result.brands.map(brand => `<div>${brand}</div>`).join('')}</div>
+                        <h4 style="font-size: 1.5rem; text-align: left;">UGC Ad Formats You Could Make</h4>
+                        <div>${result.formats.map(format => `<div class="quiz-results-format"><h5>${format.title}</h5><p style="color: var(--light-text); margin-bottom: 0;">${format.desc}</p></div>`).join('')}</div>
+                    `;
+                    
                     introScreen.style.display = 'none';
                     quizScreen.style.display = 'none';
                     resultsScreen.style.display = 'block';
                 }
 
+                // Logic for email form submission
+                if(emailForm) {
+                    emailForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        // --- PASTE YOUR NEW MAKE.COM WEBHOOK URL FOR THE MEN'S QUIZ HERE ---
+                        const webhookUrl = 'https://hook.us2.make.com/wtrk4trve3q3ag8x525dkg6cwfcntba5';
+                        // -------------------------------------------------------------------
+                        
+                        if (webhookUrl.includes('PASTE_YOUR')) { alert('Please update the webhook URL in the script first!'); return; }
+
+                        const form = e.target;
+                        const email = form.querySelector('#email-input').value;
+                        const formConfirmation = document.getElementById('form-confirmation');
+                        const submitButton = form.querySelector('button[type="submit"]');
+
+                        const dataToSend = {
+                            email: email,
+                            quizResultTitle: winningArchetypeResult.title,
+                            quizResultDescription: winningArchetypeResult.description,
+                            source: "The Blueprint for Men Quiz"
+                        };
+
+                        submitButton.disabled = true;
+                        submitButton.textContent = 'Sending...';
+
+                        fetch(webhookUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(dataToSend),
+                        }).then(response => {
+                            if (response.ok) {
+                                if(formConfirmation) formConfirmation.style.display = 'block';
+                                form.reset();
+                            } else {
+                                alert("Oops! There was a problem sending your results. Please try again.");
+                            }
+                        }).catch(error => {
+                            console.error('Webhook submission error:', error);
+                            alert("Oops! There was a problem sending your results. Please try again.");
+                        }).finally(() => {
+                            submitButton.disabled = false;
+                            submitButton.textContent = 'Send My Results';
+                        });
+                    });
+                }
+                
+                // Initial setup and event listeners
                 resetQuiz();
                 openModal();
-                startQuizBtn.addEventListener('click', () => {
-                    introScreen.style.display = 'none';
-                    quizScreen.style.display = 'block';
-                    showQuestion();
-                });
+                startQuizBtn.addEventListener('click', () => { introScreen.style.display = 'none'; quizScreen.style.display = 'block'; showQuestion(); });
                 closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
-                getBlueprintBtn.addEventListener('click', () => {
-                    closeModal();
-                    window.location.href = '#offer';
-                });
+                getBlueprintBtn.addEventListener('click', () => { closeModal(); window.location.href = '#offer'; });
             });
         }
 
@@ -725,7 +801,7 @@
             sessionStorage.setItem('guideModalSeen', 'true');
         }
         if(mensBtn) mensBtn.addEventListener("click", function () { if(guideModal) guideModal.style.display = "none"; });
-        if(womensBtn) womensBtn.addEventListener("click", function () { window.location.href = "https://www.ismelihenriquez.com/theblueprint/herblueprint/"; });
+        if(womensBtn) womensBtn.addEventListener("click", function () { window.location.href = "https://www.ismelihenriquez.com/her-content-blueprint/"; });
     });
     </script>
 </body>
