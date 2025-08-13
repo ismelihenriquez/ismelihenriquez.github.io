@@ -690,7 +690,7 @@
         const faqQuestions = document.querySelectorAll('.faq-question');
         faqQuestions.forEach(question => { question.addEventListener('click', () => { const answer = question.nextElementSibling; question.classList.toggle('active'); if (question.classList.contains('active')) { answer.style.maxHeight = answer.scrollHeight + 'px'; } else { answer.style.maxHeight = 0; } }); });
 
-        // ✅ ADDED: Full Quiz Script
+        // ✅ FINAL SCRIPT: Full Quiz Logic with Your Make.com Webhook
         const quizData = {
             questions: [
                 { text: "What's your ideal Saturday afternoon?", answers: [{ text: "Trying a new recipe or a DIY home project.", archetypes: ["homebodyCreative"] }, { text: "A workout class followed by a healthy brunch.", archetypes: ["wellnessGuru"] }, { text: "Shopping for the perfect outfit or trying new makeup looks.", archetypes: ["glamExpert"] }, { text: "Organizing my schedule and setting goals for the week ahead.", archetypes: ["careerProfessional", "savvyMom"] }] },
@@ -713,6 +713,7 @@
         const quizScreen = document.getElementById('quiz-screen');
         const resultsScreen = document.getElementById('results-screen');
         const manualQuizTrigger = document.getElementById('manual-quiz-trigger');
+        let winningArchetypeResult = {}; // To store the result data
 
         if(manualQuizTrigger) {
             const startQuizBtn = document.getElementById('start-quiz-btn');
@@ -722,15 +723,17 @@
 
             let currentQuestionIndex = 0;
             let scores = {};
-            let winningArchetypeKey;
 
             function openModal() { if (modalOverlay) modalOverlay.classList.add('active'); }
             function closeModal() { if (modalOverlay) modalOverlay.classList.remove('active'); }
             function resetQuiz() {
                 currentQuestionIndex = 0;
                 scores = { glamExpert: 0, wellnessGuru: 0, savvyMom: 0, homebodyCreative: 0, careerProfessional: 0 };
+                winningArchetypeResult = {};
                 const formConfirmation = document.getElementById('form-confirmation');
+                const emailInput = document.getElementById('email-input');
                 if(formConfirmation) formConfirmation.style.display = 'none';
+                if(emailInput) emailInput.value = ''; // Clear email input on reset
                 if(introScreen) introScreen.style.display = 'block';
                 if(resultsScreen) resultsScreen.style.display = 'none';
                 if(quizScreen) quizScreen.style.display = 'none';
@@ -760,7 +763,7 @@
             }
             function showResults() {
                 let maxScore = -1;
-                winningArchetypeKey = 'glamExpert'; // default
+                let winningArchetypeKey = 'glamExpert'; // default
                 for (const archetype in scores) {
                     if (scores[archetype] > maxScore) {
                         maxScore = scores[archetype];
@@ -768,32 +771,64 @@
                     }
                 }
                 const result = quizData.results[winningArchetypeKey];
+                winningArchetypeResult = result; // Store the result data globally
                 const resultsContentDiv = document.getElementById('results-content');
                 resultsContentDiv.innerHTML = `<p class="highlight" style="font-weight: 600; font-family: var(--font-body);">Your UGC Archetype is...</p><h1>${result.title}</h1><p>${result.description}</p><h4 style="font-size: 1.5rem; text-align: left; margin-top: 2rem;">Potential Brand Partners</h4><div class="quiz-results-brands">${result.brands.map(brand => `<div>${brand}</div>`).join('')}</div><h4 style="font-size: 1.5rem; text-align: left;">UGC Ad Formats You Could Make</h4><div>${result.formats.map(format => `<div class="quiz-results-format"><h5>${format.title}</h5><p style="color: var(--light-text); margin-bottom: 0;">${format.desc}</p></div>`).join('')}</div>`;
+
                 if(introScreen) introScreen.style.display = 'none';
                 if(quizScreen) quizScreen.style.display = 'none';
                 if(resultsScreen) resultsScreen.style.display = 'block';
             }
 
             manualQuizTrigger.addEventListener('click', () => { resetQuiz(); openModal(); });
-            if(startQuizBtn) {
-                startQuizBtn.addEventListener('click', () => {
-                    if(introScreen) introScreen.style.display = 'none';
-                    if(quizScreen) quizScreen.style.display = 'block';
-                    showQuestion();
-                });
-            }
+            
+            if(startQuizBtn) { startQuizBtn.addEventListener('click', () => { if(introScreen) introScreen.style.display = 'none'; if(quizScreen) quizScreen.style.display = 'block'; showQuestion(); }); }
             if(closeBtns) closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
-            if(getBlueprintBtn) {
-                getBlueprintBtn.addEventListener('click', () => {
-                    closeModal();
-                    window.location.href = '#offer';
-                });
-            }
+            if(getBlueprintBtn) { getBlueprintBtn.addEventListener('click', () => { closeModal(); window.location.href = '#offer'; }); }
+
+            // ** Logic to send form data to your Make.com webhook **
             if(emailForm) {
                 emailForm.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    // Webhook logic would go here
+
+                    // --- YOUR WEBHOOK URL IS NOW PLUGGED IN HERE ---
+                    const webhookUrl = 'https://hook.us2.make.com/yj2b8yrcpd8124476ksg9g8n4idt1y83';
+                    // ------------------------------------------------
+                    
+                    const form = e.target;
+                    const email = form.querySelector('#email-input').value;
+                    const formConfirmation = document.getElementById('form-confirmation');
+                    const submitButton = form.querySelector('button[type="submit"]');
+
+                    // Prepare the data to be sent
+                    const dataToSend = {
+                        email: email,
+                        quizResultTitle: winningArchetypeResult.title,
+                        quizResultDescription: winningArchetypeResult.description,
+                        source: "Her Content Blueprint Quiz" // Optional: helps you identify the source in Make.com
+                    };
+
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Sending...';
+
+                    fetch(webhookUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(dataToSend),
+                    }).then(response => {
+                        if (response.ok) {
+                            if(formConfirmation) formConfirmation.style.display = 'block';
+                            form.reset();
+                        } else {
+                            alert("Oops! There was a problem sending your results. Please try again.");
+                        }
+                    }).catch(error => {
+                        console.error('Webhook submission error:', error);
+                        alert("Oops! There was a problem sending your results. Please try again.");
+                    }).finally(() => {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send My Results';
+                    });
                 });
             }
         }
@@ -802,10 +837,7 @@
         const guideModal = document.getElementById("guideModal");
         const mensBtn = document.getElementById("mensGuide");
         const womensBtn = document.getElementById("womensGuide");
-        if (guideModal && !sessionStorage.getItem('guideModalSeen')) {
-            guideModal.style.display = "flex";
-            sessionStorage.setItem('guideModalSeen', 'true');
-        }
+        if (guideModal && !sessionStorage.getItem('guideModalSeen')) { guideModal.style.display = "flex"; sessionStorage.setItem('guideModalSeen', 'true'); }
         if(mensBtn) mensBtn.addEventListener("click", function () { window.location.href = "https://www.ismelihenriquez.com/theblueprint/"; });
         if(womensBtn) womensBtn.addEventListener("click", function () { if(guideModal) guideModal.style.display = "none"; });
     });
