@@ -180,7 +180,7 @@
             margin-bottom: 10px;
         }
 
-        /* ✅ NEW: Testimonial Slideshow Styles */
+        /* Testimonial Slideshow Styles */
         @keyframes scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(calc(-320px * 9)); } /* 320px image width * 9 images */
@@ -307,6 +307,110 @@
         #mensGuide { background-color: #333; color: white; }
         #womensGuide { background-color: var(--primary-pink); color: white; }
 
+        /* ✅ ADDED: Quiz Modal Styles */
+        .quiz-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .quiz-overlay.active {
+            display: flex;
+        }
+        .quiz-modal {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        .quiz-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 2rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: #aaa;
+        }
+        .quiz-modal-inner { text-align: center; }
+        .quiz-progress-bar {
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .quiz-progress-bar div {
+            height: 100%;
+            background: var(--primary-pink);
+            transition: width 0.3s;
+        }
+        .quiz-answer-options {
+            display: grid;
+            gap: 15px;
+        }
+        .quiz-answer-btn {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            background: white;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+        }
+        .quiz-answer-btn:hover {
+            background: var(--light-pink-bg);
+            border-color: var(--primary-pink);
+            color: var(--primary-pink);
+        }
+        .quiz-results-brands {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .quiz-results-brands div {
+            background: var(--light-pink-bg);
+            color: var(--primary-pink);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .quiz-results-format {
+            text-align: left;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .quiz-email-capture {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+        }
+        .quiz-email-capture input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+
         @media (max-width: 768px) {
             .checklist { grid-template-columns: 1fr; }
             .ugc-vs-influencer-grid { grid-template-columns: 1fr; }
@@ -327,7 +431,6 @@
     
     <header class="hero">
         <div class="page-container section-center">
-            <!-- ✅ FIXED: Image centering -->
             <img src="https://github.com/ismelihenriquez/ismelihenriquez.github.io/blob/main/sheguide.png?raw=true" alt="Her Content Blueprint Logo" style="max-width: 250px; margin: 0 auto 20px auto; display: block;" data-aos="zoom-in">
             <h1 data-aos="fade-up">Her Content Blueprint</h1>
             <h2 data-aos="fade-up" data-aos-delay="100" style="font-family: var(--font-body); font-size: 1.5rem; color: var(--primary-pink); font-weight: 600;">The Modern Woman's Guide to Making Money Online.</h2>
@@ -388,7 +491,6 @@
             </div>
         </section>
 
-        <!-- ✅ NEW: Testimonial Slideshow -->
         <section id="testimonials" class="section">
             <div class="section-center">
                 <h2 data-aos="fade-up">Proof That The Blueprint Works</h2>
@@ -440,7 +542,6 @@
             </div>
         </section>
 
-        <!-- ✅ NEW: Mid-page CTA -->
         <section class="section" style="padding-top: 0; padding-bottom: 40px;">
             <div class="section-center" data-aos="fade-up">
                 <a href="#offer" class="btn btn-primary">Yes, I'm Ready to Get Paid!</a>
@@ -529,9 +630,45 @@
         <p>© 2025 Ismeli Henriquez. All Rights Reserved.</p>
     </footer>
 
-    <!-- ✅ REMOVED: Old lightbox HTML is gone -->
-    
-    <div class="quiz-overlay" id="quiz-modal-overlay"> <!-- Quiz modal HTML and logic needed here --> </div>
+    <!-- ✅ ADDED: Quiz Modal HTML -->
+    <div class="quiz-overlay" id="quiz-modal-overlay">
+        <div class="quiz-modal" id="intro-screen">
+            <button class="quiz-close-btn">×</button>
+            <div class="quiz-modal-inner">
+                <h1>Find Your Creator Superpower</h1>
+                <p>Not sure what kind of content you could create for brands? Answer 6 quick questions to discover your unique UGC niche.</p>
+                <button id="start-quiz-btn" class="btn btn-primary" style="width: 100%;">Start The Quiz</button>
+            </div>
+        </div>
+        <div class="quiz-modal" id="quiz-screen" style="display: none;">
+             <button class="quiz-close-btn">×</button>
+            <div class="quiz-modal-inner">
+                <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                    <h3 id="question-counter" style="margin-bottom: 0; font-family: 'Poppins', sans-serif; font-size: 1.2rem;"></h3>
+                    <div class="quiz-progress-bar" style="margin-left: 1rem; flex-grow: 1;"><div id="progress-bar" style="width: 0%;"></div></div>
+                </div>
+                <h2 id="question-text" style="font-size: 1.8rem; margin-bottom: 1.5rem;"></h2>
+                <div id="answer-options" class="quiz-answer-options"></div>
+            </div>
+        </div>
+        <div class="quiz-modal" id="results-screen" style="display: none;">
+             <button class="quiz-close-btn">×</button>
+            <div class="quiz-modal-inner">
+                <div id="results-content" style="text-align: center;"></div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <h3 style="font-size: 1.75rem;">Ready to Get Started?</h3>
+                    <p style="color: var(--light-text); margin-top: 0.5rem; margin-bottom: 1.5rem;">Now that you know your creator type, Her Blueprint has everything you need to turn it into a profitable side hustle.</p>
+                    <button id="get-blueprint-btn" class="btn btn-primary">Get The Blueprint Guide</button>
+                </div>
+                <div class="quiz-email-capture">
+                    <h4 style="font-size: 1.5rem;">Get Your Full Results</h4>
+                    <p style="color: var(--light-text); margin-top: 0.5rem; margin-bottom: 1rem;">Enter your email to get your personalized results sent to your inbox.</p>
+                    <form id="email-form"><input type="email" id="email-input" placeholder="Enter Your Email Address" required><button type="submit" class="btn btn-primary">Send My Results</button></form>
+                    <p id="form-confirmation" style="color: #22c55e; font-weight: 600; margin-top: 1rem; display: none;">Got it! Your results are on their way.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="guideModal" class="modal">
       <div class="modal-content">
@@ -549,27 +686,129 @@
     document.addEventListener('DOMContentLoaded', () => {
         AOS.init({ duration: 800, once: true, offset: 50 });
         
-        // REMOVED: Old lightbox script is gone.
-        
         // FAQ Script
         const faqQuestions = document.querySelectorAll('.faq-question');
         faqQuestions.forEach(question => { question.addEventListener('click', () => { const answer = question.nextElementSibling; question.classList.toggle('active'); if (question.classList.contains('active')) { answer.style.maxHeight = answer.scrollHeight + 'px'; } else { answer.style.maxHeight = 0; } }); });
 
-        // Quiz Script (Functionality remains)
-        // NOTE: The full quiz script logic from previous versions needs to be pasted here for it to work.
-        // It has been omitted from this view for brevity but is required in the final file.
+        // ✅ ADDED: Full Quiz Script
+        const quizData = {
+            questions: [
+                { text: "What's your ideal Saturday afternoon?", answers: [{ text: "Trying a new recipe or a DIY home project.", archetypes: ["homebodyCreative"] }, { text: "A workout class followed by a healthy brunch.", archetypes: ["wellnessGuru"] }, { text: "Shopping for the perfect outfit or trying new makeup looks.", archetypes: ["glamExpert"] }, { text: "Organizing my schedule and setting goals for the week ahead.", archetypes: ["careerProfessional", "savvyMom"] }] },
+                { text: "Which social media feed do you scroll the most?", answers: [{ text: "Interior design, home organization, and cozy aesthetics.", archetypes: ["homebodyCreative"] }, { text: "Fashion influencers, makeup tutorials, and skincare routines.", archetypes: ["glamExpert"] }, { text: "Meal prep ideas, workout motivation, and mindfulness tips.", archetypes: ["wellnessGuru"] }, { text: "Parenting hacks, family activities, and budget tips.", archetypes: ["savvyMom"] }] },
+                { text: "When a friend asks for advice, it's usually about...", answers: [{ text: "The best skincare for their skin type or a good clothing brand.", archetypes: ["glamExpert"] }, { text: "Career advice, productivity hacks, or networking.", archetypes: ["careerProfessional"] }, { text: "A great protein powder or a new yoga routine.", archetypes: ["wellnessGuru"] }, { text: "How to keep the kids entertained or manage a busy household.", archetypes: ["savvyMom"] }] },
+                { text: "You get a gift card. What do you buy?", answers: [{ text: "Something for my home, like a new throw pillow or kitchen gadget.", archetypes: ["homebodyCreative", "savvyMom"] }, { text: "The latest 'must-have' serum or a new eyeshadow palette.", archetypes: ["glamExpert"] }, { text: "New workout gear or a subscription to a wellness app.", archetypes: ["wellnessGuru"] }, { text: "A new planner or a book on professional development.", archetypes: ["careerProfessional"] }] },
+                { text: "What's your 'uniform'?", answers: [{ text: "A stylish, put-together outfit, even if I'm working from home.", archetypes: ["glamExpert", "careerProfessional"] }, { text: "Comfy athleisure wear that's ready for a workout or errands.", archetypes: ["wellnessGuru", "savvyMom"] }, { text: "A cozy sweater and leggings.", archetypes: ["homebodyCreative"] }, { text: "Whatever is clean and practical for the day!", archetypes: ["savvyMom"] }] },
+                { text: "If a brand sent you a product, what video would be most fun to make?", answers: [{ text: "An aesthetic 'Get Ready With Me' (GRWM) video.", archetypes: ["glamExpert"] }, { text: "A 'Day in the Life' showing how the product fits my busy schedule.", archetypes: ["savvyMom", "careerProfessional"] }, { text: "A calming routine video, like making my morning smoothie.", archetypes: ["wellnessGuru", "homebodyCreative"] }, { text: "An honest, chatty review talking directly to the camera.", archetypes: [] }] }
+            ],
+            results: {
+                glamExpert: { title: "The Glam Expert", description: "You have a passion for all things beauty, fashion, and style. Brands in cosmetics, skincare, and apparel need your authentic voice and keen eye to showcase their products.", brands: ["Sephora", "Fenty Beauty", "Aritzia", "Drunk Elephant", "Lululemon"], formats: [{ title: "Get Ready With Me (GRWM)", desc: "Show how you incorporate a product into your daily makeup or styling routine." }, { title: "Honest First Impressions", desc: "An authentic video sharing your real-time thoughts as you try a product for the first time." }, { title: "Aesthetic Product Shot", desc: "A beautifully styled video or photo that makes the product look irresistible." }] },
+                wellnessGuru: { title: "The Wellness Guru", description: "You're passionate about health, from fitness to nutrition to mental clarity. Health food, athletic wear, and supplement brands need creators like you to share real-life testimonials.", brands: ["Alo Yoga", "Glow Recipe", "Athletic Greens", "Nike", "BetterHelp"], formats: [{ title: "Morning Routine", desc: "Show how a product (like a supplement or workout set) is part of your healthy start to the day." }, { title: "Recipe/Workout Video", desc: "Create a short tutorial that features a brand's food product or workout gear in action." }, { title: "Authentic Testimonial", desc: "A post-workout video talking about how a product helps you achieve your fitness goals." }] },
+                savvyMom: { title: "The Savvy Mom", description: "You're the master of multitasking and finding products that make family life better and easier. Brands for kids, home, and convenience need your trusted recommendations.", brands: ["Target", "HelloFresh", "KiwiCo", "The Honest Company", "Graco"], formats: [{ title: "'Mom Hack' Video", desc: "Show how a product provides a clever solution to a common parenting problem." }, { title: "A Day in the Life", desc: "Create a montage showing how a product fits seamlessly into your busy family schedule." }, { title: "Kid-Approved Review", desc: "A fun unboxing or product test featuring your kids' genuine reactions." }] },
+                homebodyCreative: { title: "The Homebody Creative", description: "You excel at creating a cozy and beautiful space. Your passion is in home decor, DIY projects, and organization. Home goods and lifestyle brands need your talent for creating aesthetic content.", brands: ["The Sill", "Brooklinen", "Our Place", "Crate & Barrel", "Etsy"], formats: [{ title: "Cozy Room Tour", desc: "A short, aesthetic video highlighting how a brand's product fits into your home." }, { title: "Satisfying 'Restock' Video", desc: "An organizing video where you restock your pantry, fridge, or bathroom using a brand's products." }, { title: "DIY Project", desc: "Showcase your creativity by using a product in a unique DIY or home styling project." }] },
+                careerProfessional: { title: "The Career Professional", description: "You are ambitious, organized, and always striving for growth. Brands in tech, business, and productivity need to show how their products help driven women like you succeed.", brands: ["Apple", "Notion", "Microsoft", "Starbucks", "Away Luggage"], formats: [{ title: "Productivity Hack", desc: "A quick video demonstrating how a tool or app saves you time and keeps you organized." }, { title: "Work From Home Setup", desc: "An aesthetic tour of your desk setup, featuring the brand's products." }, { title: "'What's In My Work Bag'", desc: "An unboxing-style video showing how a brand's products are essential for your workday." }] }
+            }
+        };
+        const modalOverlay = document.getElementById('quiz-modal-overlay');
+        const introScreen = document.getElementById('intro-screen');
+        const quizScreen = document.getElementById('quiz-screen');
+        const resultsScreen = document.getElementById('results-screen');
+        const manualQuizTrigger = document.getElementById('manual-quiz-trigger');
+
+        if(manualQuizTrigger) {
+            const startQuizBtn = document.getElementById('start-quiz-btn');
+            const emailForm = document.getElementById('email-form');
+            const getBlueprintBtn = document.getElementById('get-blueprint-btn');
+            const closeBtns = document.querySelectorAll('.quiz-close-btn');
+
+            let currentQuestionIndex = 0;
+            let scores = {};
+            let winningArchetypeKey;
+
+            function openModal() { if (modalOverlay) modalOverlay.classList.add('active'); }
+            function closeModal() { if (modalOverlay) modalOverlay.classList.remove('active'); }
+            function resetQuiz() {
+                currentQuestionIndex = 0;
+                scores = { glamExpert: 0, wellnessGuru: 0, savvyMom: 0, homebodyCreative: 0, careerProfessional: 0 };
+                const formConfirmation = document.getElementById('form-confirmation');
+                if(formConfirmation) formConfirmation.style.display = 'none';
+                if(introScreen) introScreen.style.display = 'block';
+                if(resultsScreen) resultsScreen.style.display = 'none';
+                if(quizScreen) quizScreen.style.display = 'none';
+            }
+            function showQuestion() {
+                const question = quizData.questions[currentQuestionIndex];
+                const totalQuestions = quizData.questions.length;
+                document.getElementById('question-counter').textContent = `Question ${currentQuestionIndex + 1}/${totalQuestions}`;
+                document.getElementById('progress-bar').style.width = `${((currentQuestionIndex + 1) / totalQuestions) * 100}%`;
+                document.getElementById('question-text').textContent = question.text;
+                const answerOptionsDiv = document.getElementById('answer-options');
+                answerOptionsDiv.innerHTML = '';
+                question.answers.forEach(answer => {
+                    const button = document.createElement('button');
+                    button.className = 'quiz-answer-btn';
+                    button.textContent = answer.text;
+                    button.onclick = () => selectAnswer(answer.archetypes);
+                    answerOptionsDiv.appendChild(button);
+                });
+            }
+            function selectAnswer(archetypes) {
+                archetypes.forEach(archetype => {
+                    if (scores.hasOwnProperty(archetype)) { scores[archetype]++; }
+                });
+                currentQuestionIndex++;
+                if (currentQuestionIndex < quizData.questions.length) { showQuestion(); } else { showResults(); }
+            }
+            function showResults() {
+                let maxScore = -1;
+                winningArchetypeKey = 'glamExpert'; // default
+                for (const archetype in scores) {
+                    if (scores[archetype] > maxScore) {
+                        maxScore = scores[archetype];
+                        winningArchetypeKey = archetype;
+                    }
+                }
+                const result = quizData.results[winningArchetypeKey];
+                const resultsContentDiv = document.getElementById('results-content');
+                resultsContentDiv.innerHTML = `<p class="highlight" style="font-weight: 600; font-family: var(--font-body);">Your UGC Archetype is...</p><h1>${result.title}</h1><p>${result.description}</p><h4 style="font-size: 1.5rem; text-align: left; margin-top: 2rem;">Potential Brand Partners</h4><div class="quiz-results-brands">${result.brands.map(brand => `<div>${brand}</div>`).join('')}</div><h4 style="font-size: 1.5rem; text-align: left;">UGC Ad Formats You Could Make</h4><div>${result.formats.map(format => `<div class="quiz-results-format"><h5>${format.title}</h5><p style="color: var(--light-text); margin-bottom: 0;">${format.desc}</p></div>`).join('')}</div>`;
+                if(introScreen) introScreen.style.display = 'none';
+                if(quizScreen) quizScreen.style.display = 'none';
+                if(resultsScreen) resultsScreen.style.display = 'block';
+            }
+
+            manualQuizTrigger.addEventListener('click', () => { resetQuiz(); openModal(); });
+            if(startQuizBtn) {
+                startQuizBtn.addEventListener('click', () => {
+                    if(introScreen) introScreen.style.display = 'none';
+                    if(quizScreen) quizScreen.style.display = 'block';
+                    showQuestion();
+                });
+            }
+            if(closeBtns) closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
+            if(getBlueprintBtn) {
+                getBlueprintBtn.addEventListener('click', () => {
+                    closeModal();
+                    window.location.href = '#offer';
+                });
+            }
+            if(emailForm) {
+                emailForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    // Webhook logic would go here
+                });
+            }
+        }
 
         // Guide Selection Modal Script
-        const modal = document.getElementById("guideModal");
+        const guideModal = document.getElementById("guideModal");
         const mensBtn = document.getElementById("mensGuide");
         const womensBtn = document.getElementById("womensGuide");
-        if (!sessionStorage.getItem('guideModalSeen')) {
-            modal.style.display = "flex";
+        if (guideModal && !sessionStorage.getItem('guideModalSeen')) {
+            guideModal.style.display = "flex";
             sessionStorage.setItem('guideModalSeen', 'true');
         }
-        mensBtn.addEventListener("click", function () { window.location.href = "https://www.ismelihenriquez.com/theblueprint/"; });
-        womensBtn.addEventListener("click", function () { modal.style.display = "none"; });
+        if(mensBtn) mensBtn.addEventListener("click", function () { window.location.href = "https://www.ismelihenriquez.com/theblueprint/"; });
+        if(womensBtn) womensBtn.addEventListener("click", function () { if(guideModal) guideModal.style.display = "none"; });
     });
     </script>
 </body>
-</ht
+</html>
