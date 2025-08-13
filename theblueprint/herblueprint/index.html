@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Her Content Blueprint</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #fff;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .image-section {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-section img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .content-section {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #c83dd4; /* purple */
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #ff4db8; /* pink */
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .features {
+      margin-top: 20px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .feature-icon {
+      font-size: 1.5rem;
+      margin-right: 10px;
+      color: #c83dd4;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background-color: #ff4db8;
+      color: #fff;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .cta-btn:hover {
+      background-color: #c83dd4;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .image-section, .content-section {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left Image Section -->
+    <div class="image-section">
+      <img src="your-womens-guide-image.jpg" alt="Her Content Blueprint">
+    </div>
+
+    <!-- Right Content Section -->
+    <div class="content-section">
+      <h1>Her Content Blueprint</h1>
+      <h2>Get Paid to Create for Brands You Love.</h2>
+      <p>This is your guide to getting paid by brands, simply by being you. We'll explore how to transform your existing skills, passions, and life experiences into $1,000 - $5,000+ in monthly income through User Generated Content (UGC).</p>
+      
+      <div class="features">
+        <div class="feature">
+          <span class="feature-icon">⚠️</span>
+          <span>You don't need a big following.</span>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">📷</span>
+          <span>You don't need fancy equipment.</span>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">🎯</span>
+          <span>All you need is your phone, your personality, and a willingness to learn.</span>
+        </div>
+      </div>
+
+      <br>
+      <a href="https://buy.stripe.com/eVq6oHdqkaXU4oDbACfIs02" class="cta-btn" target="_blank" rel="noopener noreferrer">Get the Guide</a>
+    </div>
+  </div>
+</body>
+</html>
