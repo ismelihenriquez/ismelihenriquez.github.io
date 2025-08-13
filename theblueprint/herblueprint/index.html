@@ -43,7 +43,7 @@
             font-family: var(--font-body);
         }
 
-        /* ✅ ADDED: Nav Bar Styles */
+        /* Nav Bar Styles */
         .lp-nav {
             position: sticky;
             top: 0;
@@ -136,7 +136,7 @@
             text-align: center;
         }
 
-        /* ✅ NEW: UGC vs Influencer Section */
+        /* UGC vs Influencer Section */
         .ugc-vs-influencer-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -180,16 +180,36 @@
             margin-bottom: 10px;
         }
 
-        /* Testimonials */
-        .testimonial-grid {
-             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+        /* ✅ NEW: Testimonial Slideshow Styles */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-320px * 9)); } /* 320px image width * 9 images */
         }
-        .testimonial-card img {
+        .testimonial-slider {
+            margin-top: 40px;
+            overflow: hidden;
+            position: relative;
             width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+            mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+        }
+        .testimonial-slider-track {
+            display: flex;
+            width: calc(320px * 18); /* 2 sets of 9 images */
+            animation: scroll 60s linear infinite;
+        }
+        .testimonial-slider:hover .testimonial-slider-track {
+            animation-play-state: paused;
+        }
+        .testimonial-slide {
+            width: 300px;
+            margin: 0 10px;
+            flex-shrink: 0;
+        }
+        .testimonial-slide img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         /* Checklist */
@@ -296,7 +316,6 @@
     </style>
 </head>
 <body>
-    <!-- ✅ ADDED: Navigation Bar -->
     <nav class="lp-nav">
         <a href="#ugc-explained">What is UGC?</a>
         <a href="#how-it-works">How It Works</a>
@@ -308,7 +327,8 @@
     
     <header class="hero">
         <div class="page-container section-center">
-            <img src="https://github.com/ismelihenriquez/ismelihenriquez.github.io/blob/main/sheguide.png?raw=true" alt="Her Content Blueprint Logo" style="max-width: 250px; margin-bottom: 20px;" data-aos="zoom-in">
+            <!-- ✅ FIXED: Image centering -->
+            <img src="https://github.com/ismelihenriquez/ismelihenriquez.github.io/blob/main/sheguide.png?raw=true" alt="Her Content Blueprint Logo" style="max-width: 250px; margin: 0 auto 20px auto; display: block;" data-aos="zoom-in">
             <h1 data-aos="fade-up">Her Content Blueprint</h1>
             <h2 data-aos="fade-up" data-aos-delay="100" style="font-family: var(--font-body); font-size: 1.5rem; color: var(--primary-pink); font-weight: 600;">The Modern Woman's Guide to Making Money Online.</h2>
             <p data-aos="fade-up" data-aos-delay="200" style="max-width: 600px; margin: 20px auto; color: var(--light-text);">Learn how to get paid by brands you love through User Generated Content (UGC) and Influencer Marketing. This guide is your complete roadmap to earning a side income or building a full-time career from your phone.</p>
@@ -317,7 +337,6 @@
     </header>
 
     <main class="page-container">
-        <!-- ✅ NEW: UGC Explained Section -->
         <section id="ugc-explained" class="section">
             <div class="section-center">
                 <h2 data-aos="fade-up">What is UGC? (And Why It's Your Perfect Start)</h2>
@@ -345,7 +364,6 @@
             </div>
         </section>
 
-        <!-- How It Works -->
         <section id="how-it-works" class="section" style="padding-top: 0;">
             <div class="section-center">
                 <h2 data-aos="fade-up">My Exact 3-Step System to Getting Paid</h2>
@@ -370,19 +388,37 @@
             </div>
         </section>
 
-        <!-- Testimonials -->
+        <!-- ✅ NEW: Testimonial Slideshow -->
         <section id="testimonials" class="section">
             <div class="section-center">
                 <h2 data-aos="fade-up">Proof That The Blueprint Works</h2>
             </div>
-            <div class="testimonial-grid" style="margin-top: 40px;">
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100"><a href="#img4"><img src="/testimonial1.PNG" alt="Testimonial 1"></a></div>
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200"><a href="#img5"><img src="/testimonial2.PNG" alt="Testimonial 2"></a></div>
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300"><a href="#img6"><img src="/testimonial3.jpg" alt="Testimonial 3"></a></div>
+            <div class="testimonial-slider">
+                <div class="testimonial-slider-track">
+                    <!-- First set of images -->
+                    <div class="testimonial-slide"><img src="/testimonial1.PNG" alt="Testimonial 1"></div>
+                    <div class="testimonial-slide"><img src="/testimonial2.PNG" alt="Testimonial 2"></div>
+                    <div class="testimonial-slide"><img src="/testimonial3.jpg" alt="Testimonial 3"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (1).JPG" alt="New Testimonial 1"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (2).JPG" alt="New Testimonial 2"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (3).JPG" alt="New Testimonial 3"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (4).JPG" alt="New Testimonial 4"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (5).JPG" alt="New Testimonial 5"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (6).JPG" alt="New Testimonial 6"></div>
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="testimonial-slide"><img src="/testimonial1.PNG" alt="Testimonial 1"></div>
+                    <div class="testimonial-slide"><img src="/testimonial2.PNG" alt="Testimonial 2"></div>
+                    <div class="testimonial-slide"><img src="/testimonial3.jpg" alt="Testimonial 3"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (1).JPG" alt="New Testimonial 1"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (2).JPG" alt="New Testimonial 2"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (3).JPG" alt="New Testimonial 3"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (4).JPG" alt="New Testimonial 4"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (5).JPG" alt="New Testimonial 5"></div>
+                    <div class="testimonial-slide"><img src="/testimonialnew (6).JPG" alt="New Testimonial 6"></div>
+                </div>
             </div>
         </section>
         
-        <!-- ✅ UPDATED: Who It's For Section -->
         <section id="who-its-for" class="section">
             <div class="section-center">
                 <h2 data-aos="fade-up">This Blueprint is For <span class="highlight">Every Woman.</span></h2>
@@ -403,8 +439,14 @@
                 </div>
             </div>
         </section>
+
+        <!-- ✅ NEW: Mid-page CTA -->
+        <section class="section" style="padding-top: 0; padding-bottom: 40px;">
+            <div class="section-center" data-aos="fade-up">
+                <a href="#offer" class="btn btn-primary">Yes, I'm Ready to Get Paid!</a>
+            </div>
+        </section>
         
-        <!-- What's Inside -->
         <section id="features" class="section">
             <div class="section-center">
                 <h2 data-aos="fade-up">The Complete Roadmap from <span class="highlight">Zero to Paid Creator</span></h2>
@@ -426,7 +468,6 @@
             </ul>
         </section>
 
-        <!-- Instagram Community Section -->
         <section id="community" class="section">
             <div class="instagram-section" data-aos="zoom-in">
                 <h2>Join the Community ✨</h2>
@@ -435,7 +476,6 @@
             </div>
         </section>
         
-        <!-- Investment Section -->
         <section class="section">
             <div class="section-center" data-aos="fade-up">
                 <h2>Your Time Is Worth More Than $79.</h2>
@@ -443,7 +483,6 @@
             </div>
         </section>
         
-        <!-- Quiz Section -->
         <section id="quiz-trigger" class="section" style="background: white; padding: 80px 0; border-radius: 20px;">
             <div class="section-center" data-aos="fade-up">
                 <h2>Find Your Unique <span class="highlight">Creator Style</span></h2>
@@ -452,7 +491,6 @@
             </div>
         </section>
         
-        <!-- Offer Section -->
         <section id="offer" class="section">
             <div class="offer-box section-center" data-aos="zoom-in">
                 <h2>Get <span class="highlight">Instant Access</span> to The Blueprint</h2>
@@ -462,7 +500,6 @@
             </div>
         </section>
         
-        <!-- FAQ Section -->
         <section id="faq" class="section">
             <div class="section-center">
                 <h2 data-aos="fade-up">Your Questions, <span class="highlight">Answered</span></h2>
@@ -478,7 +515,6 @@
             </div>
         </section>
 
-        <!-- ✅ NEW: For Men Section -->
         <section id="for-men" class="section">
             <div class="section-center" data-aos="fade-up">
                 <h2>Looking for the Men's Guide?</h2>
@@ -493,14 +529,10 @@
         <p>© 2025 Ismeli Henriquez. All Rights Reserved.</p>
     </footer>
 
-    <!-- Lightbox and Quiz Modals (HTML is unchanged, functionality remains) -->
-    <div class="lightbox" id="img4"><div class="lightbox-content"><a class="close">×</a><img src="/testimonial1.PNG" alt="Enlarged view"></div></div>
-    <div class="lightbox" id="img5"><div class="lightbox-content"><a class="close">×</a><img src="/testimonial2.PNG" alt="Enlarged view"></div></div>
-    <div class="lightbox" id="img6"><div class="lightbox-content"><a class="close">×</a><img src="/testimonial3.jpg" alt="Enlarged view"></div></div>
+    <!-- ✅ REMOVED: Old lightbox HTML is gone -->
     
-    <div class="quiz-overlay" id="quiz-modal-overlay"> <!-- Quiz modal styling is self-contained and will work --> </div>
+    <div class="quiz-overlay" id="quiz-modal-overlay"> <!-- Quiz modal HTML and logic needed here --> </div>
 
-    <!-- Popup Modal for Guide Selection -->
     <div id="guideModal" class="modal">
       <div class="modal-content">
         <h2>Which Guide Would You Like?</h2>
@@ -514,28 +546,23 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-    // All scripts remain largely the same, but are included for completeness.
     document.addEventListener('DOMContentLoaded', () => {
         AOS.init({ duration: 800, once: true, offset: 50 });
         
-        // Lightbox Script
-        const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
-        lightboxTriggers.forEach(trigger => { trigger.addEventListener('click', (e) => { e.preventDefault(); const lightboxId = trigger.getAttribute('data-lightbox'); const lightbox = document.getElementById(lightboxId); if (lightbox) { lightbox.style.display = 'flex'; } }); });
-        document.querySelectorAll('.lightbox .close, .lightbox').forEach(closer => { closer.addEventListener('click', (e) => { if (e.target === closer) { closer.closest('.lightbox').style.display = 'none'; } }); });
-
+        // REMOVED: Old lightbox script is gone.
+        
         // FAQ Script
         const faqQuestions = document.querySelectorAll('.faq-question');
         faqQuestions.forEach(question => { question.addEventListener('click', () => { const answer = question.nextElementSibling; question.classList.toggle('active'); if (question.classList.contains('active')) { answer.style.maxHeight = answer.scrollHeight + 'px'; } else { answer.style.maxHeight = 0; } }); });
 
         // Quiz Script (Functionality remains)
-        // NOTE: The full quiz script logic needs to be pasted here for it to work.
+        // NOTE: The full quiz script logic from previous versions needs to be pasted here for it to work.
         // It has been omitted from this view for brevity but is required in the final file.
 
         // Guide Selection Modal Script
         const modal = document.getElementById("guideModal");
         const mensBtn = document.getElementById("mensGuide");
         const womensBtn = document.getElementById("womensGuide");
-        // Only show the modal if the user hasn't seen it before in this session
         if (!sessionStorage.getItem('guideModalSeen')) {
             modal.style.display = "flex";
             sessionStorage.setItem('guideModalSeen', 'true');
@@ -545,4 +572,4 @@
     });
     </script>
 </body>
-</html>
+</ht
